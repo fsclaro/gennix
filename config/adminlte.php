@@ -126,10 +126,10 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-2',
+    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
-    'classes_topnav_nav' => 'navbar-expand ',
+    'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
     /*
@@ -230,7 +230,7 @@ return [
     |
     */
 
-    'menu' => [
+'menu' => [
         [
             'text' => 'search',
             'search' => false,
@@ -247,20 +247,24 @@ return [
         [
             'text'  => 'Dashboard',
             'route' => 'home',
-            'icon'  => 'fa fa-fw fa-tachometer-alt'
+            'icon'  => 'fa fa-fw fa-tachometer-alt',
         ],
 
         // Configurações da Conta
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url'  => 'admin/settings',
+            'url'  => '#',
             'icon' => 'fas fa-fw fa-user',
+            'icon_color' => 'yellow',
+            'shift' => 'ml-2',
         ],
         [
             'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'url'  => '#',
             'icon' => 'fas fa-fw fa-lock',
+            'icon_color' => 'yellow',
+            'shift' => 'ml-2',
         ],
 
         // Configurações das páginas
@@ -270,37 +274,52 @@ return [
         [
             'text' => 'users_admin',
             'icon' => 'fa fa-fw fa-users-cog',
+            'icon_color' => 'yellow',
             'submenu' => [
                 [
                     'text'  => 'users',
                     'icon'  => 'fa fa-fw fa-users',
-                    'url'   => '#'
+                    'url'   => '#',
+                    'shift' => 'ml-2',
                 ],
                 [
                     'text'  => 'roles',
                     'icon'  => 'fa fa-fw fa-user-tag',
-                    'url'   => '#'
+                    'url'   => '#',
+                    'shift' => 'ml-2',
                 ],
                 [
                     'text'  => 'permissions',
                     'icon'  => 'fa fa-fw fa-key',
-                    'url'   => '#'
+                    'url'   => '#',
+                    'shift' => 'ml-2',
                 ],
-            ]
+            ],
         ],
         [
             'text' => 'support_area',
             'icon' => 'fa fa-fw fa-headset',
+            'icon_color' => 'yellow',
             'submenu' => [
                 [
                     'text'  => 'activities',
                     'icon'  => 'fa fa-fw fa-clipboard-check',
-                    'url'   => '#'
+                    'url'   => '#',
+                    'shift' => 'ml-2',
                 ],
                 [
                     'text'  => 'routes',
                     'icon'  => 'fa fa-fw fa-globe',
-                    'url'   => '#'
+                    'route'   => 'route-viewer::index',
+                    'target' => '_blank',
+                    'shift' => 'ml-2',
+                ],
+                [
+                    'text'  => 'Log-viewer',
+                    'icon'  => 'fa fa-fw fa-eye',
+                    'route'   => 'log-viewer::dashboard',
+                    'target' => '_blank',
+                    'shift' => 'ml-2',
                 ]
             ]
         ],
@@ -322,7 +341,7 @@ return [
         JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\SearchFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\SubmenuFilter::class,
+//        JeroenNoten\LaravelAdminLte\Menu\Filters\SubmenuFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter::class,

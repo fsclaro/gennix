@@ -15,5 +15,6 @@ return [
     'users_admin'                   => 'Gestão de usuários',
     'users'                         => 'Usuários',
     'permissions'                   => 'Permissões',
-    'roles'                         => 'Papéis'
+    'roles'                         => 'Papéis',
+    'you_are_logged'                => 'Você está logado agora!'
 ];

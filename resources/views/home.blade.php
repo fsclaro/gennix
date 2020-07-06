@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'gennix')
 
 @section('content_header')
     <h1 class="m-0 text-dark">Dashboard</h1>
@@ -11,7 +11,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <p class="mb-0">You are logged in!</p>
+                    <p class="mb-0">{{ __('adminlte::menu.you_are_logged') }} <i class="far fa-laugh-beam"></i></p>
                 </div>
             </div>
         </div>
