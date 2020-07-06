@@ -19,12 +19,10 @@ return [
 
         'attributes' => [
             'prefix'     => 'route-viewer',
-
             'as'         => 'route-viewer::',
-
             'namespace'  => 'Arcanedev\\RouteViewer\\Http\\Controllers',
 
-            // 'middleware' => [],
+            'middleware' => [ 'web', 'auth'],
         ],
     ],
 
