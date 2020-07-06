@@ -1,10 +1,19 @@
 {
-    "name": "laravel/laravel",
+    "name": "fsclaro/gennix",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "The Laravel Boilerplate.",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "boilerplate"
+    ],
+    "authors": [
+        {
+            "name": "Fernando Salles Claro",
+            "email": "fsclaro@gmail.com",
+            "homepage": "https://github.com/fsclaro/gennix",
+            "role": "Developer"
+        }
     ],
     "license": "MIT",
     "require": {
