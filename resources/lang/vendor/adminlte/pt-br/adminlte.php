@@ -3,7 +3,7 @@
 return [
 
     'full_name'                   => 'Nome completo',
-    'email'                       => 'Email',
+    'email'                       => 'E-mail',
     'password'                    => 'Senha',
     'retype_password'             => 'Repita a senha',
     'remember_me'                 => 'Lembrar-me',
@@ -14,7 +14,7 @@ return [
     'sign_in'                     => 'Entrar',
     'log_out'                     => 'Sair',
     'toggle_navigation'           => 'Trocar navegação',
-    'login_message'               => 'Entre para iniciar uma nova sessão',
+    'login_message'               => 'Entre com as suas credenciais',
     'register_message'            => 'Registrar um novo membro',
     'password_reset_message'      => 'Recuperar senha',
     'reset_password'              => 'Recuperar senha',

@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Gravatar;
 
 class User extends Authenticatable
 {
@@ -36,4 +37,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function adminlte_image() {
+        if (Gravatar::exists($this->email))
+            return Gravatar::get($this->email);
+
+        return asset('/img/avatar/avatar00.png');
+    }
+
+    public function adminlte_desc() {
+        return 'Analista de Sistemas';
+    }
+
+    public function adminlte_profile_url() {
+
+        return 'profile/username';
+    }
 }
