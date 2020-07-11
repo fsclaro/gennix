@@ -4,7 +4,7 @@
 
 ## About this project
 
-The **gennix7 Project** is intended to be a starting point for other projects based on the Laravel framework. Containing in this boilerplate several packages that can aid and accelerate the construction of your web projects.
+The **gennix project** is intended to be a starting point for other projects based on the Laravel framework. Containing in this boilerplate several packages that can aid and accelerate the construction of your web projects.
 
 ## Laravel Environment
 
