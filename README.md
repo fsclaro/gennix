@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/fsclaro/blackbird7/blob/master/public/img/front-page.png">
+<img src="https://github.com/fsclaro/gennix/blob/master/_docs/img/logo_gennix.png">
 </p>
 
 ## About this project
