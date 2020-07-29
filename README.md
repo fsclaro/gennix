@@ -1,5 +1,9 @@
 <p align="center">
+<<<<<<< HEAD
 <img src="https://github.com/fsclaro/gennix/blob/master/_docs/img/logo_gennix.png?raw=true">
+=======
+<img src="https://github.com/fsclaro/gennix/blob/master/_docs/img/logo_gennix.png">
+>>>>>>> eefcf461bd5f312835c3f0df607efa0c4c012655
 </p>
 
 ## About this project
