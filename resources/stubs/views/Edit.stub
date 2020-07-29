@@ -1,0 +1,79 @@
+@extends('adminlte::page')
+
+@section('title', env('APP_NAME'))
+
+@section('content_header')
+<span style="font-size:20px">
+    <i class="fa fa-user-tag"></i> {{ __('gennix.model_{{modelNameSingularLowerCase}}.view_title') }}
+</span>
+
+<div class="float-right">
+    {{ Breadcrumbs::render('{{modelNameSingularLowerCase}}_edit') }}
+</div>
+@stop
+
+@section('content')
+<form method="post" action="{{ route('{{modelNameSingularLowerCase}}.update', $role->id) }}" enctype="multipart/form-data">
+    @csrf
+    @method('PUT')
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-primary card-outline">
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="form-group col-md-2">
+                            <label for="id">{{ __('gennix.model_{{modelNameSingularLowerCase}}.details_id') }}</label><br>
+                            <input type="text" class="form-control text-right" readonly id="id" value="{{ ${{modelNameSingularLowerCase}}->id }}">
+                        </div>
+
+                        <!-- example of any column field -->
+
+                        <div class="form-group {{ $errors->has('field-name') ? 'has-error' : '' }} col-md-10">
+                            <label for="field-name">{{ __('gennix.model_{{modelNameSingularLowerCase}}.details_field-name')}}</label>
+                            <input type="text" class="form-control" id="field-name" name="field-name" value="{{ old('field-name') ? old('field-name') : ${{modelNameSingularLowerCase}}->field-name }}">
+
+                            @if($errors->has('field-name'))
+                            <small class="form-text text-red text-bold">
+                                {{ $errors->first('field-name') }}
+                            </small>
+                            @endif
+                        </div>
+
+                        <!-- put other columns here -->
+
+                    </div> <!-- ./row -->
+
+                    <!-- put others rows here -->
+
+                </div> <!-- ./card-body -->
+
+                <div class="card-footer">
+                    <div class="float-left">
+                        <a href="{{ route('{{modelNameSingularLowerCase}}.index') }}" class="btn btn-default">
+                            <i class="fas fa-arrow-circle-left"> {{ __("gennix.back") }}</i>
+                        </a>
+                    </div>
+                    <div class="float-right">
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-save"></i> {{ __("gennix.save") }}
+                        </button>
+                    </div>
+                </div> <!-- ./card-footer-->
+            </div> <!-- ./card -->
+        </div> <!-- ./col-md-12 -->
+    </div> <!-- ./row -->
+</form>
+@stop
+
+
+
+@section('adminlte_css_pre')
+@stop
+
+@section('css')
+@stop
+
+@section('js')
+@stop

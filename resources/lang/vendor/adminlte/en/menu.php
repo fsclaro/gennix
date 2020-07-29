@@ -2,18 +2,19 @@
 
 return [
 
-    'main_navigation'               => 'MAIN NAVIGATION',
+    'main_navigation'               => 'Main Navigationl',
     'blog'                          => 'Blog',
     'pages'                         => 'Pages',
-    'account_settings'              => 'ACCOUNT SETTINGS',
-    'profile'                       => 'Profile',
-    'change_password'               => 'Change Password',
-    'multilevel'                    => 'Multi Level',
-    'level_one'                     => 'Level 1',
-    'level_two'                     => 'Level 2',
-    'level_three'                   => 'Level 3',
-    'labels'                        => 'LABELS',
-    'important'                     => 'Important',
-    'warning'                       => 'Warning',
-    'information'                   => 'Information',
+    'account_settings'              => 'My Account Settings',
+    'profile'                       => 'My Profile',
+    'change_password'               => 'Change My Password',
+    'admininstration_site'          => 'Administration Site',
+    'support_area'                  => 'Support',
+    'activities'                    => 'Activities',
+    'routes'                        => 'Routes',
+    'users_admin'                   => 'Users Admin',
+    'users'                         => 'Users',
+    'permissions'                   => 'Permissions',
+    'roles'                         => 'Roles',
+    'you_are_logged'                => ', now you are logged on system!'
 ];

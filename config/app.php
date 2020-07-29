@@ -67,6 +67,7 @@ return [
     |
     */
 
+    // 'timezone' => 'UTC',
     'timezone' => 'America/Sao_Paulo',
 
     /*
@@ -80,6 +81,7 @@ return [
     |
     */
 
+    // 'locale' => 'en',
     'locale' => 'pt-BR',
 
     /*
@@ -228,6 +230,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
     ],
 
 ];

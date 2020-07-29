@@ -15,7 +15,7 @@
     {{-- Title --}}
     <title>
         @yield('title_prefix', config('adminlte.title_prefix', ''))
-        @yield('title', config('adminlte.title', 'AdminLTE 3'))
+        @yield('title', config('adminlte.title', 'gennix'))
         @yield('title_postfix', config('adminlte.title_postfix', ''))
     </title>
 
@@ -86,6 +86,7 @@
     {{-- Custom Scripts --}}
     @yield('adminlte_js')
 
+    @include('sweetalert::alert')
 </body>
 
 </html>

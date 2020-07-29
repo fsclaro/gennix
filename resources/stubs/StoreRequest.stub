@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
+
+class {{modelName}}StoreRequest extends FormRequest
+{
+    public function authorize()
+    {
+        return Gate::allows('{{modelNameSingularLowerCase}}-create');
+    }
+
+
+    public function rules()
+    {
+        return [
+            'field_name' => [ 'required', 'outras_regras' ],
+            //
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'field_name.required' => 'Forneça um valor para este campo',
+            //
+        ];
+    }
+}

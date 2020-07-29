@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'gennix',
+    'title' => env('APP_NAME'),
     'title_prefix' => '[',
     'title_postfix' => ']',
 
@@ -200,7 +200,7 @@ return [
 
     'password_email_url' => 'password/email',
 
-    'profile_url' => false,
+    'profile_url' => 'user/profile',
 
     /*
     |--------------------------------------------------------------------------
@@ -231,11 +231,12 @@ return [
     */
 
 'menu' => [
-        [
-            'text' => 'search',
-            'search' => false,
-            'topnav' => true,
-        ],
+        // [
+        //     'text' => 'search',
+        //     'search' => true,
+        //     'topnav' => false,
+        // ],
+
         [
             'text' => 'Atividades',
             'icon' => 'fa fa-fw fa-shield-alt',
@@ -250,76 +251,60 @@ return [
             'icon'  => 'fa fa-fw fa-tachometer-alt',
         ],
 
-        // Configurações da Conta
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => '#',
-            'icon' => 'fas fa-fw fa-user',
-            'icon_color' => 'yellow',
-            'shift' => 'ml-2',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => '#',
-            'icon' => 'fas fa-fw fa-lock',
-            'icon_color' => 'yellow',
-            'shift' => 'ml-2',
-        ],
-
         // Configurações das páginas
 
         // Configurações de administação
-        ['header' => 'admininstration_site'],
+        [
+            'header' => 'admininstration_site',
+            'can'    => 'site-management',
+        ],
         [
             'text' => 'users_admin',
             'icon' => 'fa fa-fw fa-users-cog',
-            'icon_color' => 'yellow',
             'submenu' => [
                 [
                     'text'  => 'users',
                     'icon'  => 'fa fa-fw fa-users',
-                    'url'   => '#',
-                    'shift' => 'ml-2',
+                    'route' => 'user.index',
+                    'can'   => 'user-access',
                 ],
                 [
                     'text'  => 'roles',
                     'icon'  => 'fa fa-fw fa-user-tag',
-                    'url'   => '#',
-                    'shift' => 'ml-2',
+                    'route' => 'role.index',
+                    'can'   => 'role-access'
                 ],
                 [
                     'text'  => 'permissions',
                     'icon'  => 'fa fa-fw fa-key',
-                    'url'   => '#',
-                    'shift' => 'ml-2',
+                    'route' => 'permission.index',
+                    'can'   => 'permission-access',
                 ],
             ],
         ],
         [
             'text' => 'support_area',
             'icon' => 'fa fa-fw fa-headset',
-            'icon_color' => 'yellow',
             'submenu' => [
                 [
                     'text'  => 'activities',
                     'icon'  => 'fa fa-fw fa-clipboard-check',
-                    'url'   => '#',
-                    'shift' => 'ml-2',
+                    'route' => 'activity.index',
+                    'can'   => 'activity-access'
                 ],
                 [
                     'text'  => 'routes',
                     'icon'  => 'fa fa-fw fa-globe',
-                    'route'   => 'route-viewer::index',
+                    'route' => 'route-viewer::index',
                     'target' => '_blank',
-                    'shift' => 'ml-2',
+                    'can'   => 'route-viewer-access'
                 ],
                 [
                     'text'  => 'Log-viewer',
                     'icon'  => 'fa fa-fw fa-eye',
                     'route'   => 'log-viewer::dashboard',
                     'target' => '_blank',
-                    'shift' => 'ml-2',
+                    'can'   => 'log-viewer-access'
                 ]
             ]
         ],
@@ -368,19 +353,16 @@ return [
                 [
                     'type' => 'js',
                     'asset' => true,
-                    // 'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
                     'location' => 'vendor/datatables/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    // 'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
                     'location' => 'vendor/datatables/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
                     'asset' => true,
-                    // 'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
                     'location' => 'vendor/datatables/css/dataTables.bootstrap4.min.css',
                 ],
             ],
@@ -392,7 +374,6 @@ return [
                 [
                     'type' => 'js',
                     'asset' => true,
-                    // 'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
                     'location' => 'vendor/select2/js/select2.min.js',
                 ],
                 [
@@ -403,7 +384,6 @@ return [
                 [
                     'type' => 'css',
                     'asset' => true,
-                    // 'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
                     'location' => 'vendor/select2/css/select2.css',
                 ],
             ],
@@ -415,7 +395,6 @@ return [
                 [
                     'type' => 'js',
                     'asset' => true,
-                    // 'location' => '//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js',
                     'location' => 'vendor/chart.js/Chart.bundle.min.js',
                 ],
                 [
@@ -432,13 +411,11 @@ return [
                 [
                     'type' => 'js',
                     'asset' => true,
-                    // 'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
                     'location' => 'vendor/sweetalert2/sweetalert2.all.min.js',
                 ],
                 [
                     'type' => 'css',
                     'asset' => true,
-                    // 'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
                     'location' => 'vendor/sweetalert2/sweetalert2.min.css',
                 ],
                 [
@@ -455,17 +432,51 @@ return [
                 [
                     'type' => 'css',
                     'asset' => true,
-                    // 'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-center-radar.min.css',
                     'location' => 'vendor/pace-progress/themes/blue/pace-theme-flat-top.css',
 
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    // 'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
                     'location' => 'vendor/pace-progress/pace.min.js',
                 ],
             ],
         ],
+
+        [
+            'name' => 'iCheck-Bootstrap',
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/icheck-bootstrap/icheck-bootstrap.min.css',
+                ],
+            ],
+        ],
+
+        [
+            'name' => 'Summernote',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/summernote/summernote-bs4.min.css',
+
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/summernote/summernote-bs4.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/summernote/lang/summernote-'. env('SUMMERNOTE_LANG') . '.min.js',
+                ],
+            ],
+        ],
+
     ],
 ];

@@ -16,5 +16,5 @@ return [
     'users'                         => 'Usuários',
     'permissions'                   => 'Permissões',
     'roles'                         => 'Papéis',
-    'you_are_logged'                => 'Você está logado agora!'
+    'you_are_logged'                => ', agora você está logado no sistema!'
 ];

@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Foundation\Http\FormRequest;
+
+class {{modelName}}UpdateRequest extends FormRequest
+{
+    public function authorize()
+    {
+        return Gate::allows('{{modelNameSingularLowerCase}}-edit');
+    }
+
+
+    public function rules()
+    {
+        return [
+            'field_name' => [ 'required', 'outras_regras' ],
+            //
+        ];
+    }
+
+
+    public function messages()
+    {
+        return [
+            'field_name.required' => 'Forneça um valor para este campo',
+            //
+        ];
+    }
+
+}

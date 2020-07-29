@@ -17,6 +17,22 @@
 
 @section('body_data', $layoutHelper->makeBodyData())
 
+@section('footer')
+@if(env('FOOTER_CENTER'))
+<div class="text-center">
+    {!! env('FOOTER_CENTER') !!}
+</div>
+@else
+<span>
+    {!! env('FOOTER_LEFT') !!}
+</span>
+
+<div class="float-right">
+    {!! env('FOOTER_RIGHT') !!}
+</div>
+@endif
+@stop
+
 @section('body')
     <div class="wrapper">
 

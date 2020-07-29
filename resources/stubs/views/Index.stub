@@ -1,0 +1,178 @@
+@extends('adminlte::page')
+
+@section('title', env('APP_NAME'))
+
+@section('content_header')
+<span style="font-size:20px">
+    <i class="fa fa-user-tag"></i> {{ __('gennix.model_{{modelNameSingularLowerCase}}.view_title')  }}
+</span>
+
+<div class="float-right">
+    {{ Breadcrumbs::render('{{modelNameSingularLowerCase}}') }}
+</div>
+@stop
+
+@section('content')
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <div class="float-left">
+                </div> <!-- ./float-left -->
+
+                <div class="float-right">
+                    <a href="{{ route('{{modelNameSingularLowerCase}}.index') }}" class="btn btn-primary btn-sm">
+                        <i class="fas fa-sync"></i> {{ __('gennix.model_{{modelNameSingularLowerCase}}.update_screen') }}
+                    </a>
+
+                    @can('{{modelNameSingularLowerCase}}-create')
+                    <a href="{{ route('{{modelNameSingularLowerCase}}.create') }}" class="btn btn-success btn-sm">
+                        <i class="fas fa-plus"></i> {{ __('gennix.model_{{modelNameSingularLowerCase}}.insert_new') }}
+                    </a>
+                    @endcan
+
+                </div> <!-- ./float-right -->
+            </div> <!-- ./card-header -->
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover" id="datatable">
+                        <thead>
+                            <tr>
+                                <th scope="col">{{ __('gennix.model_{{modelNameSingularLowerCase}}.id') }}</th>
+
+                                <!-- put other columns here -->
+
+                                <th scope="col">{{ __('gennix.model_{{modelNameSingularLowerCase}}.actions') }}</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach(${{modelNamePluralLowerCase}} as $row)
+                            <tr data-entry-id="{{ $row->id }}">
+                                <th scope="row">{{ $row->id }}</th>
+
+                                <!-- put other fields here -->
+
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-info btn-sm dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="fas fa-bolt"> {{ __('gennix.model_{{modelNameSingularLowerCase}}.actions') }}</i>
+                                        </button>
+
+                                        <!-- dropdown menu -->
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                                            @can('{{modelNameSingularLowerCase}}-show')
+                                            <!-- details option -->
+                                            <a href="{{ route('{{modelNameSingularLowerCase}}.show', $row->id) }}" class="dropdown-item">
+                                                <i class="fas fa-fw fa-eye"></i> {{ __('gennix.model_{{modelNameSingularLowerCase}}.more_details') }}
+                                            </a>
+                                            @endcan
+
+                                            @can('{{modelNameSingularLowerCase}}-edit')
+                                            <!-- edit option -->
+                                            <a href="{{ route('{{modelNameSingularLowerCase}}.edit', $row->id) }}" class="dropdown-item">
+                                                <i class="fas fa-fw fa-edit"></i> {{ __('gennix.model_{{modelNameSingularLowerCase}}.edit') }}
+                                            </a>
+                                            @endcan
+
+                                            @can('{{modelNameSingularLowerCase}}-delete')
+                                            <div class="dropdown-divider"></div>
+
+                                            <!-- delete option -->
+                                            <a href="javascript;" class="dropdown-item text-red" id="deleteRecord" onclick="deleteRecord(event, {{ $row->id }});">
+                                                <i class="fas fa-fw fa-trash"></i> {{ __('gennix.model_{{modelNameSingularLowerCase}}.exclude_record') }}
+                                            </a>
+                                            @endcan
+
+                                        </div> <!-- dropdown-menu -->
+                                    </div> <!-- dropdown -->
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div> <!-- ./table-responsive -->
+            </div> <!-- ./card-body -->
+        </div> <!-- ./card -->
+    </div> <!-- ./col-md-12 -->
+</div> <!-- ./row -->
+@stop
+
+
+
+@section('adminlte_css_pre')
+@stop
+
+@section('css')
+@stop
+
+@section('js')
+<script>
+$(function () {
+    $("#datatable").DataTable({
+        stateSave: true,
+        autoWidth: false,
+        lengthMenu: [
+            [10, 20, 50, 100, -1],
+            [10, 20, 50, 100, "{{ __('gennix.all') }}"]
+        ],
+        language: {
+            url: "{{ asset('') . env('DATATABLE_LANGUAGE') }}",
+        },
+        columns: [
+            { width: '3em' },
+
+            // put others columns definitions here
+
+            { orderable: false, searchable: false, width:'6em' },
+        ],
+    });
+});
+
+@can('{{modelNameSingularLowerCase}}-delete')
+function deleteRecord(e, id) {
+    e.preventDefault();
+
+    var data = id;
+    var url = "{{ url('/{{modelNameSingularLowerCase}}') }}" + '/' + id
+
+    Swal.fire({
+        icon: 'warning',
+        title: '{{ __("gennix.model_{{modelNameSingularLowerCase}}.confirm_action") }}',
+        text: '{{ __("gennix.model_{{modelNameSingularLowerCase}}.confirm_text") }}',
+        showCancelButton: true,
+        confirmButtonText: '{{ __("gennix.model_{{modelNameSingularLowerCase}}.yes") }}',
+        cancelButtonText: '{{ __("gennix.model_{{modelNameSingularLowerCase}}.no") }}',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        focusCancel: true,
+        width: '35rem',
+    }).then((result) => {
+        if (result.value) {
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    _method: 'DELETE',
+                },
+                success: function() {
+                    location.reload();
+                },
+                error: function() {
+                    location.reload();
+                },
+            })
+        } else {
+            location.reload();
+        }
+    });
+};
+@endcan
+
+</script>
+@stop
