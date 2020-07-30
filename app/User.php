@@ -123,7 +123,7 @@ class User extends Authenticatable implements HasMedia
             if (Gravatar::exists($user->email)) {
                 $avatarUrl = Gravatar::get($user->email);
             } else {
-                $avatarUrl = asset('/img/avatar/avatar00.png');
+                $avatarUrl = asset('/img/avatars/avatar_0000.png');
             }
         } else {
             $avatarUrl = $avatar[0]->getFullUrl();

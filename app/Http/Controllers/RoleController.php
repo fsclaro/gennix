@@ -48,11 +48,11 @@ class RoleController extends Controller
         } catch (Throwable $t) {
             Alert::error(
                 __('gennix.opps'),
-                __('gennix.model_role.alert_messsages.store_error')
+                __('gennix.model_role.alert_messages.store_error')
             )->autoClose(2000)->timerProgressBar();
 
             Auth::user()->saveActivity(
-                __('gennix.model_role.alert_messsages.store_error') . ' Permission: ' . $request->title,
+                __('gennix.model_role.alert_messages.store_error') . ' Permission: ' . $request->title,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -102,11 +102,11 @@ class RoleController extends Controller
         } catch (Throwable $t) {
             Alert::error(
                 __('gennix.opps'),
-                __('gennix.model_role.alert_messsages.update_error')
+                __('gennix.model_role.alert_messages.update_error')
             )->autoClose(2000)->timerProgressBar();
 
             Auth::user()->saveActivity(
-                __('gennix.model_role.alert_messsages.update_error') . ' ID ' . $request->id,
+                __('gennix.model_role.alert_messages.update_error') . ' ID ' . $request->id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -138,11 +138,11 @@ class RoleController extends Controller
         } catch (Throwable $t) {
             Alert::error(
                 __('gennix.opps'),
-                __('gennix.model_role.alert_messsages.destroy_error')
+                __('gennix.model_role.alert_messages.destroy_error')
             )->autoClose(2000)->timerProgressBar();
 
             Auth::user()->saveActivity(
-                __('gennix.model_role.alert_messsages.destroy_error') . ' ID ' . $id,
+                __('gennix.model_role.alert_messages.destroy_error') . ' ID ' . $id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -184,11 +184,11 @@ class RoleController extends Controller
         } catch (Throwable $t) {
             Alert::error(
                 __('gennix.opps'),
-                __('gennix.model_permission.alert_messsages.clone_error')
+                __('gennix.model_permission.alert_messages.clone_error')
             )->autoClose(2000)->timerProgressBar();
 
             Auth::user()->saveActivity(
-                __('gennix.model_permission.alert_messsages.clone_error') . ' ID ' . $id,
+                __('gennix.model_permission.alert_messages.clone_error') . ' ID ' . $id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),

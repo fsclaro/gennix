@@ -58,11 +58,11 @@ class UserController extends Controller
         } catch (Throwable $t) {
             Alert::error(
                 __('gennix.opps'),
-                __('gennix.model_user.alert_messsages.store_error')
+                __('gennix.model_user.alert_messages.store_error')
             )->autoClose(2000)->timerProgressBar();
 
             Auth::user()->saveActivity(
-                __('gennix.model_user.alert_messsages.store_error') . ' User: ' . $request->name,
+                __('gennix.model_user.alert_messages.store_error') . ' User: ' . $request->name,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -123,11 +123,11 @@ class UserController extends Controller
         } catch (Throwable $t) {
             Alert::error(
                 __('gennix.opps'),
-                __('gennix.model_user.alert_messsages.update_error')
+                __('gennix.model_user.alert_messages.update_error')
             )->autoClose(2000)->timerProgressBar();
 
             Auth::user()->saveActivity(
-                __('gennix.model_user.alert_messsages.update_error') . ' ID: ' . $request->id,
+                __('gennix.model_user.alert_messages.update_error') . ' ID: ' . $request->id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -160,11 +160,11 @@ class UserController extends Controller
         } catch (Throwable $t) {
             Alert::error(
                 __('gennix.opps'),
-                __('gennix.model_user.alert_messsages.destroy_error')
+                __('gennix.model_user.alert_messages.destroy_error')
             )->autoClose(2000)->timerProgressBar();
 
             Auth::user()->saveActivity(
-                __('gennix.model_user.alert_messsages.destroy_error') . ' ID: ' . $user->id,
+                __('gennix.model_user.alert_messages.destroy_error') . ' ID: ' . $user->id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -210,11 +210,11 @@ class UserController extends Controller
         } catch (Throwable $t) {
             Alert::error(
                 __('gennix.opps'),
-                __('gennix.model_user.alert_messsages.profile_error')
+                __('gennix.model_user.alert_messages.profile_error')
             )->autoClose(2000)->timerProgressBar();
 
             Auth::user()->saveActivity(
-                __('gennix.model_user.alert_messsages.profile_error') . ' ID: ' . $request->id,
+                __('gennix.model_user.alert_messages.profile_error') . ' ID: ' . $request->id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -245,11 +245,11 @@ class UserController extends Controller
         } catch (Throwable $t) {
             Alert::error(
                 __('gennix.opps'),
-                __('gennix.model_user.alert_messsages.active_error')
+                __('gennix.model_user.alert_messages.active_error')
             )->autoClose(2000)->timerProgressBar();
 
             Auth::user()->saveActivity(
-                __('gennix.model_user.alert_messsages.active_error') . ' ID: ' . $id,
+                __('gennix.model_user.alert_messages.active_error') . ' ID: ' . $id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -278,11 +278,11 @@ class UserController extends Controller
         } catch (Throwable $t) {
             Alert::error(
                 __('gennix.opps'),
-                __('gennix.model_user.alert_messsages.deactive_error')
+                __('gennix.model_user.alert_messages.deactive_error')
             )->autoClose(2000)->timerProgressBar();
 
             Auth::user()->saveActivity(
-                __('gennix.model_user.alert_messsages.deactive_error') . ' ID: ' . $->id,
+                __('gennix.model_user.alert_messages.deactive_error') . ' ID: ' . $id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -314,11 +314,11 @@ class UserController extends Controller
             } catch (Throwable $t) {
                 Alert::error(
                     __('gennix.opps'),
-                    __('gennix.model_user.alert_messsages.avatar_error')
+                    __('gennix.model_user.alert_messages.avatar_error')
                 )->autoClose(2000)->timerProgressBar();
 
                 Auth::user()->saveActivity(
-                    __('gennix.model_user.alert_messsages.avatar_error') . ' ID: ' . $request->id,
+                    __('gennix.model_user.alert_messages.avatar_error') . ' ID: ' . $request->id,
                     [
                         'message' => $t->getMessage(),
                         'code_error' => $t->getCode(),
@@ -360,11 +360,11 @@ class UserController extends Controller
         } catch (Throwable $t) {
             Alert::error(
                 __('gennix.opps'),
-                __('gennix.model_user.alert_messsages.password_error')
+                __('gennix.model_user.alert_messages.password_error')
             )->autoClose(2000)->timerProgressBar();
 
             Auth::user()->saveActivity(
-                __('gennix.model_user.alert_messsages.password_error') . ' ID: ' . $request->id,
+                __('gennix.model_user.alert_messages.password_error') . ' ID: ' . $request->id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),

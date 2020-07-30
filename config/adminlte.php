@@ -237,12 +237,12 @@ return [
         //     'topnav' => false,
         // ],
 
-        [
-            'text' => 'Atividades',
-            'icon' => 'fa fa-fw fa-shield-alt',
-            'topnav' => true,
-            'topnav_rigth' => true,
-        ],
+        // [
+        //     'text' => 'Atividades',
+        //     'icon' => 'fa fa-fw fa-shield-alt',
+        //     'topnav' => true,
+        //     'topnav_rigth' => true,
+        // ],
 
 
         [
@@ -261,6 +261,7 @@ return [
         [
             'text' => 'users_admin',
             'icon' => 'fa fa-fw fa-users-cog',
+            'can'  => ['user-access', 'role-acces', 'permission-access'],
             'submenu' => [
                 [
                     'text'  => 'users',
@@ -285,6 +286,7 @@ return [
         [
             'text' => 'support_area',
             'icon' => 'fa fa-fw fa-headset',
+            'can' => ['activity-access', 'route-viewer-access', 'log-viewer-access'],
             'submenu' => [
                 [
                     'text'  => 'activities',

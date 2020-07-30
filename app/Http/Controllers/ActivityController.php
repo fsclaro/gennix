@@ -46,11 +46,11 @@ class ActivityController extends Controller
         } catch (Throwable $t) {
             Alert::error(
                 __('gennix.opps'),
-                __('gennix.model_activity.alert_messsages.destroy_error')
+                __('gennix.model_activity.alert_messages.destroy_error')
             )->autoClose(2000)->timerProgressBar();
 
             Auth::user()->saveActivity(
-                __('gennix.model_activity.alert_messsages.destroy_error') . ' ID ' . $id,
+                __('gennix.model_activity.alert_messages.destroy_error') . ' ID ' . $id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),

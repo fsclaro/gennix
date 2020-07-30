@@ -22,7 +22,7 @@ return [
             'as'         => 'route-viewer::',
             'namespace'  => 'Arcanedev\\RouteViewer\\Http\\Controllers',
 
-            'middleware' => [ 'web', 'auth'],
+            'middleware' => [ 'web', 'auth' , 'access-route-viewer'],
         ],
     ],
 

@@ -18,14 +18,14 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary card-outline">
+            <div class="card card-primary card-outline shadow">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-2 border-right border-light">
                             <div class="text-center">
                                 <label for="avatar">{{ __('gennix.model_user.avatar') }} <small class="text-red text-bold">{{ __('gennix.optional') }}</small></label><br/>
                                 <div class="image-text-center">
-                                    <img src="{{ asset('/img/avatar/avatar00.png') }}" id="img-avatar" name="img-avatar"
+                                    <img src="{{ asset('/img/avatars/avatar_0000.png') }}" id="img-avatar" name="img-avatar"
                                     class="profile-user-image img-fluid img-circle img-bordered-sm shadow" width="140px">
                                 </div>
 
