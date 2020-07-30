@@ -226,7 +226,9 @@ Breadcrumbs::for(\''. $this->modelNameSingularLowerCase . '_edit\', function ($t
 ';
 
         File::append(
-            base_path('routes/breadcrumbs.php'), $breadcrumbs);
+            base_path('routes/breadcrumbs.php'),
+            $breadcrumbs
+        );
     }
 
 

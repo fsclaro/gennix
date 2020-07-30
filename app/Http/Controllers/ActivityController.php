@@ -104,13 +104,13 @@ class ActivityController extends Controller
             if ($value) {
                 Alert::toast(
                     __('gennix.model_activity.alert_messages.is_read_success') .
-                    __('gennix.model_activity.is_read'),
+                        __('gennix.model_activity.is_read'),
                     'success'
                 )->timerProgressBar();
             } else {
                 Alert::toast(
                     __('gennix.model_activity.alert_messages.is_read_success') .
-                    __('gennix.model_activity.is_unread'),
+                        __('gennix.model_activity.is_unread'),
                     'success'
                 )->timerProgressBar();
             }
@@ -153,7 +153,7 @@ class ActivityController extends Controller
             )->autoClose(2000)->timerProgressBar();
 
             Auth::user()->saveActivity(
-                __('gennix.model_activity.alert_messages.deletemass_error') . ' Last ID '. $id,
+                __('gennix.model_activity.alert_messages.deletemass_error') . ' Last ID ' . $id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),

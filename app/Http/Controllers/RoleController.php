@@ -41,11 +41,18 @@ class RoleController extends Controller
             $role = Role::create($request->all());
             $role->permissions()->sync($request->input('permissions'));
 
-            Alert::toast('O papel foi cadastrado com sucesso.', 'success')->timerProgressBar();
+            Alert::toast(
+                __('gennix.model_role.alert_messages.store_success'),
+                'success'
+            )->timerProgressBar();
         } catch (Throwable $t) {
-            Alert::error('Ops!!', 'Ocorreu um erro e o papel não foi cadastrado.')->autoClose(2000)->timerProgressBar();
+            Alert::error(
+                __('gennix.opps'),
+                __('gennix.model_role.alert_messsages.store_error')
+            )->autoClose(2000)->timerProgressBar();
+
             Auth::user()->saveActivity(
-                'Falha no cadastramento do papel ' . $request->title,
+                __('gennix.model_role.alert_messsages.store_error') . ' Permission: ' . $request->title,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -88,11 +95,18 @@ class RoleController extends Controller
             $role->update($request->all());
             $role->permissions()->sync($request->input('permissions'));
 
-            Alert::toast('O papel foi alterado com sucesso.', 'success')->timerProgressBar();
+            Alert::toast(
+                __('gennix.model_role.alert_messages.update_success'),
+                'success'
+            )->timerProgressBar();
         } catch (Throwable $t) {
-            Alert::error('Ops!!', 'Ocorreu um erro e o papel não foi alterado.')->autoClose(2000)->timerProgressBar();
+            Alert::error(
+                __('gennix.opps'),
+                __('gennix.model_role.alert_messsages.update_error')
+            )->autoClose(2000)->timerProgressBar();
+
             Auth::user()->saveActivity(
-                'Falha na alteração do papel ' . $request->title,
+                __('gennix.model_role.alert_messsages.update_error') . ' ID ' . $request->id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -117,11 +131,18 @@ class RoleController extends Controller
             $role->detachAllPermissions();
             $role->delete();
 
-            Alert::toast('O papel foi excluído com sucesso.', 'success')->timerProgressBar();
+            Alert::toast(
+                __('gennix.model_role.alert_messages.destroy_success'),
+                'success'
+            )->timerProgressBar();
         } catch (Throwable $t) {
-            Alert::error('Ops!!', 'Ocorreu um erro e o papel não foi excluído.')->autoClose(2000)->timerProgressBar();
+            Alert::error(
+                __('gennix.opps'),
+                __('gennix.model_role.alert_messsages.destroy_error')
+            )->autoClose(2000)->timerProgressBar();
+
             Auth::user()->saveActivity(
-                'Falha na exclusão do papel ' . $id,
+                __('gennix.model_role.alert_messsages.destroy_error') . ' ID ' . $id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -156,11 +177,18 @@ class RoleController extends Controller
 
             $newRole->permissions()->sync($clonedPermissions);
 
-            Alert::toast('O papel foi clonado com sucesso.', 'success')->timerProgressBar();
+            Alert::toast(
+                __('gennix.model_permission.alert_messages.clone_success'),
+                'success'
+            )->timerProgressBar();
         } catch (Throwable $t) {
-            Alert::error('Ops!!', 'Ocorreu um erro e o papel não foi clonado.')->autoClose(2000)->timerProgressBar();
+            Alert::error(
+                __('gennix.opps'),
+                __('gennix.model_permission.alert_messsages.clone_error')
+            )->autoClose(2000)->timerProgressBar();
+
             Auth::user()->saveActivity(
-                'Falha na clonagem do papel ' . $role->title,
+                __('gennix.model_permission.alert_messsages.clone_error') . ' ID ' . $id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),

@@ -56,6 +56,5 @@ class UsersSeeder extends Seeder
         $user->addMedia(public_path('img/avatars/avatar_0516.jpg'))
             ->preservingOriginal()
             ->toMediaCollection('avatars');
-
     }
 }

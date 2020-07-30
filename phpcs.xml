@@ -20,7 +20,7 @@
     <exclude-pattern>*/vendor/*</exclude-pattern>
     <exclude-pattern>*/config/*</exclude-pattern>
     <exclude-pattern>*.js</exclude-pattern>
-
+Generic.WhiteSpace.ScopeIdent.IncorrectExact
     <!-- Show progression -->
     <arg value="p"/>
     <arg name="colors"/>

@@ -35,13 +35,20 @@ class PermissionController extends Controller
         abort_unless(Gate::allows('permission-create'), 403);
 
         try {
-            $permission = Permission::create($request->all());
+            Permission::create($request->all());
 
-            Alert::toast('Permissão cadastrada com sucesso', 'success')->timerProgressBar();
+            Alert::toast(
+                __('gennix.model_permission.alert_messages.store_success'),
+                'success'
+            )->timerProgressBar();
         } catch (Throwable $t) {
-            Alert::error('Ops!!', 'Ocorreu um erro e a permissão não pode ser cadastrada.')->autoClose(2000)->timerProgressBar();
+            Alert::error(
+                __('gennix.opps'),
+                __('gennix.model_permission.alert_messsages.store_error')
+            )->autoClose(2000)->timerProgressBar();
+
             Auth::user()->saveActivity(
-                'Falha no cadastramento da permissão ' . $request->title,
+                __('gennix.model_permission.alert_messsages.store_error') . ' Permission: ' . $request->title,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -79,11 +86,18 @@ class PermissionController extends Controller
         try {
             $permission->update($request->all());
 
-            Alert::toast('Permissão alterada com sucesso.', 'success')->timerProgressBar();
+            Alert::toast(
+                __('gennix.model_permission.alert_messages.update_success'),
+                'success'
+            )->timerProgressBar();
         } catch (Throwable $t) {
-            Alert::error('Ops!!', 'Ocorreu um erro e a permissão não pode ser alterada.')->autoClose(2000)->timerProgressBar();
+            Alert::error(
+                __('gennix.opps'),
+                __('gennix.model_permission.alert_messsages.update_error')
+            )->autoClose(2000)->timerProgressBar();
+
             Auth::user()->saveActivity(
-                'Falha na alteração da permissão com IDD ' . $request->id,
+                __('gennix.model_permission.alert_messsages.update_error') . ' ID ' . $request->id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -106,11 +120,18 @@ class PermissionController extends Controller
             $permission = Permission::where('id', $id)->first();
             $permission->delete();
 
-           Alert::toast('Permissão excluída com sucesso.', 'success')->timerProgressBar();
+            Alert::toast(
+                __('gennix.model_permission.alert_messages.destroy_success'),
+                'success'
+            )->timerProgressBar();
         } catch (Throwable $t) {
-            Alert::error('Ops!!', 'Ocorreu um erro e a permissão não foi excluída.')->autoClose(2000)->timerProgressBar();
+            Alert::error(
+                __('gennix.opps'),
+                __('gennix.model_permission.alert_messsages.destroy_error')
+            )->autoClose(2000)->timerProgressBar();
+
             Auth::user()->saveActivity(
-                'Falha na exclusão da permissão com ID ' . $id,
+                __('gennix.model_permission.alert_messsages.destroy_error') . ' ID ' . $id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),

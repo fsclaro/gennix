@@ -90,7 +90,7 @@ class User extends Authenticatable implements HasMedia
     public function saveActivity($title, $details = null, $type = 'info')
     {
         if ($details) {
-              $msgDetails = '<span class="text-red text-bold">Mensagem:</span> ' . $details['message'] . '<br>' .
+            $msgDetails = '<span class="text-red text-bold">Mensagem:</span> ' . $details['message'] . '<br>' .
                 '<span class="text-red text-bold">Código de Erro:</span> ' . $details['code_error'] . '<br>' .
                 '<span class="text-red text-bold">Usuário:</span> ' . Auth::user()->name . '<br>'.
                 '<span class="text-red text-bold">Data/Hora:</span> ' . now()->format(env('DATE_FORMAT_LONG')) . "<br>" .

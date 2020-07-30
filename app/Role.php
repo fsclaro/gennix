@@ -39,5 +39,4 @@ class Role extends Model
     {
         DB::table('permission_role')->where('role_id', $this->id)->delete();
     }
-
 }

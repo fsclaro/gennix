@@ -100,7 +100,7 @@
             'is_unread'         => 'NÃO LIDA',
 
             'alert_messages'    => [
-                'destroy_success'           => 'A atividade foi excluída.',
+                'destroy_success'           => 'A atividade foi excluída com sucesso.',
                 'destroy_error'             => 'Ocorreu um erro e a atividade não pode ser excluída',
 
                 'is_read_success'           => 'Atividades alteradas com sucesso para o status ',
@@ -142,7 +142,18 @@
             'one_role'          => 'papel atribuído',
             'more_roles'        => 'papéis atribuídos',
             'request_title'     => 'Forneça o título da permissão',
-            'request_slug'      => 'Forneça o slug para esta permissão'
+            'request_slug'      => 'Forneça o slug para esta permissão',
+
+            'alert_messages'    => [
+                'store_success'             => 'Permissão cadastrada com sucesso',
+                'store_error'               => 'Ocorreu um erro e a permissão não pode ser cadastrada.',
+
+                'update_success'             => 'Permissão alterada com sucesso',
+                'update_error'               => 'Ocorreu um erro e a permissão não pode ser alterada.',
+
+                'destroy_success'           => 'A permissão foi excluída com sucesso.',
+                'destroy_error'             => 'Ocorreu um erro e a permissão não pode ser excluída',
+            ],
         ],
 
         'model_role' => [
@@ -184,6 +195,20 @@
             'request_title'     => 'Forneça uma descrição para este papel',
             'request_permissions'=> 'Escolha pelo menos uma permissão da lista',
             'clone_role'        => 'Clonar Papel',
+
+            'alert_messages'    => [
+                'store_success'             => 'Papel cadastrado com sucesso',
+                'store_error'               => 'Ocorreu um erro e o papel não pode ser cadastrado.',
+
+                'update_success'             => 'Papel alterado com sucesso',
+                'update_error'               => 'Ocorreu um erro e o papel não pode ser alterado.',
+
+                'destroy_success'           => 'O papel foi excluído com sucesso.',
+                'destroy_error'             => 'Ocorreu um erro e o papel não pode ser excluído',
+
+                'clone_success'             => 'O papel foi clonado com sucesso.',
+                'clone_error'               => 'Ocorreu um erro e o papel não pode ser clonado',
+            ],
         ],
 
         'model_user' => [
@@ -247,5 +272,33 @@
             'leave_blank'       => 'Para não alterar a senha, deixe o campo em branco.',
             'avatar_format'     => 'Use imagens com tamanho de 140px no formato .jpg',
             'new_password'      => 'Nova Senha',
+
+            'alert_messages'    => [
+                'store_success'             => 'Usuário cadastrado com sucesso',
+                'store_error'               => 'Ocorreu um erro e o usuário não pode ser cadastrado.',
+
+                'update_success'             => 'Usuário alterado com sucesso',
+                'update_error'               => 'Ocorreu um erro e o usuário não pode ser alterado.',
+
+                'destroy_success'           => 'O usuário foi excluído com sucesso.',
+                'destroy_error'             => 'Ocorreu um erro e o usuário não pode ser excluído',
+
+                'profile_success'           => 'Perfil atualizado com sucesso.',
+                'profile_error'             => 'Ocorreu um erro e o perfil do usuário não foi alterado.',
+
+                'active_success'            => 'Usuário ativado com sucesso.',
+                'active_error'              => 'Ocorreu um erro e o usuário não foi ativado.',
+
+                'deactive_success'          => 'Usuário desativado com sucesso.',
+                'deactive_error'            => 'Ocorreu um erro e o usuário não foi desativado.',
+
+                'avatar_success'            => 'Foto atualizada com sucesso.',
+                'avatar_error'              => 'Ocorreu um erro e a foto do usuário não foi atualizada. ',
+
+                'password_success'          => 'Senha atualizada com sucesso.',
+                'password_error'            => 'Ocorreu um erro e a senha não foi atualizada.',
+
+            ],
+
         ],
     ];

@@ -51,9 +51,26 @@ class UserController extends Controller
             }
             $this->storeAvatar($request, $user);
 
-            Alert::success('Sucesso', 'O registro foi cadastrado com sucesso.')->autoClose(2000)->timerProgressBar();
+            Alert::toast(
+                __('gennix.model_user.alert_messages.store_success'),
+                'success'
+            )->timerProgressBar();
         } catch (Throwable $t) {
-            Alert::error('Ops!!', 'Ocorreu um erro e o registro não pode ser cadastrado.')->autoClose(2000)->timerProgressBar();
+            Alert::error(
+                __('gennix.opps'),
+                __('gennix.model_user.alert_messsages.store_error')
+            )->autoClose(2000)->timerProgressBar();
+
+            Auth::user()->saveActivity(
+                __('gennix.model_user.alert_messsages.store_error') . ' User: ' . $request->name,
+                [
+                    'message' => $t->getMessage(),
+                    'code_error' => $t->getCode(),
+                    'line' => $t->getLine(),
+                    'file' => $t->getFile(),
+                ],
+                'error'
+            );
         }
 
         return redirect()->route('user.index');
@@ -99,9 +116,26 @@ class UserController extends Controller
             }
             $this->storeAvatar($request, $user);
 
-            Alert::success('Sucesso', 'O registro foi alterado com sucesso.')->autoClose(2000)->timerProgressBar();
+            Alert::toast(
+                __('gennix.model_user.alert_messages.update_success'),
+                'success'
+            )->timerProgressBar();
         } catch (Throwable $t) {
-            Alert::error('Ops!!', 'Ocorreu um erro e o registro não pode ser alterado.')->autoClose(2000)->timerProgressBar();
+            Alert::error(
+                __('gennix.opps'),
+                __('gennix.model_user.alert_messsages.update_error')
+            )->autoClose(2000)->timerProgressBar();
+
+            Auth::user()->saveActivity(
+                __('gennix.model_user.alert_messsages.update_error') . ' ID: ' . $request->id,
+                [
+                    'message' => $t->getMessage(),
+                    'code_error' => $t->getCode(),
+                    'line' => $t->getLine(),
+                    'file' => $t->getFile(),
+                ],
+                'error'
+            );
         }
 
         return redirect()->route('user.index');
@@ -119,9 +153,26 @@ class UserController extends Controller
             }
             $user->delete();
 
-            Alert::success('Sucesso', 'O registro foi excluído com sucesso.')->autoClose(2000)->timerProgressBar();
+            Alert::toast(
+                __('gennix.model_user.alert_messages.destroy_success'),
+                'success'
+            )->timerProgressBar();
         } catch (Throwable $t) {
-            Alert::error('Ops!!', 'Ocorreu um erro e o registro não pode ser excluído.')->autoClose(2000)->timerProgressBar();
+            Alert::error(
+                __('gennix.opps'),
+                __('gennix.model_user.alert_messsages.destroy_error')
+            )->autoClose(2000)->timerProgressBar();
+
+            Auth::user()->saveActivity(
+                __('gennix.model_user.alert_messsages.destroy_error') . ' ID: ' . $user->id,
+                [
+                    'message' => $t->getMessage(),
+                    'code_error' => $t->getCode(),
+                    'line' => $t->getLine(),
+                    'file' => $t->getFile(),
+                ],
+                'error'
+            );
         }
     }
 
@@ -152,9 +203,26 @@ class UserController extends Controller
 
             $this->storeAvatar($request, $user);
 
-            Alert::success('Sucesso', 'O registro foi alterado com sucesso.')->autoClose(2000)->timerProgressBar();
+            Alert::toast(
+                __('gennix.model_user.alert_messages.profile_success'),
+                'success'
+            )->timerProgressBar();
         } catch (Throwable $t) {
-            Alert::error('Ops!!', 'Ocorreu um erro e o registro não pode ser alterado.')->autoClose(2000)->timerProgressBar();
+            Alert::error(
+                __('gennix.opps'),
+                __('gennix.model_user.alert_messsages.profile_error')
+            )->autoClose(2000)->timerProgressBar();
+
+            Auth::user()->saveActivity(
+                __('gennix.model_user.alert_messsages.profile_error') . ' ID: ' . $request->id,
+                [
+                    'message' => $t->getMessage(),
+                    'code_error' => $t->getCode(),
+                    'line' => $t->getLine(),
+                    'file' => $t->getFile(),
+                ],
+                'error'
+            );
         }
 
         return redirect()->route('user.profile');
@@ -170,11 +238,18 @@ class UserController extends Controller
                 'updated_at' => now()
             ]);
 
-            Alert::toast('O usuário foi ativado com sucesso.', 'success')->timerProgressBar();
+            Alert::toast(
+                __('gennix.model_user.alert_messages.active_success'),
+                'success'
+            )->timerProgressBar();
         } catch (Throwable $t) {
-            Alert::error('Ops!!', 'Ocorreu um erro e o usuário não foi ativado.')->autoClose(2000)->timerProgressBar();
+            Alert::error(
+                __('gennix.opps'),
+                __('gennix.model_user.alert_messsages.active_error')
+            )->autoClose(2000)->timerProgressBar();
+
             Auth::user()->saveActivity(
-                'Falha na alteração do status de ativação do usuário com ID ' . $id,
+                __('gennix.model_user.alert_messsages.active_error') . ' ID: ' . $id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -196,11 +271,18 @@ class UserController extends Controller
                 'updated_at' => now()
             ]);
 
-            Alert::toast('O usuário foi desativado com sucesso.', 'success')->timerProgressBar();
+            Alert::toast(
+                __('gennix.model_user.alert_messages.deactive_success'),
+                'success'
+            )->timerProgressBar();
         } catch (Throwable $t) {
-            Alert::error('Ops!!', 'Ocorreu um erro e o usuário não foi desativado.')->autoClose(2000)->timerProgressBar();
+            Alert::error(
+                __('gennix.opps'),
+                __('gennix.model_user.alert_messsages.deactive_error')
+            )->autoClose(2000)->timerProgressBar();
+
             Auth::user()->saveActivity(
-                'Falha na alteração do status de desativação do usuário com ID ' . $id,
+                __('gennix.model_user.alert_messsages.deactive_error') . ' ID: ' . $->id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
@@ -225,11 +307,18 @@ class UserController extends Controller
                 }
                 $avatar = $user->addMediaFromRequest('avatar')->toMediaCollection('avatars');
 
-                Alert::toast('A foto do usuário foi alterada com sucesso.', 'success')->timerProgressBar();
+                Alert::toast(
+                    __('gennix.model_user.alert_messages.avatar_success'),
+                    'success'
+                )->timerProgressBar();
             } catch (Throwable $t) {
-                Alert::error('Ops!!', 'Ocorreu um erro e a foto do usuário não foi alterada.')->autoClose(2000)->timerProgressBar();
+                Alert::error(
+                    __('gennix.opps'),
+                    __('gennix.model_user.alert_messsages.avatar_error')
+                )->autoClose(2000)->timerProgressBar();
+
                 Auth::user()->saveActivity(
-                    'Falha na alteração da foto do usuário com ID ' . $user->id,
+                    __('gennix.model_user.alert_messsages.avatar_error') . ' ID: ' . $request->id,
                     [
                         'message' => $t->getMessage(),
                         'code_error' => $t->getCode(),
@@ -264,11 +353,18 @@ class UserController extends Controller
                     'password' => $password,
                 ]);
 
-            Alert::toast('A senha do usuário foi alterada com sucesso.', 'success')->timerProgressBar();
+            Alert::toast(
+                __('gennix.model_user.alert_messages.password_success'),
+                'success'
+            )->timerProgressBar();
         } catch (Throwable $t) {
-            Alert::error('Ops!!', 'Ocorreu um erro e a senha do usuário não foi alterada.')->autoClose(2000)->timerProgressBar();
+            Alert::error(
+                __('gennix.opps'),
+                __('gennix.model_user.alert_messsages.password_error')
+            )->autoClose(2000)->timerProgressBar();
+
             Auth::user()->saveActivity(
-                'Falha na alteração da senha usuário com ID ' . $request->id,
+                __('gennix.model_user.alert_messsages.password_error') . ' ID: ' . $request->id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),
