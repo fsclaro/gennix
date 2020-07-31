@@ -38,7 +38,11 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
 
+            /**
+             * Gennix Middlewares
+             */
             \App\Http\Middleware\AuthGates::class,
+            \App\Http\Middleware\Language::class,
         ],
 
         'api' => [

@@ -23,6 +23,7 @@
         'save'                  => 'Save',
         'superadmin'            => 'Super Admin',
         'today_is'              => 'Today is ',
+        'optional'              => '(optional)',
 
         // Breadcrumbs
         'breadcrumbs'           => [
@@ -35,7 +36,6 @@
             'create'            => 'Insert',
             'edit'              => 'Edit',
             'password'          => 'Update Password',
-
         ],
 
         // widgets
@@ -55,6 +55,7 @@
 
         // Activity screen
         'model_activity'        => [
+            'title'             => 'Activities/Events',
             'view_title'        => 'Activities',
             'id'                => '#',
             'user'              => 'User Name',
@@ -198,7 +199,7 @@
             'excluded_record'   => 'The role was deleted.',
             'failed_text'       => 'There was a problem that prevented this action from running.',
             'canceled'          => 'Canceled',
-            'edit'              => 'Update Datas',
+            'edit'              => 'Update',
             'details_id'        => 'ID',
             'details_name'      => 'User Name',
             'details_email'     => 'E-mail',

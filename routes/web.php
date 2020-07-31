@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
+
+/**
+ * default routes
+ */
 Auth::routes();
 
 Route::redirect('/', '/home');
@@ -23,8 +27,18 @@ Route::get('/home', function () {
     return view('home');
 })->name('home')->middleware('auth');
 
+
+/**
+ * login by social network
+ */
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->name('login.social');
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('login.callback');
+
+/**
+ * change language
+ */
+Route::get('lang/{lang}', 'LanguageController@changeLanguage')->name('language');
+
 
 /**
  * activity
@@ -33,16 +47,19 @@ Route::resource('activity', 'ActivityController')->except(['edit', 'show', 'crea
 Route::post('activity/process/{type}', 'ActivityController@processRecords')->name('activity.process');
 Route::get('activity/details/{activity}', 'ActivityController@showDetails')->name('activity.details');
 
+
 /**
  * permission
  */
 Route::resource('permission', 'PermissionController');
+
 
 /**
  * Role
  */
 Route::get('role/clone/{id}', 'RoleController@cloneRole')->name('role.clone');
 Route::resource('role', 'RoleController');
+
 
 /**
  * User

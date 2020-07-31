@@ -17,6 +17,20 @@
 
 @section('body_data', $layoutHelper->makeBodyData())
 
+
+
+{{-- menu itens left side --}}
+@section('content_top_nav_left')
+@include('partials.top-left-menu')
+@stop
+
+{{-- menu itens right side --}}
+@section('content_top_nav_right')
+@include('partials.top-right-menu')
+@stop
+
+
+
 @section('footer')
 @if(env('FOOTER_CENTER'))
 <div class="text-center">
@@ -32,6 +46,8 @@
 </div>
 @endif
 @stop
+
+
 
 @section('body')
     <div class="wrapper">
@@ -79,6 +95,8 @@
 
     </div>
 @stop
+
+
 
 @section('adminlte_js')
     @stack('js')

@@ -11,5 +11,6 @@
         @endif>
         <i class="fas fa-bars"></i>
         <span class="sr-only">{{ __('adminlte::adminlte.toggle_navigation') }}</span>
+
     </a>
 </li>

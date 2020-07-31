@@ -167,7 +167,8 @@ return [
     */
 
     'right_sidebar' => false,
-    'right_sidebar_icon' => 'fas fa-cogs',
+    // 'right_sidebar_icon' => 'fas fa-cogs',
+    'right_sidebar_icon' => 'fas fa-th-large',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
     'right_sidebar_push' => true,
@@ -234,22 +235,14 @@ return [
         // [
         //     'text' => 'search',
         //     'search' => true,
-        //     'topnav' => false,
+        //     'topnav' => true,
         // ],
 
         // [
-        //     'text' => 'Atividades',
-        //     'icon' => 'fa fa-fw fa-shield-alt',
-        //     'topnav' => true,
-        //     'topnav_rigth' => true,
+        //     'text'  => 'Dashboard',
+        //     'route' => 'home',
+        //     'icon'  => 'fa fa-fw fa-tachometer-alt',
         // ],
-
-
-        [
-            'text'  => 'Dashboard',
-            'route' => 'home',
-            'icon'  => 'fa fa-fw fa-tachometer-alt',
-        ],
 
         // Configurações das páginas
 
