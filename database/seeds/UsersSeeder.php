@@ -28,8 +28,8 @@ class UsersSeeder extends Seeder
             ->toMediaCollection('avatars');
 
         $user = User::insert([
-            'name' => 'Peter Martins',
-            'email' => 'admin@gennix.test',
+            'name' => 'Peter Markus',
+            'email' => 'peter@gennix.test',
             'password' => Hash::make('12345678'),
             'active' => false,
             'is_superadmin' => false,
@@ -44,7 +44,7 @@ class UsersSeeder extends Seeder
 
         $user = User::insert([
             'name' => 'Jane Garcez',
-            'email' => 'user@gennix.test',
+            'email' => 'jane@gennix.test',
             'password' => Hash::make('12345678'),
             'active' => true,
             'is_superadmin' => false,
