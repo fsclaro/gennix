@@ -116,6 +116,21 @@
                             </div> <!-- ./row -->
 
                             <div class="row">
+                                <div class="form-group col-md-3">
+                                    <label for="phone">
+                                        {{ __('gennix.model_user.phone') }}
+                                        <small class="text-red text-bold">{{ __('gennix.optional') }}</small>
+                                    </label>
+                                    <input type="text" class="form-control" id="phone" name="phone"
+                                        value="{{ old('phone') ? old('phone') : $user->phone }}">
+
+                                    @if($errors->has('phone'))
+                                    <small class="form-text text-red text-bold">
+                                        {{ $errors->first('phone') }}
+                                    </small>
+                                    @endif
+                                </div> <!-- ./phone field -->
+
                                 <div class="form-group col-md-2">
                                     <label for="is_superadmin">{{ __('gennix.model_user.is_superadmin') }}</label>
                                     <select name="is_superadmin" id="is_superadmin" class="form-control select2" style="width: 100%" onchange="selectRole();">
@@ -130,7 +145,7 @@
                                     @endif
                                 </div> <!-- ./is_superadmin field -->
 
-                                <div class="form-group {{ $errors->has('roles') ? 'has-error' : '' }} col-md-5">
+                                <div class="form-group {{ $errors->has('roles') ? 'has-error' : '' }} col-md-3">
                                     <label for="roles">{{ __('gennix.model_user.role') }}</label>
                                     <select name="roles" id="roles" class="form-control select2" style="width: 100%" @if ($user->is_superadmin) disabled @endif>
                                         @foreach($roles as $id => $role)
@@ -147,9 +162,10 @@
                                     @endif
                                 </div> <!-- ./roles field -->
 
-                                <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }} col-md-5">
+                                <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }} col-md-4">
                                     <label for="password">{{ __('gennix.model_user.details_password')}}</label>
                                     <input type="password" class="form-control" id="password" name="password">
+                                    <small class="text-muted">{{ __('gennix.model_user.leave_blank') }}</small>
 
                                     @if($errors->has('password'))
                                     <small class="form-text text-red text-bold">

@@ -46,9 +46,14 @@
                             @foreach($users as $row)
                             <tr data-entry-id="{{ $row->id }}">
                                 <th scope="row" class="align-middle">{{ $row->id }}</th>
-                                <td class="align-middle">
+                                <td class="d-flex align-items-center">
                                     <img src="{{ $row->getAvatar($row->id) }}" class="img-circle img-bordered-sm shadow" width="50px">
-                                    &nbsp;{{ $row->name }}
+                                    <div class="ml-2">
+                                        {{ $row->name }}<br>
+                                        <small class="text-muted">
+                                            {{ $row->position }}
+                                        </small>
+                                    </div>
                                 </td>
                                 <td class="align-middle">{{ $row->email }}</td>
                                 <td class="align-middle">
@@ -161,7 +166,7 @@ $(function () {
             [10, 20, 50, 100, "{{ __('gennix.all') }}"]
         ],
         language: {
-            url: "{{ asset('') . env('DATATABLE_LANGUAGE') }}",
+            url: "{{ asset('vendor/datatables/js/i18n') . '/' . app()->getLocale() . '.json' }}",
         },
         columns: [
             { width: '3em' },

@@ -27,7 +27,6 @@ config('adminlte.password_reset_url', 'password/reset') )
 @section('auth_header', __('adminlte::adminlte.login_message'))
 
 @section('auth_body')
-
 <form action="{{ $login_url }}"
       method="post">
     {{ csrf_field() }}
@@ -108,35 +107,35 @@ config('adminlte.password_reset_url', 'password/reset') )
 
     @if(env('SOCIALITE_FACEBOOK'))
     <a href="{{ route('login.social', 'facebook') }}"
-        class="btn facebook-color rounded-circle">
+        class="btn facebook-color rounded-circle mx-1">
         <i class="fab fa-facebook"></i>
     </a>
     @endif
 
     @if(env('SOCIALITE_TWITTER'))
     <a href="{{ route('login.social', 'twitter') }}"
-        class="btn twitter-color rounded-circle">
+        class="btn twitter-color rounded-circle mx-1">
         <i class="fab fa-twitter"></i>
     </a>
     @endif
 
     @if(env('SOCIALITE_GITHUB'))
     <a href="{{ route('login.social', 'github') }}"
-        class="btn github-color rounded-circle">
+        class="btn github-color rounded-circle mx-1">
         <i class="fab fa-github"></i>
     </a>
     @endif
 
     @if(env('SOCIALITE_GOOGLE'))
     <a href="{{ route('login.social', 'google') }}"
-        class="btn google-color rounded-circle">
+        class="btn google-color rounded-circle mx-1">
         <i class="fab fa-google"></i>
     </a>
     @endif
 
     @if(env('SOCIALITE_LINKEDIN'))
     <a href="{{ route('login.social', 'linkedin') }}"
-        class="btn linkedin-color rounded-circle">
+        class="btn linkedin-color rounded-circle mx-1">
         <i class="fab fa-linkedin"></i>
     </a>
     @endif

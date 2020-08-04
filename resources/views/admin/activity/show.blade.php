@@ -125,23 +125,28 @@
         </div> <!-- ./card -->
     </div> <!-- ./col-md-12 -->
 </div> <!-- ./row -->
-
 @stop
-
-
 
 @section('adminlte_css_pre')
 @stop
 
+
 @section('css')
+<link rel="stylesheet" href="{{ asset('/vendor/summernote/summernote-bs4.min.css') }}">
 @stop
 
+
 @section('js')
+<script src="{{ asset('/vendor/summernote/summernote-bs4.min.js') }}"></script>
+
+@if (app()->getLocale() != 'en')
+<script src="{{ asset('') . '/vendor/summernote/lang/summernote-' . app()->getLocale() . '.min.js' }}"></script>
+@endif
+
 <script>
     $(function() {
         $('#details').summernote({toolbar: []});
         $('#details').summernote('disable', true);
-        $summernotes.find('.note-toolbar').hide();
     });
 </script>
 @stop

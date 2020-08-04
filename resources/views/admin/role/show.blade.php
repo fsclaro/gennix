@@ -23,7 +23,7 @@
                         <input type="text" class="form-control text-right" readonly id="id" value="{{ $role->id }}">
                     </div>
                     <div class="form-group col">
-                        <label for="title">{{ __('gennix.model_role.details_title')}}</label>
+                        <label for="title">{{ __('gennix.model_role.details_title') }}</label>
                         <input type="text" class="form-control" readonly id="title" value="{{ $role->title }}">
                     </div>
                 </div> <!-- ./row -->
@@ -95,7 +95,7 @@
                     <div class="form-group col-md-3">
                         <label for="updated_at">{{ __('gennix.model_role.details_updated_at') }}</label><br>
                         @if($role->updated_at)
-                        <input type="text" class="form-control" readonly id="updated_at" value="{{ $role->updated_at->format(env('DATE_FORMAT_LONG)) }}">
+                        <input type="text" class="form-control" readonly id="updated_at" value="{{ $role->updated_at->format(env('DATE_FORMAT_LONG')) }}">
                         @else
                         <input type="text" class="form-control" readonly id="updated_at" value="">
                         @endif

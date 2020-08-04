@@ -102,7 +102,22 @@
                             </div> <!-- ./row -->
 
                             <div class="row">
-                                <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }} col-md-5">
+                                <div class="form-group col-md-3">
+                                    <label for="phone">
+                                        {{ __('gennix.model_user.phone') }}
+                                        <small class="text-red text-bold">{{ __('gennix.optional') }}</small>
+                                    </label>
+                                    <input type="text" class="form-control" id="phone" name="phone"
+                                        value="{{ old('phone') ? old('phone') : $user->phone }}">
+
+                                    @if($errors->has('phone'))
+                                    <small class="form-text text-red text-bold">
+                                        {{ $errors->first('phone') }}
+                                    </small>
+                                    @endif
+                                </div> <!-- ./phone field -->
+
+                                <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }} col-md-4">
                                     <label for="password">{{ __('gennix.model_user.details_password')}} <small class="text-red text-bold">{{ __('gennix.optional') }}</small></label>
                                     <input type="password" class="form-control" id="password" name="password">
                                     <small class="text-muted">{{ __('gennix.model_user.leave_blank') }}</small>

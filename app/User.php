@@ -24,6 +24,7 @@ class User extends Authenticatable implements HasMedia
         'is_superadmin',
         'gender',
         'position',
+        'phone',
     ];
 
     protected $hidden = [

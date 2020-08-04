@@ -452,7 +452,7 @@ return [
 
         [
             'name' => 'Summernote',
-            'active' => true,
+            'active' => false,
             'files' => [
                 [
                     'type' => 'css',
@@ -464,11 +464,6 @@ return [
                     'type' => 'js',
                     'asset' => true,
                     'location' => 'vendor/summernote/summernote-bs4.min.js',
-                ],
-                [
-                    'type' => 'js',
-                    'asset' => true,
-                    'location' => 'vendor/summernote/lang/summernote-'. env('SUMMERNOTE_LANG') . '.min.js',
                 ],
             ],
         ],

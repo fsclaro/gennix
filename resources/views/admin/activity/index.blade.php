@@ -161,7 +161,7 @@ $(function () {
             [10, 20, 50, 100, "{{ __('gennix.all') }}"]
         ],
         language: {
-            url: "{{ asset('') . env('DATATABLE_LANGUAGE') }}",
+            url: "{{ asset('vendor/datatables/js/i18n') . '/' . app()->getLocale() . '.json' }}",
         },
         columns: [
             { orderable: false, searchable: false, width: '2em' },

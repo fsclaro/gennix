@@ -2,13 +2,13 @@
 
 return [
 
-    'main_navigation'               => 'Main Navigationl',
+    'main_navigation'               => 'Main Navigation',
     'blog'                          => 'Blog',
     'pages'                         => 'Pages',
     'account_settings'              => 'My Account Settings',
     'profile'                       => 'My Profile',
     'change_password'               => 'Change My Password',
-    'admininstration_site'          => 'Administration Site',
+    'admininstration_site'          => 'Site Administration',
     'support_area'                  => 'Support',
     'activities'                    => 'Activities',
     'routes'                        => 'Routes',

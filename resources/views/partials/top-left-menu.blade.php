@@ -4,8 +4,10 @@
         </a>
     </li>
 
+    @can('contacts-access')
     <li class="nav-item">
-        <a  href="#" class="nav-link">
-            Contatos
+        <a  href="{{ route('contact.index') }}" class="nav-link">
+            {{ __('gennix.menu_left.contacts') }}
         </a>
     </li>
+    @endcan

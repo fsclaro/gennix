@@ -25,6 +25,14 @@
         'today_is'              => 'Hoje é ',
         'optional'              => '(opcional)',
 
+        'menu_left'             => [
+            'contacts'          => 'Contatos',
+        ],
+
+        'menu_right'            => [
+
+        ],
+
         // Breadcrumbs
         'breadcrumbs'           => [
             'dashboard'         => 'Dashboard',
@@ -36,6 +44,7 @@
             'create'            => 'Inserir',
             'edit'              => 'Edição',
             'password'          => 'Alteração da Senha',
+            'contact'           => 'Contatos',
         ],
 
         // widgets
@@ -51,6 +60,24 @@
             'view_title'        => 'Dashboard',
             'view_hello'        => 'Olá ',
             'view_wellcome'     => 'Bem vindo!',
+        ],
+
+        // Contacts
+        'model_contact'         => [
+            'update_screen'     => 'Atualizar Tela',
+            'more_details'      => 'Detalhes',
+            'id'                => 'ID',
+            'actions'           => 'Ações',
+            'view_title'        => 'Contatos',
+            'name'              => 'Nome',
+            'email'             => 'E-mail',
+            'phone'             => 'Celular',
+            'details_id'        => 'ID',
+            'details_name'      => 'Nome do Usuário',
+            'details_email'     => 'E-mail',
+            'details_phone'     => 'Celular',
+            'details_position'  => 'Função',
+            'avatar'            => 'Foto',
         ],
 
         // Activity screen
@@ -220,6 +247,7 @@
             'active'            => 'Ativo?',
             'is_superadmin'     => 'Super Admin?',
             'role'              => 'Papel',
+            'phone'             => 'Celular',
             'actions'           => 'Ações',
             'update_screen'     => 'Atualizar a tela',
             'more_details'      => 'Detalhes',
@@ -269,7 +297,7 @@
             'my_profile'        => 'Meu Perfil',
             'retype_password'   => 'Redigite a Nova Senha',
             'change_password'   => 'Mudar a Senha',
-            'leave_blank'       => 'Para não alterar a senha, deixe o campo em branco.',
+            'leave_blank'       => 'Deixe em branco para não alterar a senha.',
             'avatar_format'     => 'Use imagens com tamanho de 140px no formato .jpg',
             'new_password'      => 'Nova Senha',
 
@@ -297,8 +325,6 @@
 
                 'password_success'          => 'Senha atualizada com sucesso.',
                 'password_error'            => 'Ocorreu um erro e a senha não foi atualizada.',
-
             ],
-
         ],
     ];

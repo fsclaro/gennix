@@ -2,7 +2,7 @@
 
     return [
         // General messages
-        'access_with_social'    => 'Or use social media to access',
+        'access_with_social'    => 'Or use social network to access',
         'or'                    => 'or',
         'and'                   => 'and',
         'user_not_exists'       => 'This user does not exist in the system.',
@@ -25,11 +25,21 @@
         'today_is'              => 'Today is ',
         'optional'              => '(optional)',
 
+        'menu_left'             => [
+            'contacts'          => 'Contacts',
+        ],
+
+        'menu_right'            => [
+
+        ],
+
+
         // Breadcrumbs
         'breadcrumbs'           => [
             'dashboard'         => 'Dashboard',
             'activity'          => 'Activities',
             'permission'        => 'Permissions',
+            'contact'           => 'Contact',
             'role'              => 'Roles',
             'user'              => 'Users',
             'details'           => 'Details',
@@ -51,6 +61,24 @@
             'view_title'        => 'Dashboard',
             'view_hello'        => 'Hello ',
             'view_wellcome'     => 'Wellcome!',
+        ],
+
+        // Contacts
+        'model_contact'         => [
+            'update_screen'     => 'Update Screen',
+            'more_details'      => 'Details',
+            'id'                => 'ID',
+            'actions'           => 'Actions',
+            'view_title'        => 'Contacts',
+            'name'              => 'Name',
+            'email'             => 'E-mail',
+            'phone'             => 'Phone',
+            'details_id'        => 'ID',
+            'details_name'      => 'Name',
+            'details_email'     => 'E-mail',
+            'details_phone'     => 'Phone',
+            'details_position'  => 'Position',
+            'avatar'            => 'Photo',
         ],
 
         // Activity screen
@@ -98,6 +126,18 @@
             'error'             => 'Error',
             'warning'           => 'Warning',
             'undefined'         => 'Undefined',
+
+            'alert_messages'    => [
+                'destroy_success'           => 'Activity was successfully deleted.',
+                'destroy_error'             => 'An error has occurred and the activity cannot be deleted',
+
+                'is_read_success'           => 'Activities successfully changed to status ',
+                'is_read_error'             => 'An error occurred and some activities have not been changed.',
+
+                'deletemass_success'        => 'Activities successfully deleted.',
+                'deletemass_error'          => 'An error occurred and some activities were not deleted.'
+            ],
+
         ],
 
         'model_permission' => [
@@ -131,7 +171,19 @@
             'one_role'          => 'assigned role',
             'more_roles'        => 'assigned roles',
             'request_title'     => 'Provide permission title',
-            'request_slug'      => 'Provide the slug for this permission'
+            'request_slug'      => 'Provide the slug for this permission',
+
+            'alert_messages'    => [
+                'store_success'             => 'Permission successfully registered.',
+                'store_error'               => 'An error has occurred and the permission cannot be registered.',
+
+                'update_success'             => 'Permission changed successfully.',
+                'update_error'               => 'An error has occurred and the permission cannot be changed.',
+
+                'destroy_success'           => 'The permission was successfully deleted.',
+                'destroy_error'             => 'An error has occurred and the permission cannot be deleted.',
+            ],
+
         ],
 
         'model_role' => [
@@ -173,6 +225,21 @@
             'request_title'     => 'Provide a description for this role',
             'request_permissions'=> 'Please select at least on permission',
             'clone_role'        => 'Clone Role',
+
+            'alert_messages'    => [
+                'store_success'             => 'Paper successfully registered',
+                'store_error'               => 'An error has occurred and the paper cannot be registered.',
+
+                'update_success'             => 'Paper updated successfully.',
+                'update_error'               => 'An error has occurred and the role cannot be updated.',
+
+                'destroy_success'           => 'The role was successfully deleted.',
+                'destroy_error'             => 'An error has occurred and the paper cannot be deleted.',
+
+                'clone_success'             => 'The role was successfully cloned.',
+                'clone_error'               => 'An error has occurred and the paper cannot be cloned.',
+            ],
+
         ],
 
         'model_user' => [
@@ -224,7 +291,7 @@
             'more_users'        => 'assigned users',
             'select_all'        => 'Select All',
             'unselect_all'      => 'Deselect All',
-            'select_one'        => 'Selec one of the options.',
+            'select_one'        => 'Select one of the options.',
             'request_title'     => 'Provide a description for this role',
             'request_permissions'=> 'Choose at least one permission from the list',
             'avatar'            => 'User Photo',
@@ -237,5 +304,30 @@
             'avatar_format'     => 'Use images with 140px in .jpg format',
             'new_password'      => 'New Password',
 
+            'alert_messages'    => [
+                'store_success'             => 'User successfully registered.',
+                'store_error'               => 'An error has occurred and the user cannot be registered.',
+
+                'update_success'             => 'User changed successfully.',
+                'update_error'               => 'An error has occurred and the user cannot be changed.',
+
+                'destroy_success'           => 'The user was successfully deleted.',
+                'destroy_error'             => 'An error has occurred and the user cannot be deleted.',
+
+                'profile_success'           => 'Profile updated successfully.',
+                'profile_error'             => 'An error has occurred and the user profile has not been changed.',
+
+                'active_success'            => 'User successfully activated.',
+                'active_error'              => 'An error occurred and the user was not activated.',
+
+                'deactive_success'          => 'User deactivated successfully.',
+                'deactive_error'            => 'An error has occurred and the user has not been disabled.',
+
+                'avatar_success'            => 'Photo updated successfully.',
+                'avatar_error'              => 'An error occurred and the user\'s photo was not updated. ',
+
+                'password_success'          => 'Password updated successfully.',
+                'password_error'            => 'An error occurred and the password has not been updated.',
+            ],
         ],
     ];

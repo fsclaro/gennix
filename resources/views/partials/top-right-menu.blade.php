@@ -1,3 +1,4 @@
+<!-- comment icon -->
 <li class="nav-item">
     <a href="#" class="nav-link">
         <i class="far fa-comments"></i>
@@ -5,6 +6,7 @@
     </a>
 </li>
 
+<!-- notification icon -->
 <li class="nav-item dropdown">
     <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
         <i class="far fa-bell"></i>
@@ -33,17 +35,18 @@
     </div>
 </li>
 
+<!-- language icon -->
 <li class="nav-item dropdown">
     <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
-        <i class="far fa-flag"></i>
+        <img src="{{ asset('img/flags/' . app()->getLocale() . '.png') }}" class="user-image img-circle mb-4" width="20px">
     </a>
 
     <div class="dropdown-menu dropdown-menu dropdown-menu-right">
         <a href="{{ route('language', 'pt-BR') }}" class="dropdown-item">
-            <img src="{{ asset('img/flags/brazil.png') }}" width="20px"> Brazilian Portuguese
+            <img src="{{ asset('img/flags/pt-BR.png') }}" width="20px"> Brazilian Portuguese
         </a>
         <a href="{{ route('language', 'en') }}" class="dropdown-item">
-            <img src="{{ asset('img/flags/united-states-of-america.png') }}" width="20px"> USA
+            <img src="{{ asset('img/flags/en.png') }}" width="20px"> English
         </a>
     </div>
 </li>

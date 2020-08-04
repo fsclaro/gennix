@@ -178,17 +178,17 @@ class RoleController extends Controller
             $newRole->permissions()->sync($clonedPermissions);
 
             Alert::toast(
-                __('gennix.model_permission.alert_messages.clone_success'),
+                __('gennix.model_role.alert_messages.clone_success'),
                 'success'
             )->timerProgressBar();
         } catch (Throwable $t) {
             Alert::error(
                 __('gennix.opps'),
-                __('gennix.model_permission.alert_messages.clone_error')
+                __('gennix.model_role.alert_messages.clone_error')
             )->autoClose(2000)->timerProgressBar();
 
             Auth::user()->saveActivity(
-                __('gennix.model_permission.alert_messages.clone_error') . ' ID ' . $id,
+                __('gennix.model_role.alert_messages.clone_error') . ' ID ' . $id,
                 [
                     'message' => $t->getMessage(),
                     'code_error' => $t->getCode(),

@@ -8,7 +8,7 @@ return [
     'retype_password'             => 'Retype password',
     'remember_me'                 => 'Remember Me',
     'register'                    => 'Register',
-    'register_a_new_membership'   => 'Register a new membership',
+    'register_a_new_membership'   => 'New membership',
     'i_forgot_my_password'        => 'I forgot my password',
     'i_already_have_a_membership' => 'I already have a membership',
     'sign_in'                     => 'Sign In',

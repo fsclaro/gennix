@@ -86,6 +86,11 @@
                         </div> <!-- ./row -->
 
                         <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="phone">{{ __('gennix.model_contact.details_phone') }}</label><br>
+                                <input type="text" class="form-control" readonly id="phone" value="{{ $user->phone }}">
+                            </div> <!-- ./email field -->
+
                             <div class="form-group col-md-3">
                                 <label for="is_superadmin">{{ __('gennix.model_user.details_is_superadmin') }}</label><br>
                                 @if ($user->is_superadmin)
@@ -99,7 +104,7 @@
                                 @endif
                             </div> <!-- ./gender field -->
 
-                            <div class="form-group col-md-9">
+                            <div class="form-group col-md-5">
                                 <label for="roles">{{ __('gennix.model_user.details_roles') }}</label>
                                 <button class="btn btn-default btn-block btn-text-left" id="roles" style="background-color: #E9ECEF">
                                     @if ($user->is_superadmin)

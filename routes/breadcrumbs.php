@@ -96,3 +96,15 @@ Breadcrumbs::for('user_password', function ($trail) {
     $trail->parent('user');
     $trail->push(__('gennix.breadcrumbs.password'));
 });
+
+// Dashboard > Contact
+Breadcrumbs::for('contact', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push(__('gennix.breadcrumbs.contact'), route('contact.index'));
+});
+
+// Dashboard > Contact > Details
+Breadcrumbs::for('contact_show', function ($trail) {
+    $trail->parent('contact');
+    $trail->push(__('gennix.breadcrumbs.details'));
+});

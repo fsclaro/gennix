@@ -70,6 +70,19 @@ config('adminlte.dashboard_url', 'home') )
     background-attachment: fixed;
     background-size: cover;
 }
+
+.selectLanguage {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+}
+
+.selectLanguage  a:first-child {
+    margin-right: 0.5rem;
+}
+
 </style>
 @stop
 
@@ -86,9 +99,18 @@ config('adminlte.dashboard_url', 'home') )
         <div class="{{ $auth_type ?? 'login' }}-logo"
              style="margin-top:10px;">
             <a href="{{ $dashboard_url }}">
-                <img src="{{ asset(config('adminlte.logo_img')) }}"
-                     height="50">
+                <img src="{{ asset(config('adminlte.logo_img')) }}" height="50">
                 {!! config('adminlte.logo', 'gennix') !!}
+            </a>
+        </div>
+
+        <div class="selectLanguage">
+            <a href="{{ route('language', 'pt-BR') }}">
+                <img src="{{ asset('img/flags/pt-BR.png') }}" width="35px" alt="Brazilian Portuguese">
+            </a>
+
+            <a href="{{ route('language', 'en') }}">
+                <img src="{{ asset('img/flags/en.png') }}" width="35px" alt="English">
             </a>
         </div>
 

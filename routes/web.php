@@ -71,3 +71,9 @@ Route::put('user/profile/{user}/update', 'UserController@updateProfile')->name('
 Route::get('user/password/{id}', 'UserController@changePassword')->name('user.password.change');
 Route::put('user/password/update', 'UserController@storePassword')->name('user.password.store');
 Route::resource('user', 'UserController');
+
+/**
+ * Contact
+ */
+Route::get('contact', 'ContactController@index')->name('contact.index');
+Route::get('contact/{id}', 'ContactController@show')->name('contact.show');
