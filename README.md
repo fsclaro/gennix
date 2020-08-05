@@ -3,11 +3,7 @@
 </p>
 
 
-https://img.shields.io/github/issues/fsclaro/gennix 
-https://img.shields.io/github/forks/fsclaro/gennix
-https://img.shields.io/github/stars/fsclaro/gennix
-https://img.shields.io/github/license/fsclaro/gennix
-https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Ffsclaro%2Fgennix
+![Badge](https://img.shields.io/github/issues/fsclaro/gennix) ![Badge](https://img.shields.io/github/forks/fsclaro/gennix) ![Badge](https://img.shields.io/github/stars/fsclaro/gennix) ![Badge](https://img.shields.io/github/license/fsclaro/gennix) ![Badge](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Ffsclaro%2Fgennix)
 
 ## 1) Sobre este projeto
 
