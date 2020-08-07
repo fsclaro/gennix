@@ -1,15 +1,21 @@
 <p align="center">
-<img src="https://github.com/fsclaro/gennix/blob/master/_docs/logo_gennix.png?raw=true">
+    <img src="https://github.com/fsclaro/gennix/blob/master/_docs/logo_gennix.png?raw=true">
 </p>
 
-
-![Badge](https://img.shields.io/github/issues/fsclaro/gennix) ![Badge](https://img.shields.io/github/forks/fsclaro/gennix) ![Badge](https://img.shields.io/github/stars/fsclaro/gennix) ![Badge](https://img.shields.io/github/license/fsclaro/gennix) ![Badge](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Ffsclaro%2Fgennix)
+<p align="center">
+    <img src="https://img.shields.io/github/issues/fsclaro/gennix" alt="Badge - Issues">
+    <img src="https://img.shields.io/github/forks/fsclaro/gennix" alt="Badge - Forks">
+    <img src="https://img.shields.io/github/stars/fsclaro/gennix" alt="Badge - Stars">
+    <img src="https://img.shields.io/github/license/fsclaro/gennix" alt="Badge - License">
+    <img src="https://img.shields.io/twitter/url?url=https://github.com/fsclaro/gennix" alt="Badge - Tweet This">
+</p>
 
 ## 1) Sobre este projeto
 
 O projeto **gennix** tem a intenção de ser um ponto de partida para outros projetos baseados no framework Laravel. Este boilerplate contém uma série de pacotes que permitirá acelerar a construção dos seus projetos WEB.
 
 ## 2) Ambiente mínimo
+
 Para instalar e utilizar o **gennix** a configuração mínima exigida é:
 
 - Versão mínima do PHP: 7.2
@@ -19,6 +25,7 @@ Para instalar e utilizar o **gennix** a configuração mínima exigida é:
 - Banco de Dados: MySQL/MariaDB
 
 ## 3) Pacotes incluídos do projeto
+
 Este projeto utiliza os seguintes pacotes de terceiros
 
 - arcanedev/log-viewer
@@ -35,6 +42,7 @@ Este projeto utiliza os seguintes pacotes de terceiros
 - spatie/laravel-sluggable
 
 ## 4) Pacotes incluídos no ambiente de desenvolvimento
+
 Para o ambiente de desenvolvimento, além dos descritos acima, o projeto utiliza os seguintes pacotes:
 
 - arryvdh/laravel-debugbar
@@ -42,6 +50,7 @@ Para o ambiente de desenvolvimento, além dos descritos acima, o projeto utiliza
 - matt-allan/laravel-code-style
 
 ## 5) Clonando o projeto
+
 Para utilizar e/ou testar este projeto, você deve digitar as seguintes linhas abaixo no seu terminal
 ```bash
 git clone git@github.com:fsclaro/gennix.git
@@ -50,12 +59,14 @@ git clone git@github.com:fsclaro/gennix.git
 Após concluída a clonagem, você deve realizar a configuração inicial. Para isso siga os passos abaixo:
 
 ### 5.1) Criando o arquivo de parâmetros/configuração do projeto
+
 Estando no terminal e dentro da pasta do projeto, digite a linha abaixo para copiar o arquivo de exemplo de configuração do ambiente
 ```bash
 cp .env.example .env
 ```
 
 ### 5.2) Crie o banco de dados do projeto
+
 Você pode criar o banco de dados diretamente na linha de comando através da instrução abaixo.
 ```bash
 mysql -e 'create database <YOUR_DATABASE_NAME>;' -u <YOUR_MYSQL_USERNAME> -p
@@ -79,7 +90,9 @@ DB_PASSWORD=secret
 ```
 
 ### 5.4) Executando os comandos de instalação dos pacotes e configurações iniciais
+
 No terminal execute os seguintes comandos:
+
 ```bash
 composer install
 php artisan key:generate
@@ -88,9 +101,11 @@ php artisan migrate --seed
 ```
 
 ## 6) Outras configurações que podem/devem ser realizadas
+
 No arquivo *.env* você encontrará outras configurações que podem ser realizadas. Estas estão descritas a seguir.
 
 ### 6.1) DEBUGBAR
+
 O parâmetro *DEBUGBAR_ENABLED* deve ser ativado ou desativado dependendo do ambiente onde você estiver executando o projeto. Para o ambiente de desenvolvimento você pode ativar este recurso, caso necessite realizar depurações durante o criação e testes do seu projeto.
 
 Mas para o ambiente de produção, recomendo fortemente que você deixe desativado para que não ocorram problemas de performance do projeto.
@@ -98,6 +113,7 @@ Mas para o ambiente de produção, recomendo fortemente que você deixe desativa
 Os valores permitidos para este parâmetro são: *true* ou *false*
 
 ### 6.2) USE_SOCIALITE
+
 Se você quiser liberar o acesso dos usuários do sistema através das redes sociais, você deve setar este parâmetro para *true*. Aos fazer isso, o *gennix* entenderá que deverá exibir na tela de login os botões das redes sociais para que os usuários possam se identificar desta forma.
 
 Ativando este recurso, você deve obrigatóriamente escolher pelo menos uma das redes sociais disponíveis no **gennix**, descritas a seguir:
@@ -147,10 +163,11 @@ Localize no código o trecho onde são tratados os links para acesso pela rede s
     @endif
 ```
 
-**IMPORTANTE**: A utilização do recurso de login através de redes sociais implementadas no projeto, é única e exclusivamente para realizar a autenticação de acesso. Não foi implementado no projeto a possibilidade de cadastrar novos usuários através das redes sociais. Muito embora seja um recurso que você facilmente implementaria no projeto.
+>**IMPORTANTE**: A utilização do recurso de login através de redes sociais implementadas no projeto, é única e exclusivamente para realizar a autenticação de acesso. Não foi implementado no projeto a possibilidade de cadastrar novos usuários através das redes sociais. Muito embora seja um recurso que você facilmente implementaria no projeto.
 
 
 ### 6.3) EXTERNAL_IP
+
 Um dos recursos previstos no *gennix* é o registro do IP do usuário que está acessando a aplicação. Para isso, é utilizado os serviços do provedor IPIFY. Caso queira alterar o provedor que irá identificar o IP do seu cliente, basta definir a url do mesmo neste parâmetro.
 
 Valor padrão:
@@ -158,12 +175,15 @@ EXTERNAL_IP=https://api.ipify.org
 
 
 ### 6.4) FOOTER_CENTER, FOOTER_LEFT, FOOTER_RIGHT
+
 Estes parâmetros permitem que você personalize o rodapé da aplicação. Para isso, você tem duas opções:
 
 **a) Rodapé centralizado**
+
 Para ter um texto que ficará centralizado no rodapé da página, basta você definir o conteúdo no parâmetro *FOOTER_CENTER*.
 
 **b) Rodapé do lado esquerdo e lado direito**
+
 A outra opção será você definir o texto que deseja tanto do lado esquerdo quando do lado direito nos parâmetros *FOOTER_LEFT* e *FOOTER_RIGHT* respectivamente.
 
 Caso você defina valores para os três parâmetros, o *FOOTER_CENTER* terá prioridade, ignorando os parâmetros *FOOTER_LEFT* e *FOOTER_RIGHT*.
@@ -171,6 +191,7 @@ Caso você defina valores para os três parâmetros, o *FOOTER_CENTER* terá pri
 Estes parâmetros aceitam tags HTML para que você possa utilizar a sua criatividade para construir o rodapé da forma mais adequada para a sua aplicação.
 
 ### 6.5) FORMATAÇÃO DE DATA E HORA
+
 Os parâmetros abaixo, permitem que você defina o formato da data e da hora que serão utilizadas na aplicação.
 
 **a) DATE_FORMAT** - Data no formato dd/mm/aa. Exemplo: 10/05/20
@@ -182,6 +203,7 @@ Os parâmetros abaixo, permitem que você defina o formato da data e da hora que
 Neste [link](https://www.php.net/manual/pt_BR/function.date.php) você encontrará como pode personalizar a data e a hora para outros formatos desejados.
 
 ## 7) Executando a aplicação
+
 Considerando que você já configurou sem ambiente apache ou nginx para apontar para a sua aplicação, agora você pode testar o projeto. Para isso, utilize um dos usuários abaixo para se identificar na tela de login
 
 | Nome do Usuário    | Papel      | Login                  | Senha    |
@@ -194,6 +216,7 @@ Considerando que você já configurou sem ambiente apache ou nginx para apontar 
 ## 8) Comandos adicionados ao composer
 
 ### 8.1) *composer clear-all*, executará a seguinte sequência:
+
 * artisan clear-compiled
 * artisan cache:clear
 * artisan route:clear
@@ -202,14 +225,17 @@ Considerando que você já configurou sem ambiente apache ou nginx para apontar 
 * composer dumpautoload -o
 
 ### 8.2) *composer cache-all*, executará a seguinte sequência:
+
 * artisan config:cache
 * artisan route:cache
 
 ### 8.3) *composer ide-helper*, executará a seguinte sequência:
+
 * artisan ide-helper:generate
 * artisan ide-helper:meta
 
 ### 8.4) *composer format*, executará a seguinte sequência:
+
 * php-cs-fixer fix app/ --show-progress=estimating
 * php-cs-fixer fix config/ --show-progress=estimating
 * php-cs-fixer fix database/ --show-progress=estimating
@@ -217,7 +243,7 @@ Considerando que você já configurou sem ambiente apache ou nginx para apontar 
 * php-cs-fixer fix routes/ --show-progress=estimating
 * php-cs-fixer fix tests/ --show-progress=estimating
 
-*_OBS_*: este comando necessita do pacote php-cs-fixer instalado ou de forma global ou local no seu ambiente. Caso você tenha este pacote instalado, execute o comando abaixo para fazer a instalação.
+>*_OBS_*: este comando necessita do pacote php-cs-fixer instalado ou de forma global ou local no seu ambiente. Caso você tenha este pacote instalado, execute o comando abaixo para fazer a instalação.
 
 ```bash
 composer global require friendsofphp/php-cs-fixer
@@ -237,6 +263,7 @@ Caso você queira utilizar o sistema em uma língua diferente do Português Bras
 
 
 ## 10) CRUD
+
 Este projeto dispõe de um recurso de criação da CRUD básica que permitirá acelerar o desenvolvimento do projeto.
 
 Este recurso é obtido através da execução do seguinte comando:
