@@ -116,11 +116,11 @@ $(function () {
             url: "{{ asset('vendor/datatables/js/i18n') . '/' . app()->getLocale() . '.json' }}",
         },
         columns: [
-            { width: '3em' },
-            { width: '25em' },
-            null,
-            { width: '17em'},
-            { orderable: false, searchable: false, width:'6em' },
+            { width: '3em' },   // id
+            { width: '25em' },  // Description/title
+            { width: '20em'},   // Slug
+            { width: '17em'},   // Roles
+            { orderable: false, searchable: false, width:'6em' }, // Actions
         ],
     });
 });
