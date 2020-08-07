@@ -12,21 +12,21 @@
 
 <hr>
 
-## Índice
-1. [Sobre este projeto](#Sobre-este-projeto)
-2. [Ambiente mínimo](#Ambiente-mínimo)
-3. [Pacotes incluídos no projeto]()
-4. [Pacotes incluídos no projeto no ambiente de desenvolvimento]()
-5. [Clonando o projeto]()
-6. [Outras configurações]()
-7. [Executando a aplicação]()
-8. [Comandos adicionados ao composer]()
-9. [Internacionalização]()
-10.[CRUD]()
-11.[Código de Conduta](#Código-de-Conduta)
-12.[Vulnerabilidades e Segurança]()
-
-
+## Tabela de Conteúdos
+* [Sobre este projeto](#sobre-este-projeto)
+* [Ambiente mínimo](#ambiente-mínimo)
+* [Pacotes incluídos no projeto](#pacotes-incluídos-no-projeto)
+* [Pacotes incluídos no projeto no ambiente de desenvolvimento](#pacotes-incluídos-no-ambiente-de-desenvolvimento)
+* [Clonando o projeto](#clonando-o-projeto)
+* [Outras configurações](#outras-configurações)
+* [Executando a aplicação](#executando-a-aplicação)
+* [Comandos adicionados ao composer](#comandos-adicionados-ao-composer)
+* [Internacionalização](#internacionalização)
+* [CRUD](#crud)
+* [Código de Conduta](#código-de-conduta)
+* [Vulnerabilidades e Segurança](#vulnerabilidades-e-segurança)
+* [Contribuições](#contribuições)
+* [Licença](#licença)
 
 <hr>
 
@@ -330,6 +330,6 @@ Caso você tenha interesse em colaborar com as melhorias do projeto *gennix* com
 
 Se você descobrir alguma vunerabilidade de segurança neste projeto, por favor, envie um email para [Nando Salles](mailto:fsclaro@gmail.com).
 
-## 14) Licença
+## Licença
 
 Este projeto é licenciado sobre as normas do [MIT license](https://github.com/fsclaro/gennix/blob/master/LICENSE.md) (em inglês).
