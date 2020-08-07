@@ -2,6 +2,9 @@
 <img src="https://github.com/fsclaro/gennix/blob/master/_docs/img/logo_gennix.png?raw=true">
 </p>
 
+
+![Badge](https://img.shields.io/github/issues/fsclaro/gennix) ![Badge](https://img.shields.io/github/forks/fsclaro/gennix) ![Badge](https://img.shields.io/github/stars/fsclaro/gennix) ![Badge](https://img.shields.io/github/license/fsclaro/gennix) ![Badge](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Ffsclaro%2Fgennix)
+
 ## 1) Sobre este projeto
 
 O projeto **gennix** tem a intenção de ser um ponto de partida para outros projetos baseados no framework Laravel. Este boilerplate contém uma série de pacotes que permitirá acelerar a construção dos seus projetos WEB.
