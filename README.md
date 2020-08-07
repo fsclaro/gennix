@@ -16,7 +16,6 @@
 * [Sobre este projeto](#sobre-este-projeto)
 * [Ambiente mínimo](#ambiente-mínimo)
 * [Pacotes incluídos no projeto](#pacotes-incluídos-no-projeto)
-* [Pacotes incluídos no projeto no ambiente de desenvolvimento](#pacotes-incluídos-no-ambiente-de-desenvolvimento)
 * [Clonando o projeto](#clonando-o-projeto)
 * [Outras configurações](#outras-configurações)
 * [Executando a aplicação](#executando-a-aplicação)
@@ -48,6 +47,8 @@ Para instalar e utilizar o **gennix** a configuração mínima exigida é:
 
 Este projeto utiliza os seguintes pacotes de terceiros
 
+### Produção
+
 - arcanedev/log-viewer
 - arcanedev/route-viewer
 - arrilot/laravel-widgets
@@ -61,9 +62,7 @@ Este projeto utiliza os seguintes pacotes de terceiros
 - spatie/laravel-medialibrary
 - spatie/laravel-sluggable
 
-## Pacotes incluídos no ambiente de desenvolvimento
-
-Para o ambiente de desenvolvimento, além dos descritos acima, o projeto utiliza os seguintes pacotes:
+### Desenvolvimento
 
 - arryvdh/laravel-debugbar
 - barryvdh/laravel-ide-helper
@@ -72,6 +71,7 @@ Para o ambiente de desenvolvimento, além dos descritos acima, o projeto utiliza
 ## Clonando o projeto
 
 Para utilizar e/ou testar este projeto, você deve digitar as seguintes linhas abaixo no seu terminal
+
 ```bash
 git clone git@github.com:fsclaro/gennix.git
 ```
@@ -81,6 +81,7 @@ Após concluída a clonagem, você deve realizar a configuração inicial. Para 
 ### Criando o arquivo de parâmetros/configuração do projeto
 
 Estando no terminal e dentro da pasta do projeto, digite a linha abaixo para copiar o arquivo de exemplo de configuração do ambiente
+
 ```bash
 cp .env.example .env
 ```
@@ -88,14 +89,17 @@ cp .env.example .env
 ### Crie o banco de dados do projeto
 
 Você pode criar o banco de dados diretamente na linha de comando através da instrução abaixo.
+
 ```bash
 mysql -e 'create database <YOUR_DATABASE_NAME>;' -u <YOUR_MYSQL_USERNAME> -p
 ```
+
 Caso você prefira, utilize um programa gerenciador de banco de dados de sua escolha.
 
 ### Configurando o banco de dados
 
 Edite o arquivo *.env* e modifique os parâmetros abaixo, conforme as informações que você utiliza para acessar o seu banco de dados
+
 ```bash
 DB_DATABASE=<YOUR_DATABASE_NAME>
 DB_USERNAME=<YOUR_MYSQL_USERNAME>
@@ -103,6 +107,7 @@ DB_PASSWORD=<PASSWORD_OF_YOUR_MYSQL_USERNAME>
 ```
 
 Os valores iniciais destes parâmetros são:
+
 ```bash
 DB_DATABASE=gennix
 DB_USERNAME=homestead
@@ -143,7 +148,7 @@ Ativando este recurso, você deve obrigatóriamente escolher pelo menos uma das 
 Selecione quais redes sociais serão liberadas para que o usuário possa fazer o login no sistema. Os parâmetros que devem ser configuradas para cada uma delas são:
 
 | Rede social | Ativação                | Parâmetros de acesso                        |
-|-------------|-------------------------|---------------------------------------------|
+| ----------- | ----------------------- | ------------------------------------------- |
 | Facebook    | SOCIALITE_FACEBOOK=true | FACEBOOK_CLIENT_ID e FACEBOOK_CLIENT_SECRET |
 | Twitter     | SOCIALITE_TWITTER=true  | TWITTER_CLIENT_ID e TWITTER_CLIENT_SECRET   |
 | GitHub      | SOCIALITE_GITHUB=true   | GITHUB_CLIENT_ID e GITHUB_CLIENT_SECRET     |
@@ -226,11 +231,11 @@ Neste [link](https://www.php.net/manual/pt_BR/function.date.php) você encontrar
 
 Considerando que você já configurou sem ambiente apache ou nginx para apontar para a sua aplicação, agora você pode testar o projeto. Para isso, utilize um dos usuários abaixo para se identificar na tela de login
 
-| Nome do Usuário    | Papel      | Login                  | Senha    |
-|--------------------|------------|------------------------|----------|
-| **Super Admin**    | Superadmin | superadmin@gennix.test | superman |
-| **Peter Markus**   | Admin      | peter@gennix.test      | 12345678 |
-| **Jane Garcez**    | User       | jane@gennix.test       | 12345678 |
+| Nome do Usuário  | Papel      | Login                  | Senha    |
+| ---------------- | ---------- | ---------------------- | -------- |
+| **Super Admin**  | Superadmin | superadmin@gennix.test | superman |
+| **Peter Markus** | Admin      | peter@gennix.test      | 12345678 |
+| **Jane Garcez**  | User       | jane@gennix.test       | 12345678 |
 
 
 ## Comandos adicionados ao composer
@@ -263,7 +268,7 @@ Considerando que você já configurou sem ambiente apache ou nginx para apontar 
 * php-cs-fixer fix routes/ --show-progress=estimating
 * php-cs-fixer fix tests/ --show-progress=estimating
 
->*_OBS_*: este comando necessita do pacote php-cs-fixer instalado ou de forma global ou local no seu ambiente. Caso você tenha este pacote instalado, execute o comando abaixo para fazer a instalação.
+>OBS: este comando necessita do pacote php-cs-fixer instalado ou de forma global ou local no seu ambiente. Caso você tenha este pacote instalado, execute o comando abaixo para fazer a instalação.
 
 ```bash
 composer global require friendsofphp/php-cs-fixer
@@ -289,7 +294,7 @@ Este projeto dispõe de um recurso de criação da CRUD básica que permitirá a
 Este recurso é obtido através da execução do seguinte comando:
 
 ```bash
-php artisan gennix:crud [options] <name>
+php artisan gennix:crud <options> <name>
 ```
 
 Onde:
@@ -299,7 +304,7 @@ Onde:
 * **options** - pode ser:
 
 | Chave         | Descrição                                               | Local onde os arquivos serão criados |
-|---------------|---------------------------------------------------------|--------------------------------------|
+| ------------- | ------------------------------------------------------- | ------------------------------------ |
 | --controller  | Criação do controller                                   | /app/Http/Controller                 |
 | --model       | Criação do model                                        | /app                                 |
 | --request     | Criação das requests (update e store)                   | /app/Http/Requests                   |
