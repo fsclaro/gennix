@@ -224,16 +224,13 @@ composer global require friendsofphp/php-cs-fixer
 
 O projeto *gennix* está inicialmente configurado para o Português do Brasil. Os parâmetros que definem a língua com a qual o ambiente utilizará estão definidas no arquivo */config/app.php*. Sendo que os parâmetros principais são:
 
-**a) timezone** - America/Sao_Paulo
+**a) timezone** - America/Sao_Paulo<br>
 **b) locale** - pt-BR
 
 Caso você queira utilizar o sistema em uma língua diferente do Português Brasileiro ou do Inglês, você poderá traduzir os arquivos que contém todas as mensagens exibidas no sistema. Abaixo descrevo os locais onde este arquivos estão localizado e para o que os mesmos são utilizados.
 
 * /resources/lang/pt-BR/gennix.php - contém as mensagens específicas do sistema
 * /resources/lang/vendor/adminlte - contém os arquivos de mensagens do adminlte
-
-
-
 
 
 ## 10) CRUD
