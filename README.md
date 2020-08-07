@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/fsclaro/gennix/blob/master/_docs/img/logo_gennix.png?raw=true">
+<img src="https://github.com/fsclaro/gennix/blob/master/_docs/logo_gennix.png?raw=true">
 </p>
 
 
@@ -272,11 +272,11 @@ Caso você necessite personalizar as templates que são utilizadas para a geraç
 
 ## 11) Contribuições
 
-Caso você tenha interesse em colaborar com as melhorias do projeto *gennix* com boas ideias ou informando _bugs_ ou qualque outro tipo de problema, por favor leia o [guia de contribuições](https://github.com/fsclaro/gennix/blob/master/_docs/CONTRIBUTING.md) (em inglês) e envie um email para [fsclaro@gmail.com](mailto:fsclaro@gmail.com)
+Caso você tenha interesse em colaborar com as melhorias do projeto *gennix* com boas ideias ou informando _bugs_ ou qualque outro tipo de problema, por favor leia o [guia de contribuições](https://github.com/fsclaro/gennix/blob/master/CONTRIBUTING.md) (em inglês) e envie um email para [fsclaro@gmail.com](mailto:fsclaro@gmail.com)
 
 ## 12) Código de Conduta
 
-É muito importante que você leia o [código de conduta](https://github.com/fsclaro/gennix/blob/master/_docs/CODE_OF_CONDUCT.md) (em inglês) para que exista uma coexistência pacífica entre os membros participantes deste projeto.
+É muito importante que você leia o [código de conduta](https://github.com/fsclaro/gennix/blob/master/CODE_OF_CONDUCT.md) (em inglês) para que exista uma coexistência pacífica entre os membros participantes deste projeto.
 
 ## 13) Vulnerabilidades e Segurança
 
@@ -284,4 +284,4 @@ Se você descobrir alguma vunerabilidade de segurança neste projeto, por favor,
 
 ## 14) Licença
 
-Este projeto é licenciado sobre as normas do [MIT license](https://github.com/fsclaro/gennix/blob/master/_docs/LICENSE.md) (em inglês).
+Este projeto é licenciado sobre as normas do [MIT license](https://github.com/fsclaro/gennix/blob/master/LICENSE.md) (em inglês).
