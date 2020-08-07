@@ -13,19 +13,38 @@
 <hr>
 
 ## Tabela de Conteúdos
-* [Sobre este projeto](#sobre-este-projeto)
-* [Ambiente mínimo](#ambiente-mínimo)
-* [Pacotes incluídos no projeto](#pacotes-incluídos-no-projeto)
-* [Clonando o projeto](#clonando-o-projeto)
-* [Outras configurações](#outras-configurações)
-* [Executando a aplicação](#executando-a-aplicação)
-* [Comandos adicionados ao composer](#comandos-adicionados-ao-composer)
-* [Internacionalização](#internacionalização)
-* [CRUD](#crud)
-* [Código de Conduta](#código-de-conduta)
-* [Vulnerabilidades e Segurança](#vulnerabilidades-e-segurança)
-* [Contribuições](#contribuições)
-* [Licença](#licença)
+- [Tabela de Conteúdos](#tabela-de-conteúdos)
+- [Sobre este projeto](#sobre-este-projeto)
+- [Ambiente mínimo](#ambiente-mínimo)
+- [Pacotes incluídos no projeto](#pacotes-incluídos-no-projeto)
+  - [Produção](#produção)
+  - [Desenvolvimento](#desenvolvimento)
+- [Clonando o projeto](#clonando-o-projeto)
+- [Criando o arquivo de parâmetros/configuração do projeto](#criando-o-arquivo-de-parâmetrosconfiguração-do-projeto)
+- [Preparando o banco de dados](#preparando-o-banco-de-dados)
+  - [Configurando o banco de dados](#configurando-o-banco-de-dados)
+- [Executando os comandos de instalação dos pacotes e configurações iniciais](#executando-os-comandos-de-instalação-dos-pacotes-e-configurações-iniciais)
+- [Outras configurações](#outras-configurações)
+  - [DEBUGBAR](#debugbar)
+  - [USE_SOCIALITE](#use_socialite)
+    - [SOCIALITE_FACEBOOK, SOCIALITE_TWITTER, SOCIALITE_GITHUB, SOCIALITE_LINKEDIN, SOCIALITE_GOOGLE](#socialite_facebook-socialite_twitter-socialite_github-socialite_linkedin-socialite_google)
+  - [EXTERNAL_IP](#external_ip)
+  - [FOOTER_CENTER, FOOTER_LEFT, FOOTER_RIGHT](#footer_center-footer_left-footer_right)
+  - [FORMATAÇÃO DE DATA E HORA](#formatação-de-data-e-hora)
+- [Executando a aplicação](#executando-a-aplicação)
+- [Comandos adicionados ao composer](#comandos-adicionados-ao-composer)
+  - [*composer clear-all*, executará a seguinte sequência:](#composer-clear-all-executará-a-seguinte-sequência)
+  - [*composer cache-all*, executará a seguinte sequência:](#composer-cache-all-executará-a-seguinte-sequência)
+  - [*composer ide-helper*, executará a seguinte sequência:](#composer-ide-helper-executará-a-seguinte-sequência)
+  - [*composer format*, executará a seguinte sequência:](#composer-format-executará-a-seguinte-sequência)
+    - [Para instalação global](#para-instalação-global)
+    - [Para instalação local](#para-instalação-local)
+- [Internacionalização](#internacionalização)
+- [CRUD](#crud)
+- [Contribuições](#contribuições)
+- [Código de Conduta](#código-de-conduta)
+- [Vulnerabilidades e Segurança](#vulnerabilidades-e-segurança)
+- [Licença](#licença)
 
 <hr>
 
@@ -37,11 +56,8 @@ O projeto **gennix** tem a intenção de ser um ponto de partida para outros pro
 
 Para instalar e utilizar o **gennix** a configuração mínima exigida é:
 
-- Versão mínima do PHP: 7.2
-- Versão mínima do Laravel: 7.*
-- Timezone: America/Sao_Paulo
-- Locale: pt-BR
-- Banco de Dados: MySQL/MariaDB
+* PHP: 7.2
+* Laravel: 7.*
 
 ## Pacotes incluídos no projeto
 
@@ -49,24 +65,24 @@ Este projeto utiliza os seguintes pacotes de terceiros
 
 ### Produção
 
-- arcanedev/log-viewer
-- arcanedev/route-viewer
-- arrilot/laravel-widgets
-- creativeorange/gravatar
-- davejamesmiller/laravel-breadcrumbs
-- jeroennoten/laravel-adminlte
-- laravel/socialite
-- yajra/laravel-datatables-oracle
-- laravel/ui
-- realrashid/sweet-alert
-- spatie/laravel-medialibrary
-- spatie/laravel-sluggable
+* arcanedev/log-viewer
+* arcanedev/route-viewer
+* arrilot/laravel-widgets
+* creativeorange/gravatar
+* davejamesmiller/laravel-breadcrumbs
+* jeroennoten/laravel-adminlte
+* laravel/socialite
+* yajra/laravel-datatables-oracle
+* laravel/ui
+* realrashid/sweet-alert
+* spatie/laravel-medialibrary
+* spatie/laravel-sluggable
 
 ### Desenvolvimento
 
-- arryvdh/laravel-debugbar
-- barryvdh/laravel-ide-helper
-- matt-allan/laravel-code-style
+* arryvdh/laravel-debugbar
+* barryvdh/laravel-ide-helper
+* matt-allan/laravel-code-style
 
 ## Clonando o projeto
 
@@ -78,7 +94,7 @@ git clone git@github.com:fsclaro/gennix.git
 
 Após concluída a clonagem, você deve realizar a configuração inicial. Para isso siga os passos abaixo:
 
-### Criando o arquivo de parâmetros/configuração do projeto
+## Criando o arquivo de parâmetros/configuração do projeto
 
 Estando no terminal e dentro da pasta do projeto, digite a linha abaixo para copiar o arquivo de exemplo de configuração do ambiente
 
@@ -86,7 +102,7 @@ Estando no terminal e dentro da pasta do projeto, digite a linha abaixo para cop
 cp .env.example .env
 ```
 
-### Crie o banco de dados do projeto
+## Preparando o banco de dados
 
 Você pode criar o banco de dados diretamente na linha de comando através da instrução abaixo.
 
@@ -114,7 +130,7 @@ DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
 
-### Executando os comandos de instalação dos pacotes e configurações iniciais
+## Executando os comandos de instalação dos pacotes e configurações iniciais
 
 No terminal execute os seguintes comandos:
 
@@ -193,7 +209,7 @@ Localize no código o trecho onde são tratados os links para acesso pela rede s
 
 ### EXTERNAL_IP
 
-Um dos recursos previstos no *gennix* é o registro do IP do usuário que está acessando a aplicação. Para isso, é utilizado os serviços do provedor IPIFY. Caso queira alterar o provedor que irá identificar o IP do seu cliente, basta definir a url do mesmo neste parâmetro.
+Um dos recursos previstos no *gennix* é o registro do IP do usuário que está acessando a aplicação. Para isso, são utilizados os serviços do provedor IPIFY. Caso queira alterar o provedor que irá identificar o IP do seu cliente, basta definir a url do mesmo neste parâmetro.
 
 >Valor padrão:<br>
 EXTERNAL_IP=https://api.ipify.org
@@ -268,11 +284,20 @@ Considerando que você já configurou sem ambiente apache ou nginx para apontar 
 * php-cs-fixer fix routes/ --show-progress=estimating
 * php-cs-fixer fix tests/ --show-progress=estimating
 
->OBS: este comando necessita do pacote php-cs-fixer instalado ou de forma global ou local no seu ambiente. Caso você tenha este pacote instalado, execute o comando abaixo para fazer a instalação.
+>OBS: este comando necessita do pacote php-cs-fixer instalado de forma global ou local no seu ambiente. Caso você não tenha este pacote instalado, execute um dos comandos abaixo, conforme sua necessidade,  para fazer a instalação.
+
+#### Para instalação global
 
 ```bash
 composer global require friendsofphp/php-cs-fixer
 ```
+
+#### Para instalação local
+
+```bash
+composer require friendsofphp/php-cs-fixer --dev
+```
+
 
 ## Internacionalização
 
@@ -303,16 +328,16 @@ Onde:
 
 * **options** - pode ser:
 
-| Chave         | Descrição                                               | Local onde os arquivos serão criados |
-| ------------- | ------------------------------------------------------- | ------------------------------------ |
-| --controller  | Criação do controller                                   | /app/Http/Controller                 |
-| --model       | Criação do model                                        | /app                                 |
-| --request     | Criação das requests (update e store)                   | /app/Http/Requests                   |
-| --views       | Criação das views (index, create, edit, show)           | /resources/views/admin               |
-| --breadcrumbs | Criação das breadcrumbs para todas as operações do CRUD | /routes                              |
-| --routes      | Criação da rota do tipo resources                       | /routes                              |
-| --migrations  | Criação da migration da classe                          | /database/migrations                 |
-| --all         | Cria todos os recursos acima descritos                  | ---                                  |
+| Chave         | O que é criado                              | Local onde os arquivos serão criados |
+| ------------- | ------------------------------------------- | ------------------------------------ |
+| --controller  | Controller                                  | /app/Http/Controller                 |
+| --model       | Model                                       | /app                                 |
+| --request     | Requests (update e store)                   | /app/Http/Requests                   |
+| --views       | Views (index, create, edit, show)           | /resources/views/admin               |
+| --breadcrumbs | Breadcrumbs para todas as operações do CRUD | /routes                              |
+| --routes      | Rota do tipo resources                      | /routes                              |
+| --migrations  | Migration da classe                         | /database/migrations                 |
+| --all         | Todos os recursos acima descritos           | ---                                  |
 
 *Exemplo:*
 
