@@ -10,6 +10,14 @@
     <img src="https://img.shields.io/twitter/url?url=https://github.com/fsclaro/gennix" alt="Badge - Tweet This">
 </p>
 
+<hr>
+
+## Índice
+1. [Sobre este projeto](#Sobre-este-projeto)
+2. [Ambiente mínimo](#Ambiente-mínimo)
+
+<hr>
+
 ## 1) Sobre este projeto
 
 O projeto **gennix** tem a intenção de ser um ponto de partida para outros projetos baseados no framework Laravel. Este boilerplate contém uma série de pacotes que permitirá acelerar a construção dos seus projetos WEB.
@@ -170,7 +178,7 @@ Localize no código o trecho onde são tratados os links para acesso pela rede s
 
 Um dos recursos previstos no *gennix* é o registro do IP do usuário que está acessando a aplicação. Para isso, é utilizado os serviços do provedor IPIFY. Caso queira alterar o provedor que irá identificar o IP do seu cliente, basta definir a url do mesmo neste parâmetro.
 
-Valor padrão:
+>Valor padrão:<br>
 EXTERNAL_IP=https://api.ipify.org
 
 
@@ -194,10 +202,10 @@ Estes parâmetros aceitam tags HTML para que você possa utilizar a sua criativi
 
 Os parâmetros abaixo, permitem que você defina o formato da data e da hora que serão utilizadas na aplicação.
 
-**a) DATE_FORMAT** - Data no formato dd/mm/aa. Exemplo: 10/05/20
-**b) DATE_FORMAT_LONG** - Data no formato dd/mm/aaaa. Exemplo: 15/08/2020
-**c) DATE_FORMAT_LONG_LONG** - Data no formato dia-da-semana, dd de mês-por-extenso de aaaa. Exemplo: Quinta Feira, 10 de Março de 2020
-**d) TIME_FORMAT** - Hora no formato hh:mm. Exemplo: 10:15
+**a) DATE_FORMAT** - Data no formato dd/mm/aa. Exemplo: 10/05/20<br>
+**b) DATE_FORMAT_LONG** - Data no formato dd/mm/aaaa. Exemplo: 15/08/2020<br>
+**c) DATE_FORMAT_LONG_LONG** - Data no formato dia-da-semana, dd de mês-por-extenso de aaaa. Exemplo: Quinta Feira, 10 de Março de 2020<br>
+**d) TIME_FORMAT** - Hora no formato hh:mm. Exemplo: 10:15<br>
 **e) TIME_FORMAT_LONG** - Hora no formato hh:mm:ss. Exemplo: 21:47:31
 
 Neste [link](https://www.php.net/manual/pt_BR/function.date.php) você encontrará como pode personalizar a data e a hora para outros formatos desejados.
@@ -273,7 +281,8 @@ php artisan gennix:crud [options] <name>
 ```
 
 Onde:
-* **name** - é o nome da classe do CRUD que deseja criar. *IMPORTANTE*: O nome da classe deve estar no singular.
+* **name** - é o nome da classe do CRUD que deseja criar.
+>IMPORTANTE: O nome da classe deve estar no singular sendo que a primeira letra em Maiúscula. Maiores detalhes você pode ver [aqui](https://github.com/php-fig/fig-standards).
 
 * **options** - pode ser:
 
