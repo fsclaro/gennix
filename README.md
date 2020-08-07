@@ -15,14 +15,26 @@
 ## Índice
 1. [Sobre este projeto](#Sobre-este-projeto)
 2. [Ambiente mínimo](#Ambiente-mínimo)
+3. [Pacotes incluídos no projeto]()
+4. [Pacotes incluídos no projeto no ambiente de desenvolvimento]()
+5. [Clonando o projeto]()
+6. [Outras configurações]()
+7. [Executando a aplicação]()
+8. [Comandos adicionados ao composer]()
+9. [Internacionalização]()
+10.[CRUD]()
+11.[Código de Conduta](#Código-de-Conduta)
+12.[Vulnerabilidades e Segurança]()
+
+
 
 <hr>
 
-## 1) Sobre este projeto
+## Sobre este projeto
 
 O projeto **gennix** tem a intenção de ser um ponto de partida para outros projetos baseados no framework Laravel. Este boilerplate contém uma série de pacotes que permitirá acelerar a construção dos seus projetos WEB.
 
-## 2) Ambiente mínimo
+## Ambiente mínimo
 
 Para instalar e utilizar o **gennix** a configuração mínima exigida é:
 
@@ -32,7 +44,7 @@ Para instalar e utilizar o **gennix** a configuração mínima exigida é:
 - Locale: pt-BR
 - Banco de Dados: MySQL/MariaDB
 
-## 3) Pacotes incluídos do projeto
+## Pacotes incluídos no projeto
 
 Este projeto utiliza os seguintes pacotes de terceiros
 
@@ -49,7 +61,7 @@ Este projeto utiliza os seguintes pacotes de terceiros
 - spatie/laravel-medialibrary
 - spatie/laravel-sluggable
 
-## 4) Pacotes incluídos no ambiente de desenvolvimento
+## Pacotes incluídos no ambiente de desenvolvimento
 
 Para o ambiente de desenvolvimento, além dos descritos acima, o projeto utiliza os seguintes pacotes:
 
@@ -57,7 +69,7 @@ Para o ambiente de desenvolvimento, além dos descritos acima, o projeto utiliza
 - barryvdh/laravel-ide-helper
 - matt-allan/laravel-code-style
 
-## 5) Clonando o projeto
+## Clonando o projeto
 
 Para utilizar e/ou testar este projeto, você deve digitar as seguintes linhas abaixo no seu terminal
 ```bash
@@ -66,14 +78,14 @@ git clone git@github.com:fsclaro/gennix.git
 
 Após concluída a clonagem, você deve realizar a configuração inicial. Para isso siga os passos abaixo:
 
-### 5.1) Criando o arquivo de parâmetros/configuração do projeto
+### Criando o arquivo de parâmetros/configuração do projeto
 
 Estando no terminal e dentro da pasta do projeto, digite a linha abaixo para copiar o arquivo de exemplo de configuração do ambiente
 ```bash
 cp .env.example .env
 ```
 
-### 5.2) Crie o banco de dados do projeto
+### Crie o banco de dados do projeto
 
 Você pode criar o banco de dados diretamente na linha de comando através da instrução abaixo.
 ```bash
@@ -81,7 +93,7 @@ mysql -e 'create database <YOUR_DATABASE_NAME>;' -u <YOUR_MYSQL_USERNAME> -p
 ```
 Caso você prefira, utilize um programa gerenciador de banco de dados de sua escolha.
 
-### 5.3) Configurando o banco de dados
+### Configurando o banco de dados
 
 Edite o arquivo *.env* e modifique os parâmetros abaixo, conforme as informações que você utiliza para acessar o seu banco de dados
 ```bash
@@ -97,7 +109,7 @@ DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
 
-### 5.4) Executando os comandos de instalação dos pacotes e configurações iniciais
+### Executando os comandos de instalação dos pacotes e configurações iniciais
 
 No terminal execute os seguintes comandos:
 
@@ -108,11 +120,11 @@ php artisan storage:link
 php artisan migrate --seed
 ```
 
-## 6) Outras configurações que podem/devem ser realizadas
+## Outras configurações
 
 No arquivo *.env* você encontrará outras configurações que podem ser realizadas. Estas estão descritas a seguir.
 
-### 6.1) DEBUGBAR
+### DEBUGBAR
 
 O parâmetro *DEBUGBAR_ENABLED* deve ser ativado ou desativado dependendo do ambiente onde você estiver executando o projeto. Para o ambiente de desenvolvimento você pode ativar este recurso, caso necessite realizar depurações durante o criação e testes do seu projeto.
 
@@ -120,13 +132,13 @@ Mas para o ambiente de produção, recomendo fortemente que você deixe desativa
 
 Os valores permitidos para este parâmetro são: *true* ou *false*
 
-### 6.2) USE_SOCIALITE
+### USE_SOCIALITE
 
 Se você quiser liberar o acesso dos usuários do sistema através das redes sociais, você deve setar este parâmetro para *true*. Aos fazer isso, o *gennix* entenderá que deverá exibir na tela de login os botões das redes sociais para que os usuários possam se identificar desta forma.
 
 Ativando este recurso, você deve obrigatóriamente escolher pelo menos uma das redes sociais disponíveis no **gennix**, descritas a seguir:
 
-#### 6.2.1) SOCIALITE_FACEBOOK, SOCIALITE_TWITTER, SOCIALITE_GITHUB, SOCIALITE_LINKEDIN, SOCIALITE_GOOGLE
+#### SOCIALITE_FACEBOOK, SOCIALITE_TWITTER, SOCIALITE_GITHUB, SOCIALITE_LINKEDIN, SOCIALITE_GOOGLE
 
 Selecione quais redes sociais serão liberadas para que o usuário possa fazer o login no sistema. Os parâmetros que devem ser configuradas para cada uma delas são:
 
@@ -174,7 +186,7 @@ Localize no código o trecho onde são tratados os links para acesso pela rede s
 >**IMPORTANTE**: A utilização do recurso de login através de redes sociais implementadas no projeto, é única e exclusivamente para realizar a autenticação de acesso. Não foi implementado no projeto a possibilidade de cadastrar novos usuários através das redes sociais. Muito embora seja um recurso que você facilmente implementaria no projeto.
 
 
-### 6.3) EXTERNAL_IP
+### EXTERNAL_IP
 
 Um dos recursos previstos no *gennix* é o registro do IP do usuário que está acessando a aplicação. Para isso, é utilizado os serviços do provedor IPIFY. Caso queira alterar o provedor que irá identificar o IP do seu cliente, basta definir a url do mesmo neste parâmetro.
 
@@ -182,7 +194,7 @@ Um dos recursos previstos no *gennix* é o registro do IP do usuário que está 
 EXTERNAL_IP=https://api.ipify.org
 
 
-### 6.4) FOOTER_CENTER, FOOTER_LEFT, FOOTER_RIGHT
+### FOOTER_CENTER, FOOTER_LEFT, FOOTER_RIGHT
 
 Estes parâmetros permitem que você personalize o rodapé da aplicação. Para isso, você tem duas opções:
 
@@ -198,7 +210,7 @@ Caso você defina valores para os três parâmetros, o *FOOTER_CENTER* terá pri
 
 Estes parâmetros aceitam tags HTML para que você possa utilizar a sua criatividade para construir o rodapé da forma mais adequada para a sua aplicação.
 
-### 6.5) FORMATAÇÃO DE DATA E HORA
+### FORMATAÇÃO DE DATA E HORA
 
 Os parâmetros abaixo, permitem que você defina o formato da data e da hora que serão utilizadas na aplicação.
 
@@ -210,7 +222,7 @@ Os parâmetros abaixo, permitem que você defina o formato da data e da hora que
 
 Neste [link](https://www.php.net/manual/pt_BR/function.date.php) você encontrará como pode personalizar a data e a hora para outros formatos desejados.
 
-## 7) Executando a aplicação
+## Executando a aplicação
 
 Considerando que você já configurou sem ambiente apache ou nginx para apontar para a sua aplicação, agora você pode testar o projeto. Para isso, utilize um dos usuários abaixo para se identificar na tela de login
 
@@ -221,9 +233,9 @@ Considerando que você já configurou sem ambiente apache ou nginx para apontar 
 | **Jane Garcez**    | User       | jane@gennix.test       | 12345678 |
 
 
-## 8) Comandos adicionados ao composer
+## Comandos adicionados ao composer
 
-### 8.1) *composer clear-all*, executará a seguinte sequência:
+### *composer clear-all*, executará a seguinte sequência:
 
 * artisan clear-compiled
 * artisan cache:clear
@@ -232,17 +244,17 @@ Considerando que você já configurou sem ambiente apache ou nginx para apontar 
 * artisan config:clear
 * composer dumpautoload -o
 
-### 8.2) *composer cache-all*, executará a seguinte sequência:
+### *composer cache-all*, executará a seguinte sequência:
 
 * artisan config:cache
 * artisan route:cache
 
-### 8.3) *composer ide-helper*, executará a seguinte sequência:
+### *composer ide-helper*, executará a seguinte sequência:
 
 * artisan ide-helper:generate
 * artisan ide-helper:meta
 
-### 8.4) *composer format*, executará a seguinte sequência:
+### *composer format*, executará a seguinte sequência:
 
 * php-cs-fixer fix app/ --show-progress=estimating
 * php-cs-fixer fix config/ --show-progress=estimating
@@ -257,7 +269,7 @@ Considerando que você já configurou sem ambiente apache ou nginx para apontar 
 composer global require friendsofphp/php-cs-fixer
 ```
 
-## 9) Internacionalização
+## Internacionalização
 
 O projeto *gennix* está inicialmente configurado para o Português do Brasil. Os parâmetros que definem a língua com a qual o ambiente utilizará estão definidas no arquivo */config/app.php*. Sendo que os parâmetros principais são:
 
@@ -270,7 +282,7 @@ Caso você queira utilizar o sistema em uma língua diferente do Português Bras
 * /resources/lang/vendor/adminlte - contém os arquivos de mensagens do adminlte
 
 
-## 10) CRUD
+## CRUD
 
 Este projeto dispõe de um recurso de criação da CRUD básica que permitirá acelerar o desenvolvimento do projeto.
 
@@ -306,15 +318,15 @@ php artisan gennix:crud --all Estoque
 Caso você necessite personalizar as templates que são utilizadas para a geração dos arquivos criados, basta editar os *stubs* que estão localizados em */resources/views/stubs*.
 
 
-## 11) Contribuições
+## Contribuições
 
 Caso você tenha interesse em colaborar com as melhorias do projeto *gennix* com boas ideias ou informando _bugs_ ou qualque outro tipo de problema, por favor leia o [guia de contribuições](https://github.com/fsclaro/gennix/blob/master/CONTRIBUTING.md) (em inglês) e envie um email para [fsclaro@gmail.com](mailto:fsclaro@gmail.com)
 
-## 12) Código de Conduta
+## Código de Conduta
 
 É muito importante que você leia o [código de conduta](https://github.com/fsclaro/gennix/blob/master/CODE_OF_CONDUCT.md) (em inglês) para que exista uma coexistência pacífica entre os membros participantes deste projeto.
 
-## 13) Vulnerabilidades e Segurança
+## Vulnerabilidades e Segurança
 
 Se você descobrir alguma vunerabilidade de segurança neste projeto, por favor, envie um email para [Nando Salles](mailto:fsclaro@gmail.com).
 
