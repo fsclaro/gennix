@@ -13,6 +13,13 @@ use Throwable;
 
 class RoleController extends Controller
 {
+    /**
+     * ====================================================================
+     * Display a listing of the resource.
+     * ====================================================================
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         abort_unless(Gate::allows('role-access'), 403);
@@ -23,6 +30,13 @@ class RoleController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Show the form for creating a new resource.
+     * ====================================================================
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         abort_unless(Gate::allows('role-create'), 403);
@@ -33,6 +47,14 @@ class RoleController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Store a newly created resource in storage.
+     * ====================================================================
+     *
+     * @param  \App\Http\Requests\RoleStoreRequest  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(RoleStoreRequest $request)
     {
         abort_unless(Gate::allows('role-create'), 403);
@@ -67,6 +89,14 @@ class RoleController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Display the specified resource.
+     * ====================================================================
+     *
+     * @param  \App\Role $permission
+     * @return \Illuminate\Http\Response
+     */
     public function show(Role $role)
     {
         abort_unless(Gate::allows('role-show'), 403);
@@ -75,6 +105,14 @@ class RoleController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Show the form for editing the specified resource.
+     * ====================================================================
+     *
+     * @param  \App\Role $role
+     * @return \Illuminate\Http\Response
+     */
     public function edit(Role $role)
     {
         abort_unless(Gate::allows('role-edit'), 403);
@@ -87,6 +125,15 @@ class RoleController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Update the specified resource in storage.
+     * ====================================================================
+     *
+     * @param \App\Http\Requests\RoleUpdateRequest $request
+     * @param \App\Role $role
+     * @return \Illuminate\Http\Response
+     */
     public function update(RoleUpdateRequest $request, Role $role)
     {
         abort_unless(Gate::allows('role-edit'), 403);
@@ -121,6 +168,14 @@ class RoleController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Remove the specified resource from storage.
+     * ====================================================================
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
         abort_unless(Gate::allows('role-delete'), 403);
@@ -155,6 +210,14 @@ class RoleController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Clone a specific role.
+     * ====================================================================
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function cloneRole($id)
     {
         abort_unless(Gate::allows('role-create'), 403);

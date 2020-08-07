@@ -10,6 +10,13 @@ use Throwable;
 
 class ActivityController extends Controller
 {
+    /**
+     * ====================================================================
+     * Display a listing of the resource.
+     * ====================================================================
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         abort_unless(Gate::allows('activity-access'), 403);
@@ -20,7 +27,14 @@ class ActivityController extends Controller
     }
 
 
-
+    /**
+     * ====================================================================
+     * Display the specified resource.
+     * ====================================================================
+     *
+     * @param  \App\Activity $activity
+     * @return \Illuminate\Http\Response
+     */
     public function show(Activity $activity)
     {
         abort_unless(Gate::allows('activity-show'), 403);
@@ -31,7 +45,14 @@ class ActivityController extends Controller
     }
 
 
-
+    /**
+     * ====================================================================
+     * Remove the specified resource from storage.
+     * ====================================================================
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
         abort_unless(Gate::allows('activity-access'), 403);
@@ -62,6 +83,15 @@ class ActivityController extends Controller
         }
     }
 
+
+    /**
+     * ====================================================================
+     * Display the specified resource with update is_read field
+     * ====================================================================
+     *
+     * @param  \App\Activity $activity
+     * @return \Illuminate\Http\Response
+     */
     public function showDetails(Activity $activity)
     {
         abort_unless(Gate::allows('activity-show'), 403);
@@ -76,6 +106,14 @@ class ActivityController extends Controller
 
 
 
+    /**
+     * ====================================================================
+     * Process a list of activities
+     * ====================================================================
+     *
+     * @param  int $type
+     * @return \Illuminate\Http\Response
+     */
     public function processRecords($type)
     {
         $ids = $_POST['data'];
@@ -90,7 +128,15 @@ class ActivityController extends Controller
     }
 
 
-
+    /**
+     * ====================================================================
+     * Change is_read field to true or false depending value field
+     * ====================================================================
+     *
+     * @param array $ids
+     * @param boolean $value
+     * @return \Illuminate\Http\Response
+     */
     public function changeMassIsRead($ids, $value)
     {
         try {
@@ -135,6 +181,14 @@ class ActivityController extends Controller
 
 
 
+    /**
+     * ====================================================================
+     * Mass delete Activities records
+     * ====================================================================
+     *
+     * @param array $ids
+     * @return \Illuminate\Http\Response
+     */
     public function deleteMass($ids)
     {
         try {

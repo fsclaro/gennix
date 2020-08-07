@@ -17,6 +17,13 @@ use Throwable;
 
 class UserController extends Controller
 {
+    /**
+     * ====================================================================
+     * Display a listing of the resource.
+     * ====================================================================
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         abort_unless(Gate::allows('user-access'), 403);
@@ -28,6 +35,13 @@ class UserController extends Controller
 
 
 
+    /**
+     * ====================================================================
+     * Show the form for creating a new resource.
+     * ====================================================================
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         abort_unless(Gate::allows('user-create'), 403);
@@ -39,6 +53,14 @@ class UserController extends Controller
 
 
 
+    /**
+     * ====================================================================
+     * Store a newly created resource in storage.
+     * ====================================================================
+     *
+     * @param  \App\Http\Requests\UserStoreRequest  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(UserStoreRequest $request)
     {
         abort_unless(Gate::allows('user-create'), 403);
@@ -78,6 +100,14 @@ class UserController extends Controller
 
 
 
+    /**
+     * ====================================================================
+     * Display the specified resource.
+     * ====================================================================
+     *
+     * @param  \App\User $user
+     * @return \Illuminate\Http\Response
+     */
     public function show(User $user)
     {
         abort_unless(Gate::allows('user-show'), 403);
@@ -87,6 +117,14 @@ class UserController extends Controller
 
 
 
+    /**
+     * ====================================================================
+     * Show the form for editing the specified resource.
+     * ====================================================================
+     *
+     * @param  \App\User $user
+     * @return \Illuminate\Http\Response
+     */
     public function edit(User $user)
     {
         abort_unless(Gate::allows('user-edit'), 403);
@@ -98,6 +136,15 @@ class UserController extends Controller
 
 
 
+    /**
+     * ====================================================================
+     * Update the specified resource in storage.
+     * ====================================================================
+     *
+     * @param \App\Http\Requests\UserUpdateRequest $request
+     * @param \App\User $user
+     * @return \Illuminate\Http\Response
+     */
     public function update(UserUpdateRequest $request, User $user)
     {
         abort_unless(Gate::allows('user-edit'), 403);
@@ -143,6 +190,14 @@ class UserController extends Controller
 
 
 
+    /**
+     * ====================================================================
+     * Remove the specified resource from storage.
+     * ====================================================================
+     *
+     * @param  \App\User $user
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(User $user)
     {
         abort_unless(Gate::allows('user-delete'), 403);
@@ -177,6 +232,13 @@ class UserController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Show a form with profile user informations
+     * ====================================================================
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function profile()
     {
         abort_unless(Gate::allows('user-profile'), 403);
@@ -188,6 +250,15 @@ class UserController extends Controller
 
 
 
+    /**
+     * ====================================================================
+     * Update user data profile
+     * ====================================================================
+     *
+     * @param \App\Http\Requests\UserUpdateProfileRequest $request
+     * @param \App\User $user
+     * @return \Illuminate\Http\Response
+     */
     public function updateProfile(UserUpdateProfileRequest $request, User $user)
     {
         abort_unless(Gate::allows('user-profile'), 403);
@@ -230,6 +301,14 @@ class UserController extends Controller
 
 
 
+    /**
+     * ====================================================================
+     * Change active field from a user to true
+     * ====================================================================
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function active($id)
     {
         try {
@@ -263,6 +342,15 @@ class UserController extends Controller
         return redirect()->route('user.index');
     }
 
+
+    /**
+     * ====================================================================
+     * Change active field from a user to false
+     * ====================================================================
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function deactive($id)
     {
         try {
@@ -297,6 +385,15 @@ class UserController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Store a new avatar from any user
+     * ====================================================================
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\User $user
+     * @return \Illuminate\Http\Response
+     */
     public function storeAvatar(Request $request, User $user)
     {
         if (isset($request['avatar'])) {
@@ -331,6 +428,14 @@ class UserController extends Controller
         }
     }
 
+    /**
+     * ====================================================================
+     * Show a form that user can change your password
+     * ====================================================================
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function changePassword($id)
     {
         abort_unless(Gate::allows('user-edit'), 403);
@@ -341,6 +446,14 @@ class UserController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Update user password
+     * ====================================================================
+     *
+     * @param \App\Http\Requests\UserPasswordRequest $request
+     * @return \Illuminate\Http\Response
+     */
     public function storePassword(UserPasswordRequest $request)
     {
         abort_unless(Gate::allows('user-edit'), 403);

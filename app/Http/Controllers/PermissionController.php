@@ -12,6 +12,13 @@ use Throwable;
 
 class PermissionController extends Controller
 {
+    /**
+     * ====================================================================
+     * Display a listing of the resource.
+     * ====================================================================
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         abort_unless(Gate::allows('permission-access'), 403);
@@ -22,6 +29,13 @@ class PermissionController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Show the form for creating a new resource.
+     * ====================================================================
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         abort_unless(Gate::allows('permission-create'), 403);
@@ -30,6 +44,14 @@ class PermissionController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Store a newly created resource in storage.
+     * ====================================================================
+     *
+     * @param  \App\Http\Requests\PermissionStoreRequest  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(PermissionStoreRequest $request)
     {
         abort_unless(Gate::allows('permission-create'), 403);
@@ -63,6 +85,14 @@ class PermissionController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Display the specified resource.
+     * ====================================================================
+     *
+     * @param  \App\Permission $permission
+     * @return \Illuminate\Http\Response
+     */
     public function show(Permission $permission)
     {
         abort_unless(Gate::allows('permission-show'), 403);
@@ -71,6 +101,14 @@ class PermissionController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Show the form for editing the specified resource.
+     * ====================================================================
+     *
+     * @param  \App\Permission $permission
+     * @return \Illuminate\Http\Response
+     */
     public function edit(Permission $permission)
     {
         abort_unless(Gate::allows('permission-edit'), 403);
@@ -79,6 +117,15 @@ class PermissionController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Update the specified resource in storage.
+     * ====================================================================
+     *
+     * @param \App\Http\Requests\PermissionUpdateRequest $request
+     * @param \App\Permission $permission
+     * @return \Illuminate\Http\Response
+     */
     public function update(PermissionUpdateRequest $request, Permission $permission)
     {
         abort_unless(Gate::allows('permission-edit'), 403);
@@ -112,6 +159,14 @@ class PermissionController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Remove the specified resource from storage.
+     * ====================================================================
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
         abort_unless(Gate::allows('permission-delete'), 403);

@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\Gate;
 
 class ContactController extends Controller
 {
+    /**
+     * ====================================================================
+     * Display a listing of the resource.
+     * ====================================================================
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         abort_unless(Gate::allows('contacts-access'), 403);
@@ -17,6 +24,14 @@ class ContactController extends Controller
         return view('admin.contact.index', compact('contacts'));
     }
 
+    /**
+     * ====================================================================
+     * Display the specified resource.
+     * ====================================================================
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
         abort_unless(Gate::allows('contacts-access'), 403);
@@ -25,5 +40,4 @@ class ContactController extends Controller
 
         return view('admin.contact.show', compact('user'));
     }
-
 }
