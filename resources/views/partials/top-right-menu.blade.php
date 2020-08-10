@@ -35,6 +35,7 @@
     </div>
 </li>
 
+@if (env('MULTI_LANGUAGE'))
 <!-- language icon -->
 <li class="nav-item dropdown">
     <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
@@ -50,3 +51,4 @@
         </a>
     </div>
 </li>
+@endif

@@ -71,6 +71,7 @@ config('adminlte.dashboard_url', 'home') )
     background-size: cover;
 }
 
+@if (env('MULTI_LANGUAGE'))
 .selectLanguage {
     margin: 0;
     display: flex;
@@ -82,6 +83,7 @@ config('adminlte.dashboard_url', 'home') )
 .selectLanguage  a:first-child {
     margin-right: 0.5rem;
 }
+@endif
 
 </style>
 @stop
@@ -104,6 +106,7 @@ config('adminlte.dashboard_url', 'home') )
             </a>
         </div>
 
+        @if (env('MULTI_LANGUAGE'))
         <div class="selectLanguage">
             <a href="{{ route('language', 'pt-BR') }}">
                 <img src="{{ asset('img/flags/pt-BR.png') }}" width="35px" alt="Brazilian Portuguese">
@@ -113,6 +116,7 @@ config('adminlte.dashboard_url', 'home') )
                 <img src="{{ asset('img/flags/en.png') }}" width="35px" alt="English">
             </a>
         </div>
+        @endif
 
         {{-- Card Header --}}
         @hasSection('auth_header')
