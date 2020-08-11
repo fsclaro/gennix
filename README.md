@@ -245,9 +245,10 @@ Os parâmetros abaixo, permitem que você defina o formato da data e da hora que
 Neste [link](https://www.php.net/manual/pt_BR/function.date.php) você encontrará como pode personalizar a data e a hora para outros formatos desejados.
 
 ### MULTI_LANGUAGE
-Este parâmetro permite que o sistema exiba os recursos que permitem que o usuário altere a linguagem default do sistema.
+Este parâmetro permite que o sistema exiba os recursos onde o usuário poderá escolher em qual linguagem o sistema será exibido. A linguagem default do sistema é **pt-BR**. Atualmente os valores possíveis são **pt-BR** e **en**.
 
 Os valores possíveis são **true** ou **false**. Quando o valor estiver como **true** o sistema exibirá na tela de login e também no menu superior do dashboard do sistema.
+
 
 >Valor Padrão: **true**
 
