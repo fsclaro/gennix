@@ -31,6 +31,7 @@
   - [EXTERNAL_IP](#external_ip)
   - [FOOTER_CENTER, FOOTER_LEFT, FOOTER_RIGHT](#footer_center-footer_left-footer_right)
   - [FORMATAÇÃO DE DATA E HORA](#formatação-de-data-e-hora)
+  - [MULTI_LANGUAGE](#multi_language)
 - [Executando a aplicação](#executando-a-aplicação)
 - [Comandos adicionados ao composer](#comandos-adicionados-ao-composer)
   - [*composer clear-all*, executará a seguinte sequência:](#composer-clear-all-executará-a-seguinte-sequência)
@@ -242,6 +243,13 @@ Os parâmetros abaixo, permitem que você defina o formato da data e da hora que
 **e) TIME_FORMAT_LONG** - Hora no formato hh:mm:ss. Exemplo: 21:47:31
 
 Neste [link](https://www.php.net/manual/pt_BR/function.date.php) você encontrará como pode personalizar a data e a hora para outros formatos desejados.
+
+### MULTI_LANGUAGE
+Este parâmetro permite que o sistema exiba os recursos que permitem que o usuário altere a linguagem default do sistema.
+
+Os valores possíveis são **true** ou **false**. Quando o valor estiver como **true** o sistema exibirá na tela de login e também no menu superior do dashboard do sistema.
+
+>Valor Padrão: **true**
 
 ## Executando a aplicação
 
