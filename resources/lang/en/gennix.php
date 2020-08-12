@@ -46,6 +46,7 @@
             'create'            => 'Insert',
             'edit'              => 'Edit',
             'password'          => 'Update Password',
+            'audit'             => 'Audit',
         ],
 
         // widgets
