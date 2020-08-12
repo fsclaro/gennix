@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="form-group col-md-3">
                         <label for="created_at">{{ __('gennix.model_{{modelNameSingularLowerCase}}.details_created_at') }}</label><br>
-                        @if($role->created_at)
+                        @if(${{modelNameSingularLowerCase}}->created_at)
                         <input type="text" class="form-control" readonly id="created_at" value="{{ ${{modelNameSingularLowerCase}}->created_at->format(env('DATE_FORMAT_LONG')) }}">
                         @else
                         <input type="text" class="form-control" readonly id="created_at" value="">
@@ -41,7 +41,7 @@
 
                     <div class="form-group col-md-3">
                         <label for="updated_at">{{ __('gennix.model_{{modelNameSingularLowerCase}}.details_updated_at') }}</label><br>
-                        @if($role->updated_at)
+                        @if(${{modelNameSingularLowerCase}}->updated_at)
                         <input type="text" class="form-control" readonly id="updated_at" value="{{ ${{modelNameSingularLowerCase}}->updated_at->format(env('DATE_FORMAT_LONG')) }}">
                         @else
                         <input type="text" class="form-control" readonly id="updated_at" value="">
@@ -52,7 +52,9 @@
             </div> <!-- ./card-body -->
 
             <div class="card-footer">
-                <a href="{{ route('{{modelNameSingularLowerCase}}.index') }}" class="btn btn-default"><i class="fas fa-arrow-circle-left"> {{ __("gennix.back") }}</i></a>
+                <a href="{{ route('{{modelNameSingularLowerCase}}.index') }}" class="btn btn-default">
+                    <i class="fas fa-arrow-circle-left"></i> {{ __("gennix.back") }}
+                </a>
             </div> <!-- ./card-footer-->
 
         </div> <!-- ./card -->

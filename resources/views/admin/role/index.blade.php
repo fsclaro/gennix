@@ -69,7 +69,7 @@
                                         <button class="btn btn-info btn-sm dropdown-toggle" type="button"
                                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
-                                            <i class="fas fa-bolt"> {{ __('gennix.model_role.actions') }}</i>
+                                            <i class="fas fa-bolt"></i> {{ __('gennix.model_role.actions') }}
                                         </button>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

@@ -38,6 +38,7 @@
   - [*composer cache-all*, executará a seguinte sequência:](#composer-cache-all-executará-a-seguinte-sequência)
   - [*composer ide-helper*, executará a seguinte sequência:](#composer-ide-helper-executará-a-seguinte-sequência)
   - [*composer format*, executará a seguinte sequência:](#composer-format-executará-a-seguinte-sequência)
+  - [*composer beautify*, executará a seguinte sequência:](#composer-beautify-executará-a-seguinte-sequência)
     - [Para instalação global](#para-instalação-global)
     - [Para instalação local](#para-instalação-local)
 - [Internacionalização](#internacionalização)
@@ -76,6 +77,8 @@ Este projeto utiliza os seguintes pacotes de terceiros
 * yajra/laravel-datatables-oracle
 * laravel/ui
 * realrashid/sweet-alert
+* spatie/laravel-activitylog
+* spatie/laravel-backup
 * spatie/laravel-medialibrary
 * spatie/laravel-sluggable
 
@@ -293,7 +296,14 @@ Considerando que você já configurou sem ambiente apache ou nginx para apontar 
 * php-cs-fixer fix routes/ --show-progress=estimating
 * php-cs-fixer fix tests/ --show-progress=estimating
 
->OBS: este comando necessita do pacote php-cs-fixer instalado de forma global ou local no seu ambiente. Caso você não tenha este pacote instalado, execute um dos comandos abaixo, conforme sua necessidade,  para fazer a instalação.
+### *composer beautify*, executará a seguinte sequência:
+* phpcbf --standard=PSR2 -p app/*
+* phpcbf --standard=PSR2 -p database/*
+* phpcbf --standard=PSR2 -p resources/*
+
+>OBS: os comandos *_format_* e *_beautify_* necessitam do pacote php-cs-fixer instalado de forma global ou local no seu ambiente. Caso você não tenha este pacote instalado, execute um dos comandos abaixo, conforme sua necessidade,  para fazer a instalação.
+
+
 
 #### Para instalação global
 

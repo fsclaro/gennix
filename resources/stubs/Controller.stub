@@ -14,6 +14,13 @@ use Throwable;
 
 class {{modelName}}Controller extends Controller
 {
+    /**
+     * ====================================================================
+     * Display a listing of the resource.
+     * ====================================================================
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         abort_unless(Gate::allows('{{modelNameSingularLowerCase}}-access'), 403);
@@ -24,6 +31,15 @@ class {{modelName}}Controller extends Controller
     }
 
 
+
+
+    /**
+     * ====================================================================
+     * Show the form for creating a new resource.
+     * ====================================================================
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         abort_unless(Gate::allows('{{modelNameSingularLowerCase}}-create'), 403);
@@ -32,6 +48,16 @@ class {{modelName}}Controller extends Controller
     }
 
 
+
+
+    /**
+     * ====================================================================
+     * Store a newly created resource in storage.
+     * ====================================================================
+     *
+     * @param  \App\Http\Requests\{{modelName}}StoreRequest  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store({{modelName}}StoreRequest $request)
     {
         abort_unless(Gate::allows('{{modelNameSingularLowerCase}}-create'), 403);
@@ -65,6 +91,16 @@ class {{modelName}}Controller extends Controller
     }
 
 
+
+
+    /**
+     * ====================================================================
+     * Display the specified resource.
+     * ====================================================================
+     *
+     * @param  \App\{{modelName}} ${modelNameSingularLowerCase}}
+     * @return \Illuminate\Http\Response
+     */
     public function show({{modelName}} ${{modelNameSingularLowerCase}})
     {
         abort_unless(Gate::allows('{{modelNameSingularLowerCase}}-show'), 403);
@@ -73,6 +109,16 @@ class {{modelName}}Controller extends Controller
     }
 
 
+
+
+    /**
+     * ====================================================================
+     * Show the form for editing the specified resource.
+     * ====================================================================
+     *
+     * @param  \App\{{modelName}} ${{modelNameSingularLowerCase}}
+     * @return \Illuminate\Http\Response
+     */
     public function edit({{modelName}} ${{modelNameSingularLowerCase}})
     {
         abort_unless(Gate::allows('{{modelNameSingularLowerCase}}-edit'), 403);
@@ -81,6 +127,17 @@ class {{modelName}}Controller extends Controller
     }
 
 
+
+
+    /**
+     * ====================================================================
+     * Update the specified resource in storage.
+     * ====================================================================
+     *
+     * @param \App\Http\Requests\{{modelName}}UpdateRequest $request
+     * @param \App\{{modelName}} ${{modelNameSingularLowerCase}}
+     * @return \Illuminate\Http\Response
+     */
     public function update({{modelName}}UpdateRequest $request, {{modelName}} ${{modelNameSingularLowerCase}})
     {
         abort_unless(Gate::allows('{{modelNameSingularLowerCase}}-edit'), 403);
@@ -114,6 +171,16 @@ class {{modelName}}Controller extends Controller
     }
 
 
+
+
+    /**
+     * ====================================================================
+     * Remove the specified resource from storage.
+     * ====================================================================
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy({{modelName}} ${{modelNameSingularLowerCase}})
     {
         abort_unless(Gate::allows('{{modelNameSingularLowerCase}}-delete'), 403);

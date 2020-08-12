@@ -5,10 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Role extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, LogsActivity;
 
     protected $fillable = [
         'title',
@@ -18,6 +19,26 @@ class Role extends Model
         'created_at',
         'updated_at',
         'deleted_at',
+    ];
+
+
+    // define attributes for audit changes
+    protected static $logAttributes = [
+        'id',
+        'title',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
+
+    // register audit for only changed attributes
+    protected static $logOnlyDirty = true;
+
+    // define types actions for audit
+    protected static $recordEvents = [
+        'created',
+        'updated',
+        'deleted'
     ];
 
 

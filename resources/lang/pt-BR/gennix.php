@@ -45,6 +45,7 @@
             'edit'              => 'Edição',
             'password'          => 'Alteração da Senha',
             'contact'           => 'Contatos',
+            'audit'             => 'Auditoria',
         ],
 
         // widgets
@@ -326,5 +327,31 @@
                 'password_success'          => 'Senha atualizada com sucesso.',
                 'password_error'            => 'Ocorreu um erro e a senha não foi atualizada.',
             ],
+        ],
+
+        'model_audit' => [
+            'view_title'                    => 'Auditoria',
+            'update_screen'                 => 'Atualizar a tela',
+            'insert_new'                    => 'Inserir',
+
+            'id'                            => '#',
+            'operation'                     => 'Operação',
+            'user'                          => 'Usuário',
+            'model'                         => 'Model',
+            'created_at'                    => 'Ocorreu em',
+            'actions'                       => 'Ações',
+            'more_details'                  => 'Detalhes',
+
+            'operation_created'             => 'Novo Registro',
+            'operation_updated'             => 'Alteração de Dados',
+            'operation_deleted'             => 'Exclusão de Registro',
+
+            'details_id'                    => 'ID',
+            'details_user'                  => 'Usuário',
+            'details_operation'             => 'Operação',
+            'details_model'                 => 'Model',
+            'details_model_id'              => 'Model ID',
+            'details_properties'            => 'Atributos Afetados',
+            'details_created_at'            => 'Ocorreu em'
         ],
     ];

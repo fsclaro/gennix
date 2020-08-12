@@ -4,15 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Activitylog\Traits\LogsActivity;
+use App\Helper\GennixHelper;
 
 class {{modelName}} extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, LogsActivity;
 
     protected $table = '{{modelNameSingularLowerCase}}';
 
     protected $fillable = [
-        //
+        // relacione os atributos que devem ser fornecidos valores
     ];
 
     protected $dates = [
@@ -31,6 +33,27 @@ class {{modelName}} extends Model
 
     protected $guarded = [
         'id'
+    ];
+
+    // define os atributos que serão auditados
+    protected static $logAttributes = [
+        'id',
+
+        // relacione os atributos que serão auditados
+
+        'created_at',
+        'updated_at',
+    ];
+
+    // define que somente os atributos alterados que serão auditados
+    // nas operações do tipo updated
+    protected static $logOnlyDirty = true;
+
+    // define quais os tipos de ações que serão auditados
+    protected static $recordEvents = [
+        'created',
+        'updated',
+        'deleted'
     ];
 
     // Declarar todos os relacionamentos da tabela

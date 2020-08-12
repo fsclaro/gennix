@@ -59,7 +59,7 @@
                                         <button class="btn btn-info btn-sm dropdown-toggle" type="button"
                                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
-                                            <i class="fas fa-bolt"> {{ __('gennix.model_{{modelNameSingularLowerCase}}.actions') }}</i>
+                                            <i class="fas fa-bolt"></i> {{ __('gennix.model_{{modelNameSingularLowerCase}}.actions') }}
                                         </button>
 
                                         <!-- dropdown menu -->
@@ -121,7 +121,7 @@ $(function () {
             [10, 20, 50, 100, "{{ __('gennix.all') }}"]
         ],
         language: {
-            url: "{{ asset('') . env('DATATABLE_LANGUAGE') }}",
+            url: "{{ asset('vendor/datatables/js/i18n') . '/' . app()->getLocale() . '.json' }}",
         },
         columns: [
             { width: '3em' },

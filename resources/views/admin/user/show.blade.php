@@ -151,7 +151,9 @@
             </div> <!-- ./card-body -->
 
             <div class="card-footer">
-                <a href="{{ route('user.index') }}" class="btn btn-default"><i class="fas fa-arrow-circle-left"> {{ __("gennix.back") }}</i></a>
+                <a href="{{ route('user.index') }}" class="btn btn-default">
+                    <i class="fas fa-arrow-circle-left"></i> {{ __("gennix.back") }}
+                </a>
             </div> <!-- ./card-footer-->
         </div> <!-- ./card -->
     </div> <!-- ./col-md-12 -->

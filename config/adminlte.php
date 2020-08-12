@@ -279,8 +279,14 @@ return [
         [
             'text' => 'support_area',
             'icon' => 'fa fa-fw fa-headset',
-            'can' => ['activity-access', 'route-viewer-access', 'log-viewer-access'],
+            'can' => ['activity-access', 'route-viewer-access', 'log-viewer-access', 'audit-access'],
             'submenu' => [
+                [
+                    'text'  => 'audit',
+                    'icon'  => 'fa fa-fw fa-binoculars',
+                    'route' => 'audit.index',
+                    'can'   => 'audit-access'
+                ],
                 [
                     'text'  => 'activities',
                     'icon'  => 'fa fa-fw fa-clipboard-check',

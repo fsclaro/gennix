@@ -108,3 +108,27 @@ Breadcrumbs::for('contact_show', function ($trail) {
     $trail->parent('contact');
     $trail->push(__('gennix.breadcrumbs.details'));
 });
+
+// Dashboard > Audit
+Breadcrumbs::for('audit', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push(__('gennix.breadcrumbs.audit'), route('audit.index'));
+});
+
+// Dashboard > Audit > Details
+Breadcrumbs::for('audit_show', function ($trail) {
+    $trail->parent('audit');
+    $trail->push(__('gennix.breadcrumbs.details'));
+});
+
+// Dashboard > Audit > Create
+Breadcrumbs::for('audit_create', function ($trail) {
+    $trail->parent('audit');
+    $trail->push(__('gennix.breadcrumbs.create'));
+});
+
+// Dashboard > Audit > Edit
+Breadcrumbs::for('audit_edit', function ($trail) {
+    $trail->parent('audit');
+    $trail->push(__('gennix.breadcrumbs.edit'));
+});

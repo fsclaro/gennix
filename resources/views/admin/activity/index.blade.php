@@ -20,7 +20,7 @@
                 <div class="float-left">
                     <div class="dropdown">
                         <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-bolt"> {{ __('gennix.model_activity.actions') }}</i>
+                            <i class="fas fa-bolt"></i> {{ __('gennix.model_activity.actions') }}
                         </button>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -113,7 +113,7 @@
                                         <button class="btn btn-info btn-sm dropdown-toggle" type="button"
                                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
-                                            <i class="fas fa-bolt"> {{ __('gennix.model_activity.actions') }}</i>
+                                            <i class="fas fa-bolt"></i> {{ __('gennix.model_activity.actions') }}
                                         </button>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -148,6 +148,7 @@
 @stop
 
 @section('css')
+<link rel="stylesheet" href="{{ asset('css/gennix.css') }}">
 @stop
 
 @section('js')

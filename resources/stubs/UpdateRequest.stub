@@ -13,20 +13,26 @@ class {{modelName}}UpdateRequest extends FormRequest
     }
 
 
+
+
     public function rules()
     {
         return [
-            'field_name' => [ 'required', 'outras_regras' ],
-            //
+            'field_name' => [ 'required', 'others_rules' ],
+
+            //  define others_rules
         ];
     }
+
+
 
 
     public function messages()
     {
         return [
             'field_name.required' => 'Forneça um valor para este campo',
-            //
+
+            // define others messages
         ];
     }
 

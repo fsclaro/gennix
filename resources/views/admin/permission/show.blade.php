@@ -68,7 +68,7 @@
                         @if($permission->created_at)
                         <input type="text" class="form-control" readonly id="created_at" value="{{ $permission->created_at->format(env('DATE_FORMAT_LONG')) }}">
                         @else
-                        <input type="text" class="form-control" readonly id="created_at" value="">
+                        <input type="text" class="form-control" readonly id="created_at">
                         @endif
                     </div>
 
@@ -77,7 +77,7 @@
                         @if($permission->updated_at)
                         <input type="text" class="form-control" readonly id="updated_at" value="{{ $permission->updated_at->format(env('DATE_FORMAT_LONG')) }}">
                         @else
-                        <input type="text" class="form-control" readonly id="updated_at" value="">
+                        <input type="text" class="form-control" readonly id="updated_at">
                         @endif
                     </div>
                 </div> <!-- ./row -->
@@ -86,7 +86,9 @@
             </div> <!-- ./card-body -->
 
             <div class="card-footer">
-                <a href="{{ route('permission.index') }}" class="btn btn-default"><i class="fas fa-arrow-circle-left"> {{ __("gennix.back") }}</i></a>
+                <a href="{{ route('permission.index') }}" class="btn btn-default">
+                    <i class="fas fa-arrow-circle-left"></i> {{ __("gennix.back") }}
+                </a>
             </div> <!-- ./card-footer-->
         </div> <!-- ./card -->
     </div> <!-- ./col-md-12 -->

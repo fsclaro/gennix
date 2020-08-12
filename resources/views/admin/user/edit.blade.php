@@ -181,7 +181,7 @@
                 <div class="card-footer">
                     <div class="float-left">
                         <a href="{{ route('user.index') }}" class="btn btn-default">
-                            <i class="fas fa-arrow-circle-left"> {{ __("gennix.back") }}</i>
+                            <i class="fas fa-arrow-circle-left"></i> {{ __("gennix.back") }}
                         </a>
                     </div>
 

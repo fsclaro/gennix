@@ -11,10 +11,11 @@ use Illuminate\Support\Facades\Auth;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Illuminate\Support\Facades\DB;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class User extends Authenticatable implements HasMedia
 {
-    use Notifiable, HasMediaTrait;
+    use Notifiable, HasMediaTrait, LogsActivity;
 
     protected $fillable = [
         'name',
@@ -42,6 +43,33 @@ class User extends Authenticatable implements HasMedia
         'updated_at',
         'last_login',
         'email_verified_at',
+    ];
+
+    // define attributes for audit changes
+    protected static $logAttributes = [
+        'id',
+        'name',
+        'email',
+        'password',
+        'active',
+        'is_superadmin',
+        'gender',
+        'position',
+        'phone',
+        'last_login',
+        'email_verified_at',
+        'created_at',
+        'updated_at',
+    ];
+
+    // register audit for only changed attributes
+    protected static $logOnlyDirty = true;
+
+    // define types actions for audit
+    protected static $recordEvents = [
+        'created',
+        'updated',
+        'deleted'
     ];
 
     /**

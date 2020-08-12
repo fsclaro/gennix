@@ -32,6 +32,8 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
         "realrashid/sweet-alert": "^3.1",
+        "spatie/laravel-activitylog": "^3.14",
+        "spatie/laravel-backup": "^6.11",
         "spatie/laravel-medialibrary": "^7.19",
         "spatie/laravel-sluggable": "^2.2"
     },
@@ -111,7 +113,11 @@
             "./vendor/bin/php-cs-fixer fix resources/  --show-progress=estimating",
             "./vendor/bin/php-cs-fixer fix routes/  --show-progress=estimating",
             "./vendor/bin/php-cs-fixer fix tests/  --show-progress=estimating"
+        ],
+        "beautify": [
+            "phpcbf --standard=PSR2 -p app/*",
+            "phpcbf --standard=PSR2 -p database/*",
+            "phpcbf --standard=PSR2 -p resources/*"
         ]
-
     }
 }
