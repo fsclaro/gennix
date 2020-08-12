@@ -330,4 +330,29 @@
                 'password_error'            => 'An error occurred and the password has not been updated.',
             ],
         ],
+
+        'model_audit' => [
+            'view_title'                    => 'Audit',
+            'update_screen'                 => 'Update screen',
+
+            'id'                            => '#',
+            'operation'                     => 'Operation Type',
+            'user'                          => 'User Name',
+            'model'                         => 'Model',
+            'created_at'                    => 'When',
+            'actions'                       => 'Actions',
+            'more_details'                  => 'Details',
+
+            'operation_created'             => 'Created Record',
+            'operation_updated'             => 'Updated Record',
+            'operation_deleted'             => 'Excluded Record',
+
+            'details_id'                    => 'ID',
+            'details_user'                  => 'User Name',
+            'details_operation'             => 'Operation Type',
+            'details_model'                 => 'Model',
+            'details_model_id'              => 'Model ID',
+            'details_properties'            => 'Attributes Afected',
+            'details_created_at'            => 'When'
+        ],
     ];

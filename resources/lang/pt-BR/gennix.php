@@ -332,7 +332,6 @@
         'model_audit' => [
             'view_title'                    => 'Auditoria',
             'update_screen'                 => 'Atualizar a tela',
-            'insert_new'                    => 'Inserir',
 
             'id'                            => '#',
             'operation'                     => 'Operação',
