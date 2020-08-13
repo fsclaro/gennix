@@ -34,11 +34,12 @@
   - [MULTI_LANGUAGE](#multi_language)
 - [Executando a aplicação](#executando-a-aplicação)
 - [Comandos adicionados ao composer](#comandos-adicionados-ao-composer)
-  - [*composer clear-all*, executará a seguinte sequência:](#composer-clear-all-executará-a-seguinte-sequência)
-  - [*composer cache-all*, executará a seguinte sequência:](#composer-cache-all-executará-a-seguinte-sequência)
-  - [*composer ide-helper*, executará a seguinte sequência:](#composer-ide-helper-executará-a-seguinte-sequência)
-  - [*composer format*, executará a seguinte sequência:](#composer-format-executará-a-seguinte-sequência)
-  - [*composer beautify*, executará a seguinte sequência:](#composer-beautify-executará-a-seguinte-sequência)
+  - [*composer update**](#composer-update)
+  - [*composer clear-all*](#composer-clear-all)
+  - [*composer cache-all*](#composer-cache-all)
+  - [*composer ide-helper*](#composer-ide-helper)
+  - [*composer format*](#composer-format)
+  - [*composer beautify*](#composer-beautify)
     - [Para instalação global](#para-instalação-global)
     - [Para instalação local](#para-instalação-local)
 - [Internacionalização](#internacionalização)
@@ -268,7 +269,14 @@ Considerando que você já configurou sem ambiente apache ou nginx para apontar 
 
 ## Comandos adicionados ao composer
 
-### *composer clear-all*, executará a seguinte sequência:
+O *gennix* possui alguns comandos complementares ao composer. Estes comandos complementares podem ser enconstrados no arquivo *_composer.json_*.
+
+Abaixo, descrevo os novos comandos e o que cada um deles fazem.
+
+### *composer update**
+Após a atualização e/ou instalação dos pacotes, será executado o comando *clear-all* descrito a seguir.
+
+### *composer clear-all*
 
 * artisan clear-compiled
 * artisan cache:clear
@@ -277,17 +285,17 @@ Considerando que você já configurou sem ambiente apache ou nginx para apontar 
 * artisan config:clear
 * composer dumpautoload -o
 
-### *composer cache-all*, executará a seguinte sequência:
+### *composer cache-all*
 
 * artisan config:cache
 * artisan route:cache
 
-### *composer ide-helper*, executará a seguinte sequência:
+### *composer ide-helper*
 
 * artisan ide-helper:generate
 * artisan ide-helper:meta
 
-### *composer format*, executará a seguinte sequência:
+### *composer format*
 
 * php-cs-fixer fix app/ --show-progress=estimating
 * php-cs-fixer fix config/ --show-progress=estimating
@@ -296,7 +304,8 @@ Considerando que você já configurou sem ambiente apache ou nginx para apontar 
 * php-cs-fixer fix routes/ --show-progress=estimating
 * php-cs-fixer fix tests/ --show-progress=estimating
 
-### *composer beautify*, executará a seguinte sequência:
+### *composer beautify*
+
 * phpcbf --standard=PSR2 -p app/*
 * phpcbf --standard=PSR2 -p database/*
 * phpcbf --standard=PSR2 -p resources/*
