@@ -21,6 +21,7 @@
         "arcanedev/log-viewer": "^7.0",
         "arcanedev/route-viewer": "^3.0",
         "arrilot/laravel-widgets": "^3.13",
+        "beyondcode/laravel-self-diagnosis": "^1.4",
         "creativeorange/gravatar": "^1.0",
         "davejamesmiller/laravel-breadcrumbs": "^5.3",
         "fideloper/proxy": "^4.2",
@@ -86,7 +87,7 @@
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "composer clear-all"
+            "@composer clear-all"
         ],
 
         "clear-all": [
@@ -95,7 +96,7 @@
             "@php artisan route:clear",
             "@php artisan view:clear",
             "@php artisan config:clear",
-            "composer dumpautoload -o"
+            "@composer dumpautoload -o"
         ],
         "cache-all": [
             "@php artisan config:cache",
@@ -114,9 +115,11 @@
             "./vendor/bin/php-cs-fixer fix tests/  --show-progress=estimating"
         ],
         "beautify": [
-            "phpcbf --standard=PSR2 -p app/*",
-            "phpcbf --standard=PSR2 -p database/*",
-            "phpcbf --standard=PSR2 -p resources/*"
+            "phpcbf --standard=PSR2 -p app/",
+            "phpcbf --standard=PSR2 -p config/",
+            "phpcbf --standard=PSR2 -p database/",
+            "phpcbf --standard=PSR2 -p resources/",
+            "phpcbf --standard=PSR2 -p routes/"
         ]
     }
 }

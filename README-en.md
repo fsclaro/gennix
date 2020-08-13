@@ -12,7 +12,7 @@
 
 <hr>
 <p align="center">
-If you prefer english version, <a href="https://github.com/fsclaro/gennix/blob/master/README-en.md">click here</a>
+If you prefer portuguese version, <a href="https://github.com/fsclaro/gennix/blob/master/README.md">click here</a>
 </p>
 <hr>
 
