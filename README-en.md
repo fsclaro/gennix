@@ -380,7 +380,7 @@ If you need to customize the templates that are used to generate the created fil
 
 ## Contributions
 
-If you are interested in contributing to the *gennix* project improvements with good ideas or reporting _bugs_ or any other type of problem, please read the [contribution guide](https://github.com/fsclaro/gennix/blob/master/CONTRIBUTING.md) and send an email to [fsclaro@gmail.com](mailto:fsclaro@gmail.com)
+If you are interested in contributing to the *gennix* project improvements with good ideas or reporting _bugs_ or any other type of problem, please read the [contribution guide](https://github.com/fsclaro/gennix/blob/master/CONTRIBUTING.md) and register a PR (pull request) or a Issue.
 
 ## Code of conduct
 

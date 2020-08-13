@@ -383,7 +383,7 @@ Caso você necessite personalizar as templates que são utilizadas para a geraç
 
 ## Contribuições
 
-Caso você tenha interesse em colaborar com as melhorias do projeto *gennix* com boas ideias ou informando _bugs_ ou qualque outro tipo de problema, por favor leia o [guia de contribuições](https://github.com/fsclaro/gennix/blob/master/CONTRIBUTING.md) (em inglês) e envie um email para [fsclaro@gmail.com](mailto:fsclaro@gmail.com)
+Caso você tenha interesse em colaborar com as melhorias do projeto *gennix* com boas ideias ou informando _bugs_ ou qualquer outro tipo de problema, por favor leia o [guia de contribuições](https://github.com/fsclaro/gennix/blob/master/CONTRIBUTING.md) (em inglês) e registre uma PR (pull request) ou uma Issue.
 
 ## Código de Conduta
 
