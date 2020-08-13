@@ -16,61 +16,61 @@ If you prefer portuguese version, <a href="https://github.com/fsclaro/gennix/blo
 </p>
 <hr>
 
-## Tabela de Conteúdos
-- [Tabela de Conteúdos](#tabela-de-conteúdos)
-- [Sobre este projeto](#sobre-este-projeto)
-- [Ambiente mínimo](#ambiente-mínimo)
-- [Pacotes incluídos no projeto](#pacotes-incluídos-no-projeto)
-  - [Produção](#produção)
-  - [Desenvolvimento](#desenvolvimento)
-- [Clonando o projeto](#clonando-o-projeto)
-- [Criando o arquivo de parâmetros/configuração do projeto](#criando-o-arquivo-de-parâmetrosconfiguração-do-projeto)
-- [Preparando o banco de dados](#preparando-o-banco-de-dados)
-  - [Configurando o banco de dados](#configurando-o-banco-de-dados)
-- [Executando os comandos de instalação dos pacotes e configurações iniciais](#executando-os-comandos-de-instalação-dos-pacotes-e-configurações-iniciais)
-- [Outras configurações](#outras-configurações)
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [About this project](#about-this-project)
+- [Minimal environment](#minimal-environment)
+- [Packages included in the project](#packages-included-in-the-project)
+  - [Production](#production)
+  - [Development](#development)
+- [Cloning](#cloning)
+- [Creating the project parameters/configuration file](#creating-the-project-parametersconfiguration-file)
+- [Preparing the database](#preparing-the-database)
+  - [Configuring the database](#configuring-the-database)
+- [Executing package installation commands and initial configurations](#executing-package-installation-commands-and-initial-configurations)
+- [Other settings](#other-settings)
   - [DEBUGBAR](#debugbar)
   - [USE_SOCIALITE](#use_socialite)
     - [SOCIALITE_FACEBOOK, SOCIALITE_TWITTER, SOCIALITE_GITHUB, SOCIALITE_LINKEDIN, SOCIALITE_GOOGLE](#socialite_facebook-socialite_twitter-socialite_github-socialite_linkedin-socialite_google)
   - [EXTERNAL_IP](#external_ip)
   - [FOOTER_CENTER, FOOTER_LEFT, FOOTER_RIGHT](#footer_center-footer_left-footer_right)
-  - [FORMATAÇÃO DE DATA E HORA](#formatação-de-data-e-hora)
+  - [DATE AND TIME FORMATTING](#date-and-time-formatting)
   - [MULTI_LANGUAGE](#multi_language)
-- [Executando a aplicação](#executando-a-aplicação)
-- [Comandos adicionados ao composer](#comandos-adicionados-ao-composer)
+- [Running the application](#running-the-application)
+- [Commands added to the composer](#commands-added-to-the-composer)
   - [*composer update**](#composer-update)
   - [*composer clear-all*](#composer-clear-all)
   - [*composer cache-all*](#composer-cache-all)
   - [*composer ide-helper*](#composer-ide-helper)
   - [*composer format*](#composer-format)
   - [*composer beautify*](#composer-beautify)
-    - [Para instalação global](#para-instalação-global)
-    - [Para instalação local](#para-instalação-local)
-- [Internacionalização](#internacionalização)
+    - [For global installation](#for-global-installation)
+    - [For local installation](#for-local-installation)
+- [Internationalization](#internationalization)
 - [CRUD](#crud)
-- [Contribuições](#contribuições)
-- [Código de Conduta](#código-de-conduta)
-- [Vulnerabilidades e Segurança](#vulnerabilidades-e-segurança)
-- [Licença](#licença)
+- [Contributions](#contributions)
+- [Code of conduct](#code-of-conduct)
+- [Vulnerabilities and Security](#vulnerabilities-and-security)
+- [License](#license)
 
 <hr>
 
-## Sobre este projeto
+## About this project
 
-O projeto **gennix** tem a intenção de ser um ponto de partida para outros projetos baseados no framework Laravel. Este boilerplate contém uma série de pacotes que permitirá acelerar a construção dos seus projetos WEB.
+The **gennix** project is intended to be a starting point for other projects based on the Laravel framework. This boilerplate contains a series of packages that will allow you to speed up the construction of your WEB projects.
 
-## Ambiente mínimo
+## Minimal environment
 
-Para instalar e utilizar o **gennix** a configuração mínima exigida é:
+To install and use **gennix** the minimum configuration required is:
 
 * PHP: 7.2
 * Laravel: 7.*
 
-## Pacotes incluídos no projeto
+## Packages included in the project
 
-Este projeto utiliza os seguintes pacotes de terceiros
+This project uses the following third party packages
 
-### Produção
+### Production
 
 * arcanedev/log-viewer
 * arcanedev/route-viewer
@@ -88,43 +88,43 @@ Este projeto utiliza os seguintes pacotes de terceiros
 * spatie/laravel-medialibrary
 * spatie/laravel-sluggable
 
-### Desenvolvimento
+### Development
 
 * arryvdh/laravel-debugbar
 * barryvdh/laravel-ide-helper
 * matt-allan/laravel-code-style
 
-## Clonando o projeto
+## Cloning
 
-Para utilizar e/ou testar este projeto, você deve digitar as seguintes linhas abaixo no seu terminal
+To use and/or test this project, you must type the following lines below in your terminal
 
 ```bash
 git clone git@github.com:fsclaro/gennix.git
 ```
 
-Após concluída a clonagem, você deve realizar a configuração inicial. Para isso siga os passos abaixo:
+After cloning is complete, you must perform the initial configuration. To do this, follow the steps below:
 
-## Criando o arquivo de parâmetros/configuração do projeto
+## Creating the project parameters/configuration file
 
-Estando no terminal e dentro da pasta do projeto, digite a linha abaixo para copiar o arquivo de exemplo de configuração do ambiente
+Being in the terminal and inside the project folder, type the line below to copy the sample environment configuration file
 
 ```bash
 cp .env.example .env
 ```
 
-## Preparando o banco de dados
+## Preparing the database
 
-Você pode criar o banco de dados diretamente na linha de comando através da instrução abaixo.
+You can create the database directly on the command line using the instruction below.
 
 ```bash
 mysql -e 'create database <YOUR_DATABASE_NAME>;' -u <YOUR_MYSQL_USERNAME> -p
 ```
 
-Caso você prefira, utilize um programa gerenciador de banco de dados de sua escolha.
+CIf you prefer, use a database manager program of your choice.
 
-### Configurando o banco de dados
+### Configuring the database
 
-Edite o arquivo *.env* e modifique os parâmetros abaixo, conforme as informações que você utiliza para acessar o seu banco de dados
+Edit the *.env* file and modify the parameters below, according to the information you use to access your database
 
 ```bash
 DB_DATABASE=<YOUR_DATABASE_NAME>
@@ -132,7 +132,7 @@ DB_USERNAME=<YOUR_MYSQL_USERNAME>
 DB_PASSWORD=<PASSWORD_OF_YOUR_MYSQL_USERNAME>
 ```
 
-Os valores iniciais destes parâmetros são:
+The initial values of these parameters are:
 
 ```bash
 DB_DATABASE=gennix
@@ -140,9 +140,9 @@ DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
 
-## Executando os comandos de instalação dos pacotes e configurações iniciais
+## Executing package installation commands and initial configurations
 
-No terminal execute os seguintes comandos:
+At the terminal, execute the following commands:
 
 ```bash
 composer install
@@ -151,37 +151,37 @@ php artisan storage:link
 php artisan migrate --seed
 ```
 
-## Outras configurações
+## Other settings
 
-No arquivo *.env* você encontrará outras configurações que podem ser realizadas. Estas estão descritas a seguir.
+In the *.env* file you will find other configurations that can be made. These are described below.
 
 ### DEBUGBAR
 
-O parâmetro *DEBUGBAR_ENABLED* deve ser ativado ou desativado dependendo do ambiente onde você estiver executando o projeto. Para o ambiente de desenvolvimento você pode ativar este recurso, caso necessite realizar depurações durante o criação e testes do seu projeto.
+The *DEBUGBAR_ENABLED* parameter must be enabled or disabled depending on the environment where you are running the project. For the development environment you can activate this feature, in case you need to perform debugging during the creation and testing of your project.
 
-Mas para o ambiente de produção, recomendo fortemente que você deixe desativado para que não ocorram problemas de performance do projeto.
+But for the production environment, I strongly recommend that you leave it disabled so that there are no project performance problems.
 
-Os valores permitidos para este parâmetro são: *true* ou *false*
+The allowed values for this parameter are: *true* or *false*
 
 ### USE_SOCIALITE
 
-Se você quiser liberar o acesso dos usuários do sistema através das redes sociais, você deve setar este parâmetro para *true*. Aos fazer isso, o *gennix* entenderá que deverá exibir na tela de login os botões das redes sociais para que os usuários possam se identificar desta forma.
+If you want to allow system users access through social networks, you must set this parameter to *true*. In doing so, * gennix * will understand that it should display the social media buttons on the login screen so that users can identify themselves in this way.
 
-Ativando este recurso, você deve obrigatóriamente escolher pelo menos uma das redes sociais disponíveis no **gennix**, descritas a seguir:
+Activating this feature, you must choose at least one of the social networks available in **gennix**, described below:
 
 #### SOCIALITE_FACEBOOK, SOCIALITE_TWITTER, SOCIALITE_GITHUB, SOCIALITE_LINKEDIN, SOCIALITE_GOOGLE
 
-Selecione quais redes sociais serão liberadas para que o usuário possa fazer o login no sistema. Os parâmetros que devem ser configuradas para cada uma delas são:
+Select which social networks will be released so that the user can log in to the system. The parameters that must be configured for each of them are:
 
-| Rede social | Ativação                | Parâmetros de acesso                        |
-| ----------- | ----------------------- | ------------------------------------------- |
-| Facebook    | SOCIALITE_FACEBOOK=true | FACEBOOK_CLIENT_ID e FACEBOOK_CLIENT_SECRET |
-| Twitter     | SOCIALITE_TWITTER=true  | TWITTER_CLIENT_ID e TWITTER_CLIENT_SECRET   |
-| GitHub      | SOCIALITE_GITHUB=true   | GITHUB_CLIENT_ID e GITHUB_CLIENT_SECRET     |
-| LinkedIn    | SOCIALITE_LINKEDIN=true | LINKEDIN_CLIENT_ID e LINKEDIN_CLIENT_SECRET |
-| Google      | SOCIALIE_GOOGLE=true    | GOOGLE_CLIENT_ID e GOOGLE_CLIENT_SECRET     |
+| Social network | Activation              | Access parameters                             |
+| -------------- | ----------------------- | --------------------------------------------- |
+| Facebook       | SOCIALITE_FACEBOOK=true | FACEBOOK_CLIENT_ID and FACEBOOK_CLIENT_SECRET |
+| Twitter        | SOCIALITE_TWITTER=true  | TWITTER_CLIENT_ID and TWITTER_CLIENT_SECRET   |
+| GitHub         | SOCIALITE_GITHUB=true   | GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET     |
+| LinkedIn       | SOCIALITE_LINKEDIN=true | LINKEDIN_CLIENT_ID and LINKEDIN_CLIENT_SECRET |
+| Google         | SOCIALIE_GOOGLE=true    | GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET     |
 
-Para definir os valores do CLIENT_ID e CLIENT_SECRET das suas redes sociais escolhidas, utilize os seguintes links:
+To define the CLIENT_ID and CLIENT_SECRET values for your chosen social networks, use the following links:
 
 * [Facebook](https://developers.facebook.com/apps/)
 * [Twitter](https://developer.twitter.com/en/apps)
@@ -189,9 +189,9 @@ Para definir os valores do CLIENT_ID e CLIENT_SECRET das suas redes sociais esco
 * [LinkedIn](https://www.linkedin.com/developers/)
 * [Google](https://console.cloud.google.com)
 
-Para configurar o acesso através de outras redes sociais, consulte maiores detalhes através deste [link](https://socialiteproviders.com/).
+To configure access through other social networks, see more details through this [link](https://socialiteproviders.com/).
 
-Para adicionar outras redes sociais, além de criar os parâmetros no arquivo *.env*, você também deve editar o arquivo */config/services.php* e adicionar as entradas equivalentes conforme o exemplo abaixo:
+To add other social networks, in addition to creating the parameters in the *.env* file, you must also edit the */config/services.php* file and add the equivalent entries as in the example below:
 
 ```php
     'linkedin' => [
@@ -201,9 +201,9 @@ Para adicionar outras redes sociais, além de criar os parâmetros no arquivo *.
     ],
 ```
 
-Também deverá alterar o arquivo */resources/views/vendor/adminlte/auth/login.blade.php* para adicionar o código necessário para que sistema entenda que você está liberando o acesso por uma nova rede social.
+You should also change the file */resources/views/vendor/adminlte/auth/login.blade.php* to add the code needed for the system to understand that you are giving access to a new social network.
 
-Localize no código o trecho onde são tratados os links para acesso pela rede social e acrescente o código como o exemplo abaixo, fazendo-se as adaptações necessárias:
+Locate in the code the section where the links for accessing the social network are treated and add the code as the example below, making the necessary adaptations:
 
 ```php
     @if(env('SOCIALITE_GOOGLE'))
@@ -214,72 +214,73 @@ Localize no código o trecho onde são tratados os links para acesso pela rede s
     @endif
 ```
 
->**IMPORTANTE**: A utilização do recurso de login através de redes sociais implementadas no projeto, é única e exclusivamente para realizar a autenticação de acesso. Não foi implementado no projeto a possibilidade de cadastrar novos usuários através das redes sociais. Muito embora seja um recurso que você facilmente implementaria no projeto.
+>**IMPORTANT**: The use of the login feature through social networks implemented in the project, is solely and exclusively to perform access authentication. The possibility of registering new users through social networks was not implemented in the project. Even though it is a feature that you would easily implement in the project.
 
 
 ### EXTERNAL_IP
 
-Um dos recursos previstos no *gennix* é o registro do IP do usuário que está acessando a aplicação. Para isso, são utilizados os serviços do provedor IPIFY. Caso queira alterar o provedor que irá identificar o IP do seu cliente, basta definir a url do mesmo neste parâmetro.
+One of the features provided in *gennix* is the registration of the IP of the user who is accessing the application. For this, the services of the IPIFY provider are used. If you want to change the provider that will identify your client's IP, just define the URL of this client in this parameter.
 
->Valor padrão:<br>
+>Default value:<br>
 EXTERNAL_IP=https://api.ipify.org
 
 
 ### FOOTER_CENTER, FOOTER_LEFT, FOOTER_RIGHT
 
-Estes parâmetros permitem que você personalize o rodapé da aplicação. Para isso, você tem duas opções:
+These parameters allow you to customize the footer of the application. For this, you have two options:
 
-**a) Rodapé centralizado**
+**a) Centralized footer**
 
-Para ter um texto que ficará centralizado no rodapé da página, basta você definir o conteúdo no parâmetro *FOOTER_CENTER*.
+To have a text that will be centered at the bottom of the page, you only need to define the content in the parameter *FOOTER_CENTER*.
 
-**b) Rodapé do lado esquerdo e lado direito**
+**b) Left and right footer**
 
-A outra opção será você definir o texto que deseja tanto do lado esquerdo quando do lado direito nos parâmetros *FOOTER_LEFT* e *FOOTER_RIGHT* respectivamente.
+The other option will be to define the text you want both on the left and on the right side in the parameters *FOOTER_LEFT* and *FOOTER_RIGHT* respectively.
 
-Caso você defina valores para os três parâmetros, o *FOOTER_CENTER* terá prioridade, ignorando os parâmetros *FOOTER_LEFT* e *FOOTER_RIGHT*.
+If you set values for the three parameters, *FOOTER_CENTER* will take precedence, ignoring the parameters *FOOTER_LEFT* and *FOOTER_RIGHT*.
 
-Estes parâmetros aceitam tags HTML para que você possa utilizar a sua criatividade para construir o rodapé da forma mais adequada para a sua aplicação.
+These parameters accept HTML tags so that you can use your creativity to build the footer in the most appropriate way for your application.
 
-### FORMATAÇÃO DE DATA E HORA
+### DATE AND TIME FORMATTING
 
-Os parâmetros abaixo, permitem que você defina o formato da data e da hora que serão utilizadas na aplicação.
+The parameters below, allow you to define the date and time format that will be used in the application.
 
-**a) DATE_FORMAT** - Data no formato dd/mm/aa. Exemplo: 10/05/20<br>
-**b) DATE_FORMAT_LONG** - Data no formato dd/mm/aaaa. Exemplo: 15/08/2020<br>
-**c) DATE_FORMAT_LONG_LONG** - Data no formato dia-da-semana, dd de mês-por-extenso de aaaa. Exemplo: Quinta Feira, 10 de Março de 2020<br>
-**d) TIME_FORMAT** - Hora no formato hh:mm. Exemplo: 10:15<br>
-**e) TIME_FORMAT_LONG** - Hora no formato hh:mm:ss. Exemplo: 21:47:31
+**a) DATE_FORMAT** - Date in the format mm/dd/yy. Example: 05/10/20 <br>
+**b) DATE_FORMAT_LONG** - Date in dd/mm/yyyy format. Example: 08/15/2020 <br>
+**c) DATE_FORMAT_LONG_LONG** - Date in day-of-week format, month-in-length dd of yyyy. Example: Thursday, 10 March 2020 <br>
+**d) TIME_FORMAT** - Time in hh:mm format. Example: 10:15 <br>
+**e) TIME_FORMAT_LONG** - Time in the format hh:mm:ss. Example: 21:47:31
 
-Neste [link](https://www.php.net/manual/pt_BR/function.date.php) você encontrará como pode personalizar a data e a hora para outros formatos desejados.
+In this [link](https://www.php.net/manual/pt_BR/function.date.php) you will find how you can customize the date and time for other desired formats.
 
 ### MULTI_LANGUAGE
-Este parâmetro permite que o sistema exiba os recursos onde o usuário poderá escolher em qual linguagem o sistema será exibido.
+This parameter allows the system to display the resources where the user can choose in which language the system will be displayed.
 
-Os valores possíveis são **true** ou **false**. Quando o valor estiver como **true** o sistema exibirá na tela de login e também no menu superior do dashboard do sistema os flags das linguagens disponíveis. Sendo que a linguagem default do sistema é **pt-BR**. Atualmente os valores possíveis são **pt-BR** e **en**.
+Possible values are **true** or **false**. When the value is ** true ** the system will display the flags of the available languages on the login screen and also on the top menu of the system dashboard. The default language of the system is **pt-BR**. Currently, the possible values are **pt-BR** and **en**.
 
 
->Valor Padrão: **true**
+>Default value: **true**
 
-## Executando a aplicação
+## Running the application
 
-Considerando que você já configurou sem ambiente apache ou nginx para apontar para a sua aplicação, agora você pode testar o projeto. Para isso, utilize um dos usuários abaixo para se identificar na tela de login
+Considering that you have already configured without an apache or nginx environment to point to your application, you can now test the project. To do this, use one of the users below to identify yourself on the login screen
 
-| Nome do Usuário  | Papel      | Login                  | Senha    |
+| Name             | Role       | Login                  | Password |
 | ---------------- | ---------- | ---------------------- | -------- |
 | **Super Admin**  | Superadmin | superadmin@gennix.test | superman |
 | **Peter Markus** | Admin      | peter@gennix.test      | 12345678 |
 | **Jane Garcez**  | User       | jane@gennix.test       | 12345678 |
 
 
-## Comandos adicionados ao composer
+## Commands added to the composer
 
-O *gennix* possui alguns comandos complementares ao composer. Estes comandos complementares podem ser enconstrados no arquivo *_composer.json_*.
+*Gennix* has some complementary commands to the composer. These complementary commands can be found in the *_composer.json_* file.
 
-Abaixo, descrevo os novos comandos e o que cada um deles fazem.
+Below, I describe the new commands and what each of them does.
 
 ### *composer update**
-Após a atualização e/ou instalação dos pacotes, será executado o comando *clear-all* descrito a seguir.
+
+After updating and / or installing the packages, the *clear-all* command described below will be executed.
 
 ### *composer clear-all*
 
@@ -315,84 +316,80 @@ Após a atualização e/ou instalação dos pacotes, será executado o comando *
 * phpcbf --standard=PSR2 -p database/*
 * phpcbf --standard=PSR2 -p resources/*
 
->OBS: os comandos *_format_* e *_beautify_* necessitam do pacote php-cs-fixer instalado de forma global ou local no seu ambiente. Caso você não tenha este pacote instalado, execute um dos comandos abaixo, conforme sua necessidade,  para fazer a instalação.
+>NOTE: the commands *_format_* and *_beautify_* require the php-cs-fixer package installed globally or locally in your environment. If you do not have this package installed, execute one of the commands below, as needed, to perform the installation.
 
-
-
-#### Para instalação global
+#### For global installation
 
 ```bash
 composer global require friendsofphp/php-cs-fixer
 ```
 
-#### Para instalação local
+#### For local installation
 
 ```bash
 composer require friendsofphp/php-cs-fixer --dev
 ```
 
 
-## Internacionalização
+## Internationalization
 
-O projeto *gennix* está inicialmente configurado para o Português do Brasil. Os parâmetros que definem a língua com a qual o ambiente utilizará estão definidas no arquivo */config/app.php*. Sendo que os parâmetros principais são:
+The *gennix* project is initially configured for Brazilian Portuguese. The parameters that define the language the environment will use are defined in the file */config/app.php*. The main parameters are:
 
 **a) timezone** - America/Sao_Paulo<br>
 **b) locale** - pt-BR
 
-Caso você queira utilizar o sistema em uma língua diferente do Português Brasileiro ou do Inglês, você poderá traduzir os arquivos que contém todas as mensagens exibidas no sistema. Abaixo descrevo os locais onde este arquivos estão localizado e para o que os mesmos são utilizados.
+If you want to use the system in a language other than Brazilian Portuguese or English, you can translate the files containing all messages displayed on the system. Below I describe the locations where these files are located and what they are used for.
 
-* /resources/lang/pt-BR/gennix.php - contém as mensagens específicas do sistema
-* /resources/lang/vendor/adminlte - contém os arquivos de mensagens do adminlte
-
+* /resources/lang/pt-BR/gennix.php - contains system-specific messages
+* /resources/lang/vendor/adminlte - contains the adminlte message files
 
 ## CRUD
 
-Este projeto dispõe de um recurso de criação da CRUD básica que permitirá acelerar o desenvolvimento do projeto.
+This project has a resource to create the basic CRUD that will allow to accelerate the development of the project.
 
-Este recurso é obtido através da execução do seguinte comando:
+This feature is obtained by executing the following command:
 
 ```bash
 php artisan gennix:crud <options> <name>
 ```
 
-Onde:
-* **name** - é o nome da classe do CRUD que deseja criar.
->IMPORTANTE: O nome da classe deve estar no singular sendo que a primeira letra em Maiúscula. Maiores detalhes você pode ver [aqui](https://github.com/php-fig/fig-standards).
+* **name** - is the name of the CRUD class you want to create.
+>IMPORTANT: The name of the class must be in the singular, with the first letter in Uppercase. More details you can see [here](https://github.com/php-fig/fig-standards).
 
-* **options** - pode ser:
+* **options** - can be:
 
-| Chave         | O que é criado                              | Local onde os arquivos serão criados |
+| Key           | What will be created                        | Location where files will be created |
 | ------------- | ------------------------------------------- | ------------------------------------ |
 | --controller  | Controller                                  | /app/Http/Controller                 |
 | --model       | Model                                       | /app                                 |
-| --request     | Requests (update e store)                   | /app/Http/Requests                   |
+| --request     | Requests (update and store)                 | /app/Http/Requests                   |
 | --views       | Views (index, create, edit, show)           | /resources/views/admin               |
-| --breadcrumbs | Breadcrumbs para todas as operações do CRUD | /routes                              |
-| --routes      | Rota do tipo resources                      | /routes                              |
-| --migrations  | Migration da classe                         | /database/migrations                 |
-| --all         | Todos os recursos acima descritos           | ---                                  |
+| --breadcrumbs | Breadcrumbs to all CRUD operations          | /routes                              |
+| --routes      | Resources route                             | /routes                              |
+| --migrations  | Migration                                   | /database/migrations                 |
+| --all         | All resrouces above                         | ---                                  |
 
-*Exemplo:*
+*Example:*
 
 ```bash
-php artisan gennix:crud --all Estoque
+php artisan gennix:crud --all Client
 ```
 
-Caso você necessite personalizar as templates que são utilizadas para a geração dos arquivos criados, basta editar os *stubs* que estão localizados em */resources/views/stubs*.
+If you need to customize the templates that are used to generate the created files, just edit the *stubs* that are located in */resources/views/stubs*.
 
 
-## Contribuições
+## Contributions
 
-Caso você tenha interesse em colaborar com as melhorias do projeto *gennix* com boas ideias ou informando _bugs_ ou qualque outro tipo de problema, por favor leia o [guia de contribuições](https://github.com/fsclaro/gennix/blob/master/CONTRIBUTING.md) (em inglês) e envie um email para [fsclaro@gmail.com](mailto:fsclaro@gmail.com)
+If you are interested in contributing to the *gennix* project improvements with good ideas or reporting _bugs_ or any other type of problem, please read the [contribution guide](https://github.com/fsclaro/gennix/blob/master/CONTRIBUTING.md) and send an email to [fsclaro@gmail.com](mailto:fsclaro@gmail.com)
 
-## Código de Conduta
+## Code of conduct
 
-É muito importante que você leia o [código de conduta](https://github.com/fsclaro/gennix/blob/master/CODE_OF_CONDUCT.md) (em inglês) para que exista uma coexistência pacífica entre os membros participantes deste projeto.
+It is very important that you read the [code of conduct](https://github.com/fsclaro/gennix/blob/master/CODE_OF_CONDUCT.md) so that there is peaceful coexistence among the members participating in this project.
 
-## Vulnerabilidades e Segurança
+## Vulnerabilities and Security
 
-Se você descobrir alguma vunerabilidade de segurança neste projeto, por favor, envie um email para [Nando Salles](mailto:fsclaro@gmail.com).
+If you discover any security vulnerabilities in this project, please send an email to [Nando Salles](mailto:fsclaro@gmail.com).
 
-## Licença
+## License
 
-Este projeto é licenciado sobre as normas do [MIT license](https://github.com/fsclaro/gennix/blob/master/LICENSE.md) (em inglês).
+This project is licensed under the [MIT license](https://github.com/fsclaro/gennix/blob/master/LICENSE.md).
