@@ -137,6 +137,9 @@
                 'deletemass_success'        => 'Atividades excluídas com sucesso.',
                 'deletemass_error'          => 'Ocorreu um erro e algumas atividades não foram excluídas.'
             ],
+            'export'                        => 'Exportações',
+            'export_excel'                  => 'Excel',
+            'export_csv'                    => 'CSV',
         ],
 
         'model_permission' => [
@@ -182,6 +185,9 @@
                 'destroy_success'           => 'A permissão foi excluída com sucesso.',
                 'destroy_error'             => 'Ocorreu um erro e a permissão não pode ser excluída',
             ],
+            'export'                        => 'Exportações',
+            'export_excel'                  => 'Excel',
+            'export_csv'                    => 'CSV',
         ],
 
         'model_role' => [
@@ -237,6 +243,9 @@
                 'clone_success'             => 'O papel foi clonado com sucesso.',
                 'clone_error'               => 'Ocorreu um erro e o papel não pode ser clonado',
             ],
+            'export'                        => 'Exportações',
+            'export_excel'                  => 'Excel',
+            'export_csv'                    => 'CSV',
         ],
 
         'model_user' => [
@@ -327,6 +336,9 @@
                 'password_success'          => 'Senha atualizada com sucesso.',
                 'password_error'            => 'Ocorreu um erro e a senha não foi atualizada.',
             ],
+            'export'                        => 'Exportações',
+            'export_excel'                  => 'Excel',
+            'export_csv'                    => 'CSV',
         ],
 
         'model_audit' => [

@@ -21,12 +21,33 @@
                 </div> <!-- ./float-left -->
 
                 <div class="float-right">
-                    <a href="{{ route('role.index') }}" class="btn btn-primary btn-sm">
-                        <i class="fas fa-sync"></i> {{ __('gennix.model_role.update_screen') }}
-                    </a>
-                    <a href="{{ route('role.create') }}" class="btn btn-success btn-sm">
-                        <i class="fas fa-plus"></i> {{ __('gennix.model_role.insert_new') }}
-                    </a>
+                    <div class="row">
+                        <div class="dropdown mr-1">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+                                id="dropdownOperationsButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="fas fa-download"></i> {{ __('gennix.model_role.export') }}
+                            </button>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownOperationsButton">
+                                <a href="{{ route('role.export', 'xlsx') }}" class="dropdown-item">
+                                    <i class="fas fa-file-excel"></i> {{ __('gennix.model_role.export_excel') }}
+                                </a>
+
+                                <a href="{{ route('role.export', 'csv') }}" class="dropdown-item">
+                                    <i class="fas fa-file-alt"></i> {{ __('gennix.model_role.export_csv') }}
+                                </a>
+                            </div>
+                        </div>
+
+                        <a href="{{ route('role.index') }}" class="btn btn-primary btn-sm mr-1">
+                            <i class="fas fa-sync"></i> {{ __('gennix.model_role.update_screen') }}
+                        </a>
+
+                        <a href="{{ route('role.create') }}" class="btn btn-success btn-sm">
+                            <i class="fas fa-plus"></i> {{ __('gennix.model_role.insert_new') }}
+                        </a>
+                    </div> <!-- ./row -->
                 </div> <!-- ./float-right -->
             </div> <!-- ./card-header -->
 

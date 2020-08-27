@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use RealRashid\SweetAlert\Facades\Alert;
 use Throwable;
+use App\Exports\PermissionsExport;
 
 class PermissionController extends Controller
 {
@@ -195,6 +196,21 @@ class PermissionController extends Controller
                 ],
                 'error'
             );
+        }
+    }
+
+
+    /**
+     * ====================================================================
+     * Export data to excel file
+     * ====================================================================
+     */
+    public function export(string $type)
+    {
+        if ($type == "xlsx") {
+            return (new PermissionsExport)->download('permissions.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+        } else {
+            return (new PermissionsExport)->download('permissions.csv', \Maatwebsite\Excel\Excel::CSV);
         }
     }
 }

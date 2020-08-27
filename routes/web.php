@@ -60,6 +60,7 @@ Route::get('activity/details/{activity}', 'ActivityController@showDetails')->nam
  * permission
  * ---------------------------------------------------
  */
+Route::get('permission/export/{type}', 'PermissionController@export')->name('permission.export');
 Route::resource('permission', 'PermissionController');
 
 
@@ -68,6 +69,7 @@ Route::resource('permission', 'PermissionController');
  * Role
  * ---------------------------------------------------
  */
+Route::get('role/export/{type}', 'RoleController@export')->name('role.export');
 Route::get('role/clone/{id}', 'RoleController@cloneRole')->name('role.clone');
 Route::resource('role', 'RoleController');
 
@@ -77,6 +79,7 @@ Route::resource('role', 'RoleController');
  * User
  * ---------------------------------------------------
  */
+Route::get('user/export/{type}', 'UserController@export')->name('user.export');
 Route::get('user/active/{id}', 'UserController@active')->name('user.active');
 Route::get('user/deactive/{id}', 'UserController@deactive')->name('user.deactive');
 Route::get('user/profile', 'UserController@profile')->name('user.profile');

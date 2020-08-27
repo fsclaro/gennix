@@ -10,6 +10,7 @@ use App\Http\Requests\RoleStoreRequest;
 use App\Http\Requests\RoleUpdateRequest;
 use RealRashid\SweetAlert\Facades\Alert;
 use Throwable;
+use App\Exports\RolesExport;
 
 class RoleController extends Controller
 {
@@ -263,5 +264,20 @@ class RoleController extends Controller
         }
 
         return redirect()->route('role.index');
+    }
+
+
+    /**
+     * ====================================================================
+     * Export data to excel file
+     * ====================================================================
+     */
+    public function export(string $type)
+    {
+        if ($type == "xlsx") {
+            return (new RolesExport)->download('roles.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+        } else {
+            return (new RolesExport)->download('roles.csv', \Maatwebsite\Excel\Excel::CSV);
+        }
     }
 }

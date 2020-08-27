@@ -13,6 +13,7 @@ use App\Http\Requests\UserUpdateProfileRequest;
 use App\Http\Requests\UserPasswordRequest;
 use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Exports\UsersExport;
 use Throwable;
 
 class UserController extends Controller
@@ -489,5 +490,20 @@ class UserController extends Controller
         }
 
         return redirect()->route('user.index');
+    }
+
+
+    /**
+     * ====================================================================
+     * Export data to excel file
+     * ====================================================================
+     */
+    public function export(string $type)
+    {
+        if ($type == "xlsx") {
+            return (new UsersExport)->download('users.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+        } else {
+            return (new UsersExport)->download('users.csv', \Maatwebsite\Excel\Excel::CSV);
+        }
     }
 }
