@@ -383,6 +383,19 @@ php artisan gennix:crud --all Estoque
 
 Caso você necessite personalizar as templates que são utilizadas para a geração dos arquivos criados, basta editar os *stubs* que estão localizados em */resources/views/stubs*.
 
+Depois que você criou o novo CRUD, não se esqueça de editar o arquivo *config/adminlte.php* e na seção *menu* adicionar e/ou alterar os parâmetros para que o novo CRUD apareça no menu do sistema. Localize o trecho abaixo e faça os ajustes necessários.
+
+```php
+// [
+//     'text'  => 'audit',
+//     'icon'  => 'fa fa-fw fa-binoculars',
+//     'route' => 'audit.index',
+//     'can'   => 'audit-access'
+// ],
+```
+
+Também, se for o caso, crie as permissões e papéis necessários para o novo CRUD.
+
 
 ## Contribuições
 
