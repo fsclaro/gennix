@@ -1,3 +1,17 @@
-- ## Get Started
-    - [Overview](/{{route}}/{{version}}/overview)
-
+- ## Tabela de Conteúdos
+    - [Sobre este projeto](/{{route}}/{{version}}/about)
+    - [Ambiente mínimo](/{{route}}/{{version}}/environment)
+    - [Pacotes do Projeto](/{{route}}/{{version}}/packages)
+    - [Clonando o projeto](/{{route}}/{{version}}/cloning)
+    - [Configurações](/{{route}}/{{version}}/configurations)
+    - [Banco de dados](/{{route}}/{{version}}/database)
+    - [Instalando](/{{route}}/{{version}}/installing)
+    - [Outras configurações](/{{route}}/{{version}}/othersconfigurations)
+    - [Executando a aplicação](/{{route}}/{{version}}/executing)
+    - [Comandos adicionais](/{{route}}/{{version}}/)
+    - [Internacionalização](/{{route}}/{{version}}/overview)
+    - [CRUD](/{{route}}/{{version}}/overview)
+    - [Contribuições](/{{route}}/{{version}}/overview)
+    - [Código de conduta](/{{route}}/{{version}}/overview)
+    - [Vulnerabilidade e Segurança](/{{route}}/{{version}}/overview)
+    - [Licença](/{{route}}/{{version}}/overview)
