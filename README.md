@@ -394,7 +394,7 @@ Caso você tenha interesse em colaborar com as melhorias do projeto *gennix* com
 
 ## Vulnerabilidades e Segurança
 
-Se você descobrir alguma vunerabilidade de segurança neste projeto, por favor, envie um email para [Nando Salles](mailto:fsclaro@gmail.com).
+Se você descobrir alguma vulnerabilidade de segurança neste projeto, por favor, envie um email para [Nando Salles](mailto:fsclaro@gmail.com).
 
 ## Licença
 
