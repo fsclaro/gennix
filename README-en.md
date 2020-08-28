@@ -76,6 +76,7 @@ This project uses the following third party packages
 * arcanedev/route-viewer
 * arrilot/laravel-widgets
 * beyondcode/laravel-self-diagnosis
+* binarytorch/larecipe
 * creativeorange/gravatar
 * davejamesmiller/laravel-breadcrumbs
 * jeroennoten/laravel-adminlte
