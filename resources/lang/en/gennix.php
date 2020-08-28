@@ -184,6 +184,9 @@
                 'destroy_success'           => 'The permission was successfully deleted.',
                 'destroy_error'             => 'An error has occurred and the permission cannot be deleted.',
             ],
+            'export'                        => 'Export',
+            'export_excel'                  => 'To Excel',
+            'export_csv'                    => 'To CSV',
 
         ],
 
@@ -240,7 +243,9 @@
                 'clone_success'             => 'The role was successfully cloned.',
                 'clone_error'               => 'An error has occurred and the paper cannot be cloned.',
             ],
-
+            'export'                        => 'Export',
+            'export_excel'                  => 'To Excel',
+            'export_csv'                    => 'To CSV',
         ],
 
         'model_user' => [
@@ -330,6 +335,9 @@
                 'password_success'          => 'Password updated successfully.',
                 'password_error'            => 'An error occurred and the password has not been updated.',
             ],
+            'export'                        => 'Export',
+            'export_excel'                  => 'To Excel',
+            'export_csv'                    => 'To CSV',
         ],
 
         'model_audit' => [
