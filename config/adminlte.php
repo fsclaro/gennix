@@ -251,6 +251,12 @@ return [
         //     'route' => 'audit.index',
         //     'can'   => 'audit-access'
         // ],
+        [
+            'text'  => 'documentation',
+            'icon'  => 'fa fa-fw fa-file-alt',
+            'url'   => 'docs/1.0/',
+            'target'=> '_blank',
+        ],
 
 
         // Configurações de administação
