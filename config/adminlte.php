@@ -244,7 +244,14 @@ return [
         //     'icon'  => 'fa fa-fw fa-tachometer-alt',
         // ],
 
-        // Configurações das páginas
+        // Configurações das páginas dos cruds
+        // [
+        //     'text'  => 'audit',
+        //     'icon'  => 'fa fa-fw fa-binoculars',
+        //     'route' => 'audit.index',
+        //     'can'   => 'audit-access'
+        // ],
+
 
         // Configurações de administação
         [
