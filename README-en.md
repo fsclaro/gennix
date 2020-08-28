@@ -82,7 +82,9 @@ This project uses the following third party packages
 * laravel/socialite
 * yajra/laravel-datatables-oracle
 * laravel/ui
+* maatwebsite/excel
 * realrashid/sweet-alert
+* renatomarinho/laravel-page-speed
 * spatie/laravel-activitylog
 * spatie/laravel-backup
 * spatie/laravel-medialibrary
@@ -93,6 +95,7 @@ This project uses the following third party packages
 * arryvdh/laravel-debugbar
 * barryvdh/laravel-ide-helper
 * matt-allan/laravel-code-style
+* squizlabs/php_codesniffer
 
 ## Cloning
 

@@ -82,7 +82,9 @@ Este projeto utiliza os seguintes pacotes de terceiros
 * laravel/socialite
 * yajra/laravel-datatables-oracle
 * laravel/ui
+* maatwebsite/excel
 * realrashid/sweet-alert
+* renatomarinho/laravel-page-speed
 * spatie/laravel-activitylog
 * spatie/laravel-backup
 * spatie/laravel-medialibrary
@@ -93,6 +95,7 @@ Este projeto utiliza os seguintes pacotes de terceiros
 * arryvdh/laravel-debugbar
 * barryvdh/laravel-ide-helper
 * matt-allan/laravel-code-style
+* squizlabs/php_codesniffer
 
 ## Clonando o projeto
 

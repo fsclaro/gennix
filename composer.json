@@ -34,6 +34,7 @@
         "laravel/ui": "^2.1",
         "maatwebsite/excel": "^3.1",
         "realrashid/sweet-alert": "^3.1",
+        "renatomarinho/laravel-page-speed": "^1.8",
         "spatie/laravel-activitylog": "^3.14",
         "spatie/laravel-backup": "^6.11",
         "spatie/laravel-medialibrary": "^7.19",
