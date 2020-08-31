@@ -21,6 +21,7 @@
         "arcanedev/log-viewer": "^7.0",
         "arcanedev/route-viewer": "^3.0",
         "arrilot/laravel-widgets": "^3.13",
+        "barryvdh/laravel-dompdf": "^0.8.6",
         "beyondcode/laravel-self-diagnosis": "^1.4",
         "binarytorch/larecipe": "^2.3",
         "creativeorange/gravatar": "^1.0",
