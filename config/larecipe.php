@@ -30,7 +30,7 @@ return [
     'docs'        => [
         'route'   => '/docs',
         'path'    => '/resources/docs',
-        'landing' => 'about',
+        'landing' => 'overview',
         'middleware' => ['web', 'auth'],
     ],
 
@@ -137,7 +137,7 @@ return [
         'code_theme'     => 'dark', // or: light
         'fav'            => '',     // eg: fav.png
         'fa_v4_shims'    => true, // Add FontAwesome v4 shims prevent BC break
-        'show_side_bar'  => false,
+        'show_side_bar'  => true,
         'colors'         => [
             'primary'    => '#3133b5', // '#787AF6',
             'secondary'  => '#367aad', // '#2b9cf2'
