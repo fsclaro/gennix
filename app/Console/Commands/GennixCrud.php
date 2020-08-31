@@ -5,19 +5,21 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
+use DB;
 
 class GennixCrud extends Command
 {
     protected $signature = 'gennix:crud
         {name : Class name on singular mode. Example: User}
-        {--all : Generate controller, model, requests, routes, migration, breadcrumbs and views}
+        {--all : Generate controller, model, requests, routes, migration, breadcrumbs, permissions and views}
         {--controller : Generate controller}
         {--model : Generate model}
         {--request : Generate requests (Update and Store)}
         {--views : Generate views}
         {--breadcrumbs : Generate breadcrumbs}
         {--routes : Generate routes}
-        {--migration : Generate migration}';
+        {--migration : Generate migration}
+        {--permissions : Generate essentials permissions}';
 
     protected $description = 'Generate an basic CRUD for any Class';
 
@@ -74,6 +76,11 @@ class GennixCrud extends Command
         if ($options['migration'] || $options['all']) {
             $this->info('Generating the migration...');
             $this->createMigration();
+        }
+
+        if ($options['permissions'] || $options['all']) {
+            $this->info('Generating the essential permissions...');
+            $this->createPermissions();
         }
     }
 
@@ -133,7 +140,7 @@ class GennixCrud extends Command
             $this->getStub('UpdateRequest')
         );
 
-        if (! file_exists($path = app_path('/Http/Requests'))) {
+        if (!file_exists($path = app_path('/Http/Requests'))) {
             mkdir($path, 0777, true);
         }
 
@@ -154,7 +161,7 @@ class GennixCrud extends Command
             $this->getStub('StoreRequest')
         );
 
-        if (! file_exists($path = app_path('/Http/Requests'))) {
+        if (!file_exists($path = app_path('/Http/Requests'))) {
             mkdir($path, 0777, true);
         }
 
@@ -183,10 +190,50 @@ Route::resource(\'' . $this->modelNameSingularLowerCase . "', '{$this->modelName
         $this->call('make:migration', ['name' => 'create_' . $table . '_table', '--create' => $table]);
     }
 
+
+    protected function createPermissions()
+    {
+        $permissions = [
+            [
+                'slug' => $this->modelNameSingularLowerCase . '-access',
+                'description' => 'Acessar o ' . $this->modelName . ' pelo menu lateral',
+            ],
+            [
+                'slug' => $this->modelNameSingularLowerCase . '-create',
+                'description' => 'Criar um novo registro de ' . $this->modelName,
+            ],
+            [
+                'slug' => $this->modelNameSingularLowerCase . '-edit',
+                'description' => 'Editar um registro de ' . $this->modelName,
+            ],
+            [
+                'slug' => $this->modelNameSingularLowerCase . '-show',
+                'description' => 'Exibir os detalhes de um registro de ' . $this->modelName,
+            ],
+            [
+                'slug' => $this->modelNameSingularLowerCase . '-delete',
+                'description' => 'Excluir um registro de ' . $this->modelName,
+            ],
+        ];
+
+        foreach ($permissions as $permission) {
+            $this->info('Creating permission ' . $permission['slug']);
+
+            DB::table('permissions')->insert(
+                [
+                    'title' => $permission['description'],
+                    'slug' => $permission['slug'],
+                    'created_at' => now(),
+                ]
+            );
+        }
+    }
+
+
     protected function views()
     {
         $path = resource_path('views/admin/' . $this->modelNameSingularLowerCase);
-        if (! file_exists($path)) {
+        if (!file_exists($path)) {
             mkdir($path, 0777, true);
         }
 
@@ -213,14 +260,14 @@ Breadcrumbs::for(\'' . $this->modelNameSingularLowerCase . '_show\', function ($
 });
 
 // Dashboard > ' . $this->modelName . ' > Create
-Breadcrumbs::for(\''. $this->modelNameSingularLowerCase . '_create\', function ($trail) {
-    $trail->parent(\''. $this->modelNameSingularLowerCase . '\');
+Breadcrumbs::for(\'' . $this->modelNameSingularLowerCase . '_create\', function ($trail) {
+    $trail->parent(\'' . $this->modelNameSingularLowerCase . '\');
     $trail->push(__(\'gennix.breadcrumbs.create\'));
 });
 
-// Dashboard > '. $this->modelName . ' > Edit
-Breadcrumbs::for(\''. $this->modelNameSingularLowerCase . '_edit\', function ($trail) {
-    $trail->parent(\''. $this->modelNameSingularLowerCase . '\');
+// Dashboard > ' . $this->modelName . ' > Edit
+Breadcrumbs::for(\'' . $this->modelNameSingularLowerCase . '_edit\', function ($trail) {
+    $trail->parent(\'' . $this->modelNameSingularLowerCase . '\');
     $trail->push(__(\'gennix.breadcrumbs.edit\'));
 });
 ';
