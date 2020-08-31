@@ -1,6 +1,20 @@
 <?php
 
 return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Disable Blade Compilation
+    |--------------------------------------------------------------------------
+    |
+    | These option configure LaRecipe to don't compile blade directives that
+    | existing on your documentation. With compileBlade false value, the Blade
+    | codewill be printed on screen.
+    |
+    |
+    */
+    'compileBlade' => false,
+
     /*
     |--------------------------------------------------------------------------
     | Documentation Routes
@@ -16,7 +30,7 @@ return [
     'docs'        => [
         'route'   => '/docs',
         'path'    => '/resources/docs',
-        'landing' => 'about',
+        'landing' => 'overview',
         'middleware' => ['web'],
     ],
 
@@ -94,8 +108,8 @@ return [
     */
 
     'search'            => [
-        'enabled'       => false,
-        'default'       => 'algolia',
+        'enabled'       => true,
+        'default'       => 'internal',
         'engines'       => [
             'internal'  => [
                 'index' => ['h2', 'h3']
@@ -123,10 +137,10 @@ return [
         'code_theme'     => 'dark', // or: light
         'fav'            => '',     // eg: fav.png
         'fa_v4_shims'    => true, // Add FontAwesome v4 shims prevent BC break
-        'show_side_bar'  => true,
+        'show_side_bar'  => false,
         'colors'         => [
-            'primary'    => '#787AF6',
-            'secondary'  => '#2b9cf2'
+            'primary'    => '#3133b5', // '#787AF6',
+            'secondary'  => '#367aad', // '#2b9cf2'
         ],
 
         'theme_order'    => null // ['LaRecipeDarkTheme', 'customTheme']

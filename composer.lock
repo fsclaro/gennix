@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a0773562584acdb9c8349f117ec5243",
+    "content-hash": "e5d4c2806bbd27546e7a4d65774b3b70",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -341,6 +341,47 @@
                 "stack"
             ],
             "time": "2019-12-24T22:41:47+00:00"
+        },
+        {
+            "name": "axelrindle/larecipe-emojify",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/axelrindle/larecipe-emojify.git",
+                "reference": "3cdb3e82fa63ab006e76c222362f9d693726a2d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/axelrindle/larecipe-emojify/zipball/3cdb3e82fa63ab006e76c222362f9d693726a2d5",
+                "reference": "3cdb3e82fa63ab006e76c222362f9d693726a2d5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Axelrindle\\Emojify\\AssetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Axelrindle\\Emojify\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Replaces emoji shortcodes with native unicode emojis.",
+            "keywords": [
+                "emoji",
+                "larecipe"
+            ],
+            "time": "2019-04-15T10:44:12+00:00"
         },
         {
             "name": "beyondcode/laravel-self-diagnosis",
@@ -2571,16 +2612,16 @@
         },
         {
             "name": "markbaker/matrix",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MarkBaker/PHPMatrix.git",
-                "reference": "5348c5a67e3b75cd209d70103f916a93b1f1ed21"
+                "reference": "182d44c3b2e3b063468f7481ae3ef71c69dc1409"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MarkBaker/PHPMatrix/zipball/5348c5a67e3b75cd209d70103f916a93b1f1ed21",
-                "reference": "5348c5a67e3b75cd209d70103f916a93b1f1ed21",
+                "url": "https://api.github.com/repos/MarkBaker/PHPMatrix/zipball/182d44c3b2e3b063468f7481ae3ef71c69dc1409",
+                "reference": "182d44c3b2e3b063468f7481ae3ef71c69dc1409",
                 "shasum": ""
             },
             "require": {
@@ -2591,7 +2632,7 @@
                 "phpcompatibility/php-compatibility": "dev-master",
                 "phploc/phploc": "^4",
                 "phpmd/phpmd": "dev-master",
-                "phpunit/phpunit": "^5.7",
+                "phpunit/phpunit": "^5.7|^6.0|7.0",
                 "sebastian/phpcpd": "^3.0",
                 "squizlabs/php_codesniffer": "^3.0@dev"
             },
@@ -2636,7 +2677,7 @@
                 "matrix",
                 "vector"
             ],
-            "time": "2019-10-06T11:29:25+00:00"
+            "time": "2020-08-28T19:41:55+00:00"
         },
         {
             "name": "monolog/monolog",

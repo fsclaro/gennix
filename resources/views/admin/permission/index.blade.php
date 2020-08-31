@@ -40,7 +40,7 @@
                             </div>
                         </div>
 
-                        <a href="{{ route('permission.index') }}" class="btn btn-primary btn-sm">
+                        <a href="{{ route('permission.index') }}" class="btn btn-primary btn-sm mr-1">
                             <i class="fas fa-sync"></i> {{ __('gennix.model_permission.update_screen') }}
                         </a>
                         <a href="{{ route('permission.create') }}" class="btn btn-success btn-sm">

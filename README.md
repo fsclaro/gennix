@@ -210,12 +210,12 @@ Também deverá alterar o arquivo */resources/views/vendor/adminlte/auth/login.b
 Localize no código o trecho onde são tratados os links para acesso pela rede social e acrescente o código como o exemplo abaixo, fazendo-se as adaptações necessárias:
 
 ```php
-    @if(env('SOCIALITE_GOOGLE'))
+    if(env('SOCIALITE_GOOGLE'))
     <a href="{{ route('login.social', 'google') }}"
         class="btn google-color rounded-circle mx-1">
         <i class="fab fa-google"></i>
     </a>
-    @endif
+    endif
 ```
 
 >**IMPORTANTE**: A utilização do recurso de login através de redes sociais implementadas no projeto, é única e exclusivamente para realizar a autenticação de acesso. Não foi implementado no projeto a possibilidade de cadastrar novos usuários através das redes sociais. Muito embora seja um recurso que você facilmente implementaria no projeto.
