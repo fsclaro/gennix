@@ -11,11 +11,22 @@ class UsersExport implements FromView
 {
 
     use Exportable;
-    
+
+    private $type;
+
+    public function __construct(string $type)
+    {
+        $this->type = $type;
+    }
+
     public function view(): View
     {
-        return view('admin.user.export', [
-            'users' => User::all()
-        ]);
+        $users = User::all();
+
+        if ($this->type == "xlsx") {
+            return view('admin.user.export.xlsx', [ 'users' => $users ]);
+        } elseif ($this->type == "csv") {
+            return view('admin.user.export.csv', [ 'users' => $users ]);
+        }
     }
 }

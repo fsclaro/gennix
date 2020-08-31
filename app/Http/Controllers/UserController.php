@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Exports\UsersExport;
 use Throwable;
+use PDF;
 
 class UserController extends Controller
 {
@@ -500,10 +501,33 @@ class UserController extends Controller
      */
     public function export(string $type)
     {
-        if ($type == "xlsx") {
-            return (new UsersExport)->download('users.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+
+        if ($type == "pdf") {
+            $this->exportPDF();
         } else {
-            return (new UsersExport)->download('users.csv', \Maatwebsite\Excel\Excel::CSV);
+            $export = new UsersExport($type);
+
+            if ($type == "xlsx") {
+                return $export->download('users.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+            } elseif ($type == "csv") {
+                return $export->download('users.csv', \Maatwebsite\Excel\Excel::CSV);
+            }
         }
+    }
+
+
+    public function exportPDF()
+    {
+        $user = User::all();
+
+        $pdf = PDF::loadView('admin.user.export.pdf', ['users' => $user])
+            ->setOptions(
+                [
+                    'orientation' => 'landscape',
+                    'show_warning' => true,
+                ]
+            );
+
+        return $pdf->download('users.pdf');
     }
 }

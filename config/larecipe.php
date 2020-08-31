@@ -30,8 +30,8 @@ return [
     'docs'        => [
         'route'   => '/docs',
         'path'    => '/resources/docs',
-        'landing' => 'overview',
-        'middleware' => ['web'],
+        'landing' => 'about',
+        'middleware' => ['web', 'auth'],
     ],
 
     /*
@@ -69,10 +69,10 @@ return [
     */
 
     'settings'       => [
-        'auth'       => false,
+        'auth'       => true,
         'ga_id'      => '',
         'middleware' => [
-            'web',
+            'web', 'auth'
         ]
     ],
 
@@ -90,7 +90,7 @@ return [
     */
 
     'cache'       => [
-        'enabled' => false,
+        'enabled' => true,
         'period'  => 5
     ],
 
@@ -159,9 +159,9 @@ return [
     */
 
     'seo'                 => [
-        'author'          => '',
-        'description'     => '',
-        'keywords'        => '',
+        'author'          => 'Nando Salles',
+        'description'     => 'Gennix - Boilerplate para projetos Laravel',
+        'keywords'        => 'gennix, boilerplate, sistema, web, laravel',
         'og'              => [
             'title'       => '',
             'type'        => 'article',

@@ -28,11 +28,15 @@
 
                             <div class="dropdown-menu" aria-labelledby="dropdownOperationsButton">
                                 <a href="{{ route('user.export', 'xlsx') }}" class="dropdown-item">
-                                    <i class="fas fa-file-excel"></i> {{ __('gennix.model_user.export_excel') }}
+                                    <i class="fas fa-file-excel text-green"></i> {{ __('gennix.model_user.export_excel') }}
                                 </a>
 
                                 <a href="{{ route('user.export', 'csv') }}" class="dropdown-item">
                                     <i class="fas fa-file-alt"></i> {{ __('gennix.model_user.export_csv') }}
+                                </a>
+
+                                <a href="{{ route('user.export', 'pdf') }}" class="dropdown-item">
+                                    <i class="fas fa-file-pdf text-red"></i> {{ __('gennix.model_user.export_pdf') }}
                                 </a>
                             </div>
                         </div>

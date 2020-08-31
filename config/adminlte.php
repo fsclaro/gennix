@@ -254,7 +254,7 @@ return [
         [
             'text'  => 'documentation',
             'icon'  => 'fa fa-fw fa-file-alt',
-            'url'   => 'docs/1.0/',
+            'url'   => 'docs',
             'target'=> '_blank',
         ],
 
