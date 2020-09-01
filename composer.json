@@ -120,11 +120,11 @@
             "./vendor/bin/php-cs-fixer fix tests/  --show-progress=estimating"
         ],
         "beautify": [
-            "phpcbf --standard=PSR2 -p app/",
-            "phpcbf --standard=PSR2 -p config/",
-            "phpcbf --standard=PSR2 -p database/",
-            "phpcbf --standard=PSR2 -p resources/",
-            "phpcbf --standard=PSR2 -p routes/"
+            "./vendor/bin/phpcbf --standard=PSR2 -p app/",
+            "./vendor/bin/phpcbf --standard=PSR2 -p config/",
+            "./vendor/bin/phpcbf --standard=PSR2 -p database/",
+            "./vendor/bin/phpcbf --standard=PSR2 -p resources/",
+            "./vendor/bin/phpcbf --standard=PSR2 -p routes/"
         ]
     }
 }
