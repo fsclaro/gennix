@@ -501,7 +501,6 @@ class UserController extends Controller
      */
     public function export(string $type)
     {
-
         if ($type == "pdf") {
             $this->exportPDF();
         } else {
@@ -521,12 +520,10 @@ class UserController extends Controller
         $user = User::all();
 
         $pdf = PDF::loadView('admin.user.export.pdf', ['users' => $user])
-            ->setOptions(
-                [
-                    'orientation' => 'landscape',
-                    'show_warning' => true,
-                ]
-            );
+            ->setOptions([
+                'orientation'  => 'landscape',
+                'show_warning' => true,
+            ]);
 
         return $pdf->download('users.pdf');
     }
