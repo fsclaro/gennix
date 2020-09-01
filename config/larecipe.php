@@ -90,7 +90,7 @@ return [
     */
 
     'cache'       => [
-        'enabled' => true,
+        'enabled' => false,
         'period'  => 5
     ],
 
