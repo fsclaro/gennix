@@ -17,6 +17,30 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Enable/Disable Github Button
+    |--------------------------------------------------------------------------
+    |
+    | These option permit enable or disable GitHub button
+    |
+    |
+    */
+    'showGitHubButton' => false,
+    'urlGitHub' => 'https://github.com/fsclaro/gennix',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Enable/Disable Logout Button
+    |--------------------------------------------------------------------------
+    |
+    | These option permit enable or disable Logout button
+    |
+    |
+    */
+    'showLogoutButton' => false,
+
+
+    /*
+    |--------------------------------------------------------------------------
     | Documentation Routes
     |--------------------------------------------------------------------------
     |

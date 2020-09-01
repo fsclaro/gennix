@@ -22,14 +22,17 @@
                 <larecipe-button id="search-button"
                     :type="searchBox ? 'primary' : 'link'"
                     @click="searchBox = ! searchBox"
-                    class="px-4">
+                    class="px-4 mr-1">
                     <i class="fas fa-search" id="search-button-icon"></i>
                 </larecipe-button>
             @endif
 
-            <larecipe-button tag="a" href="https://github.com/fsclaro/gennix" target="__blank" type="black" class="mx-2 px-4">
+            @if (config('larecipe.showGitHubButton'))
+            <larecipe-button tag="a" href="{{ config('larecipe.urlGitHub') }}" target="__blank"
+                type="black" class="mx-2 px-4 mr-1">
                 <i class="fab fa-github"></i>
             </larecipe-button>
+            @endif
 
             {{-- versions dropdown --}}
             <larecipe-dropdown>
@@ -49,23 +52,25 @@
             </larecipe-dropdown>
             {{-- /versions dropdown --}}
 
-            @auth
-                {{-- account --}}
-                <!-- <larecipe-dropdown>
-                    <larecipe-button type="white" class="ml-2">
-                        {{ auth()->user()->name ?? 'Account' }} <i class="fa fa-angle-down"></i>
-                    </larecipe-button>
+            @if (config('larecipe.showLogoutButton'))
+                @auth
+                    {{-- account --}}
+                    <larecipe-dropdown>
+                        <larecipe-button type="white" class="ml-2">
+                            {{ auth()->user()->name ?? 'Account' }} <i class="fa fa-angle-down"></i>
+                        </larecipe-button>
 
-                    <template slot="list">
-                        <form action="/logout" method="POST">
-                            {{ csrf_field() }}
+                        <template slot="list">
+                            <form action="/logout" method="POST">
+                                {{ csrf_field() }}
 
-                            <button type="submit" class="py-2 px-4 text-white bg-danger inline-flex"><i class="fa fa-power-off mr-2"></i> Logout</button>
-                        </form>
-                    </template>
-                </larecipe-dropdown> -->
-                {{-- /account --}}
-            @endauth
+                                <button type="submit" class="py-2 px-4 text-white bg-danger inline-flex"><i class="fa fa-power-off mr-2"></i> Logout</button>
+                            </form>
+                        </template>
+                    </larecipe-dropdown>
+                    {{-- /account --}}
+                @endauth
+            @endif
         </div>
     </nav>
 </div>
