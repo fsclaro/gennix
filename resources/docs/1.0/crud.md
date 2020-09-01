@@ -9,7 +9,9 @@
 <a name="section-01"></a>
 # CRUD
 
-Este projeto dispõe de um recurso de criação da CRUD básica que permitirá acelerar o desenvolvimento do projeto.
+---
+
+O **gennix** dispõe de um recurso de criação de um CRUD básico que permitirá acelerar o desenvolvimento do seu projeto.
 
 ---
 
