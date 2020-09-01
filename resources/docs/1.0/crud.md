@@ -1,4 +1,10 @@
 - [CRUD](#section-01)
+- [Comando de criação do CRUD](#section-02)
+- [Permissões criadas](#section-03)
+- [Personalizando os stubs](#section-04)
+- [Ajustando o menu](#section-05)
+- [Internacionalização](#section-06)
+
 
 <a name="section-01"></a>
 # CRUD
@@ -7,14 +13,17 @@ Este projeto dispõe de um recurso de criação da CRUD básica que permitirá a
 
 ---
 
+<a name="section-02"></a>
+## Comando de criação do CRUD
+
 Este recurso é obtido através da execução do seguinte comando:
 
 ```bash
-php artisan gennix:crud <options> <name>
+php artisan gennix:crud <options> <model_name>
 ```
 
 Onde:
-* **name** - é o nome da classe do CRUD que deseja criar.
+* **model_name** - é o nome da classe do CRUD que deseja criar.
 
 > {info} IMPORTANTE: O nome da classe deve estar no singular sendo que a primeira letra em Maiúscula. Maiores detalhes você pode ver [aqui](https://github.com/php-fig/fig-standards).
 
@@ -29,7 +38,8 @@ Onde:
 | --breadcrumbs | Breadcrumbs para todas as operações do CRUD | /routes                              |
 | --routes      | Rota do tipo resources                      | /routes                              |
 | --migrations  | Migration da classe                         | /database/migrations                 |
-| --all         | Todos os recursos acima descritos           | *não se aplica*                      |
+| --permissions | Permissões básicas da classe                | **tabela permissions**               |
+| --all         | Todos os recursos acima descritos           | **não se aplica**                    |
 
 
 ---
@@ -56,14 +66,50 @@ php artisan gennix:crud --all Estoque
 
 ---
 
-Caso você necessite personalizar as templates que são utilizadas para a geração dos arquivos criados, basta editar
-os *stubs* que estão localizados em */resources/views/stubs*.
+<a name="section-03"></a>
+## Permissões criadas
+
+O parâmetro **--permissions** criará as permissões básicas na tabela **permissions** do sistema.
 
 ---
 
-Depois que você criou o novo CRUD, não se esqueça de editar o arquivo *config/adminlte.php* e na seção *menu*
-adicionar e/ou alterar os parâmetros para que o novo CRUD apareça no menu do sistema. Localize o trecho abaixo e faça
-os ajustes necessários.
+**Exemplo:** Supondo que o comando CRUD executado foi.
+
+---
+
+```php
+php artisan gennix:crud --permissions Client
+```
+
+---
+
+As permissões que serão criadas são:
+
+| Descrição da permissão           | Slug/Chave        |
+|----------------------------------|-------------------|
+| Acessar o cadastro de cliente    | client**-access** |
+| Criar um novo cliente            | client**-create** |
+| Editar os dados de um cliente    | client**-edit**   |
+| Exibir os detalhes de um cliente | client**-show**   |
+| Excluir o registro de um cliente | client**-delete** |
+
+---
+
+Após criadas as permissões, você também deverá associá-las a um determinado **papel** para que os novos recursos fiquem disponíveis aos usuários do sistema.
+
+---
+
+<a name="section-04"></a>
+## Personalizando os stubs
+
+Caso você necessite personalizar as templates que são utilizadas para a geração dos arquivos criados, basta editar os **stubs** que estão localizados em **/resources/views/stubs**.
+
+---
+
+<a name="section-05"></a>
+## Ajustando o menu
+
+Depois que você criou o novo CRUD, não se esqueça de editar o arquivo **config/adminlte.php** e na seção **menu** adicionar e/ou alterar os parâmetros para que o novo CRUD apareça no menu do sistema. Localize o trecho abaixo e faça os ajustes necessários.
 
 ```php
 // [
@@ -76,25 +122,8 @@ os ajustes necessários.
 
 ---
 
-Estando no dashboard do sistema, como superadmin, crie as permissões necessárias para que o CRUD seja visualizado
-e as funções sejam liberadas.
+<a name="section-06"></a>
+## Internacionalização
 
----
-Na tabela abaixo estão descritas quais são as permissões que devem ser criadas, considere que foi criado um CRUD
-chamado Client.
-
-| Descrição da permissão           | Slug              |
-|----------------------------------|-------------------|
-| Acessar o cadastro de cliente    | client**-access** |
-| Criar um novo cliente            | client**-create** |
-| Editar os dados de um cliente    | client**-edit**   |
-| Exibir os detalhes de um cliente | client**-show**   |
-| Excluir o registro de um cliente | client**-delete** |
-
----
-Após criadas as permissões, você também deverá associá-las a um determinado papel para que os novos recursos fiquem
-disponíveis aos usuários do sistema.
-
----
 Por último, não se esqueça de adicionar também os textos das telas e menu conforme descrito no ítem de
-interncionalização desta documentação. Para saber mais, [clique aqui](/{{route}}/{{version}}/i18n).
+internacionalização desta documentação. Para saber mais, [clique aqui](/{{route}}/{{version}}/i18n).

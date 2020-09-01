@@ -374,6 +374,7 @@ Onde:
 | --breadcrumbs | Breadcrumbs para todas as operações do CRUD | /routes                              |
 | --routes      | Rota do tipo resources                      | /routes                              |
 | --migrations  | Migration da classe                         | /database/migrations                 |
+| --permissions |
 | --all         | Todos os recursos acima descritos           | ---                                  |
 
 *Exemplo:*
