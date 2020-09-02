@@ -90,6 +90,9 @@ This project uses the following third party packages
 * spatie/laravel-backup
 * spatie/laravel-medialibrary
 * spatie/laravel-sluggable
+* h4cc/wkhtmltoimage-amd64
+* h4cc/wkhtmltopdf-amd64
+* barryvdh/laravel-snappy
 
 ### Development
 
