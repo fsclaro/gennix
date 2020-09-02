@@ -35,7 +35,7 @@
                                     <i class="fas fa-file-alt"></i> {{ __('gennix.model_user.export_csv') }}
                                 </a>
 
-                                <a href="{{ route('user.export', 'pdf') }}" class="dropdown-item">
+                                <a href="{{ route('user.export', 'pdf') }}" target="_blank" class="dropdown-item">
                                     <i class="fas fa-file-pdf text-red"></i> {{ __('gennix.model_user.export_pdf') }}
                                 </a>
                             </div>
