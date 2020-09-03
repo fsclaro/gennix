@@ -177,7 +177,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Barryvdh\Snappy\ServiceProvider::class
+        // Barryvdh\Snappy\ServiceProvider::class
     ],
 
     /*
@@ -232,10 +232,15 @@ return [
 
         'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
-        
+
+        'PdfReport' => Jimmyjs\ReportGenerator\Facades\PdfReportFacade::class,
+        'ExcelReport' => Jimmyjs\ReportGenerator\Facades\ExcelReportFacade::class,
+        'CSVReport' => Jimmyjs\ReportGenerator\Facades\CSVReportFacade::class
     ],
 
 ];
