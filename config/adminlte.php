@@ -292,7 +292,13 @@ return [
         [
             'text' => 'support_area',
             'icon' => 'fa fa-fw fa-headset',
-            'can' => ['activity-access', 'route-viewer-access', 'log-viewer-access', 'audit-access'],
+            'can' => [
+                        'audit-access',
+                        'activity-access',
+                        'route-viewer-access',
+                        'log-viewer-access',
+                        'phpinfo-access',
+                    ],
             'submenu' => [
                 [
                     'text'  => 'audit',
@@ -319,6 +325,13 @@ return [
                     'route'   => 'log-viewer::dashboard',
                     'target' => '_blank',
                     'can'   => 'log-viewer-access'
+                ],
+                [
+                    'text'  => 'phpinfo',
+                    'icon'  => 'fa fa-fw fa-info-circle',
+                    'route' => 'laravelPhpInfo::phpinfo',
+                    'can'   => 'phpinfo-access',
+                    'target' => '_blank',
                 ]
             ]
         ],
