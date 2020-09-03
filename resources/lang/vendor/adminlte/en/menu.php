@@ -18,5 +18,6 @@ return [
     'roles'                         => 'Roles',
     'you_are_logged'                => ', now you are logged on system!',
     'audit'                         => 'Audit',
-    'documentation'                 => 'System Documentation'
+    'documentation'                 => 'System Documentation',
+    'phpinfo'                       => 'PHP Information',
 ];

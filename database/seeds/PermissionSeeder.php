@@ -43,9 +43,11 @@ class PermissionSeeder extends Seeder
         Permission::insert(['title' => 'Acessar área de suporte', 'slug' => 'support-access', 'created_at' => now()]);
         Permission::insert(['title' => 'Acessar Log-Viewer', 'slug' => 'log-viewer-access', 'created_at' => now()]);
         Permission::insert(['title' => 'Acessar Route-Viewer', 'slug' => 'route-viewer-access', 'created_at' => now()]);
+        Permission::insert(['title' => 'Acessar phpInfo', 'slug' => 'phpinfo-access', 'created_at' => now()]);
 
         Permission::insert(['title' => 'Acessar lista de contatos', 'slug' => 'contacts-access', 'created_at' => now()]);
         Permission::insert(['title' => 'Acessar detalhes de contatos', 'slug' => 'contacts-show', 'created_at' => now()]);
+
 
         // Get all permissions
         $permissions = Permission::all();

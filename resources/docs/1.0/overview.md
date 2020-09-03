@@ -45,13 +45,16 @@ Este projeto utiliza os seguintes pacotes de terceiros
 * arcanedev/log-viewer
 * arcanedev/route-viewer
 * arrilot/laravel-widgets
+* barryvdh/laravel-snappy
 * beyondcode/laravel-self-diagnosis
 * binarytorch/larecipe
 * creativeorange/gravatar
 * davejamesmiller/laravel-breadcrumbs
+* h4cc/wkhtmltoimage-amd64
+* h4cc/wkhtmltopdf-amd64
+* jeremykenedy/laravel-phpinfo
 * jeroennoten/laravel-adminlte
 * laravel/socialite
-* yajra/laravel-datatables-oracle
 * laravel/ui
 * maatwebsite/excel
 * realrashid/sweet-alert
@@ -60,14 +63,12 @@ Este projeto utiliza os seguintes pacotes de terceiros
 * spatie/laravel-backup
 * spatie/laravel-medialibrary
 * spatie/laravel-sluggable
-* h4cc/wkhtmltoimage-amd64
-* h4cc/wkhtmltopdf-amd64
-* barryvdh/laravel-snappy
+* yajra/laravel-datatables-oracle
 
 
 ### Desenvolvimento
 
-* arryvdh/laravel-debugbar
+* barryvdh/laravel-debugbar
 * barryvdh/laravel-ide-helper
 * matt-allan/laravel-code-style
 * squizlabs/php_codesniffer

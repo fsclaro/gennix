@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Exports\UsersExport;
 use Throwable;
-use PDF;
+use PdfReport;
+use ExcelReport;
+use CSVReport;
 
 class UserController extends Controller
 {
@@ -501,30 +503,78 @@ class UserController extends Controller
      */
     public function export(string $type)
     {
-        if ($type == "pdf") {
-            return $this->exportPDF();
-        } else {
-            $export = new UsersExport($type);
+        $user = User::orderBy('id', 'asc');
 
-            if ($type == "xlsx") {
-                return $export->download('users.xlsx', \Maatwebsite\Excel\Excel::XLSX);
-            } elseif ($type == "csv") {
-                return $export->download('users.csv', \Maatwebsite\Excel\Excel::CSV);
-            }
+        $title = "Relação de Usuários do Sistema";
+
+        $meta = [
+            'Ordem' => 'por ID',
+        ];
+
+        $columns = [
+            'ID' => 'id',
+            'Nome do Usuário' => 'name',
+            'Ativo?' => function ($result) {
+                return ($result->active) ? 'Sim' : 'Não';
+            },
+            'Super Admin?' => function ($result) {
+                return ($result->is_superadmin) ? 'Sim' : 'Não';
+            },
+            'Sexo' => 'gender',
+            'Função' => 'position',
+            'Celular' => 'phone',
+            'Dt Cadastramento' => function ($result) {
+                return $result->created_at->format('d/m/Y');
+            },
+        ];
+
+        if ($type == "pdf") {
+            return $this->exportPDF($user, $title, $meta, $columns);
+        } elseif ($type == "xlsx") {
+            return $this->exportExcel($user, $title, $meta, $columns);
+        } else {
+            return $this->exportCSV($user, $title, $meta, $columns);
         }
     }
 
 
-    public function exportPDF()
+    public function exportPDF($user, $title = "", $meta = [], $columns)
     {
-        $user = User::all();
-
-        $pdf = PDF::loadView('admin.user.export.pdf', ['users' => $user])
+        return PdfReport::of($title, $meta, $user, $columns)
+            ->editColumn('ID', ['class' => 'center'])
+            ->editColumn('Ativo?', ['class' => 'center'])
+            ->editColumn('Super Admin?', ['class' => 'center'])
+            ->editColumn('Sexo', ['class' => 'center'])
             ->setPaper('a4')
             ->setOrientation('landscape')
-            ->setOption('enable-external-links', true)
-            ->setOption('enable-javascript', true);
+            ->showNumColumn(false)
+            ->stream();
+    }
 
-        return $pdf->download('users.pdf');
+
+    public function exportExcel($user, $title = "", $meta = [], $columns)
+    {
+        return ExcelReport::of($title, [], $user, $columns)
+            ->editColumn('ID', ['class' => 'center bolder'])
+            ->editColumn('Ativo?', ['class' => 'center'])
+            ->editColumn('Super Admin?', ['class' => 'center color-red'])
+            ->editColumn('Sexo', ['class' => 'center'])
+            ->setCss([
+                '.bolder' => 'font-weight: 800;',
+                '.color-red' => 'color: red;'
+            ])
+            ->showNumColumn(false)
+            ->showMeta(false)
+            ->download('users');
+    }
+
+
+
+    public function exportCSV($user, $title = "", $meta = [], $columns)
+    {
+        return CSVReport::of("", [], $user, $columns)
+            ->showNumColumn(false)
+            ->showMeta(false)
+            ->download('users');
     }
 }

@@ -93,6 +93,7 @@ Este projeto utiliza os seguintes pacotes de terceiros
 * h4cc/wkhtmltoimage-amd64
 * h4cc/wkhtmltopdf-amd64
 * barryvdh/laravel-snappy
+* jeremykenedy/laravel-phpinfo
 
 ### Desenvolvimento
 
