@@ -17,6 +17,9 @@
     <div class="col-md-12">
         <div class="card card-primary card-outline shadow">
             <div class="card-header">
+                <div class="float-left">
+                </div> <!-- ./float-left -->
+
                 <div class="float-right">
                     <div class="row">
                         <div class="dropdown mr-1">

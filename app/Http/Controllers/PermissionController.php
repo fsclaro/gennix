@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use RealRashid\SweetAlert\Facades\Alert;
 use Throwable;
-use App\Exports\PermissionsExport;
+use PdfReport;
+use ExcelReport;
+use CSVReport;
 
 class PermissionController extends Controller
 {
@@ -200,17 +202,124 @@ class PermissionController extends Controller
     }
 
 
+
     /**
      * ====================================================================
      * Export data to excel file
+     *
+     * @param string $type
+     *
+     * @return void
      * ====================================================================
      */
     public function export(string $type)
     {
-        if ($type == "xlsx") {
-            return (new PermissionsExport)->download('permissions.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+        $permission = Permission::orderBy('id', 'asc');
+
+        $title = "Relação de Permissões do Sistema";
+
+        $meta = [
+            'Ordem' => 'por ID',
+        ];
+
+        $columns = [
+            'ID' => 'id',
+            'Descrição da Permissão' => 'title',
+            'Slug/Chave' => 'slug',
+            'Papéis' => function($result) {
+                $list = '';
+                foreach($result->roles as $role) {
+                    if ($result->roles->last() == $role) {
+                        $list .= $role->title;
+                    } else {
+                        $list .= $role->title . ', ';
+                    }
+                }
+                return $list;
+
+            },
+        ];
+
+        if ($type == "pdf") {
+            return $this->exportPDF($permission, $title, $meta, $columns);
+        } elseif ($type == "xlsx") {
+            return $this->exportExcel($permission, $title, $meta, $columns);
         } else {
-            return (new PermissionsExport)->download('permissions.csv', \Maatwebsite\Excel\Excel::CSV);
+            return $this->exportCSV($permission, $title, $meta, $columns);
         }
+    }
+
+
+    /**
+     * ====================================================================
+     * Export report to PDF format
+     *
+     * @param App\Permission $permission
+     * @param string $title
+     * @param array $meta
+     * @param array $columns
+     *
+     * @return PdfReport $report
+     * ====================================================================
+     */
+    public function exportPDF($permission, $title = "", $meta = [], $columns)
+    {
+        return PdfReport::of($title, $meta, $permission, $columns)
+            ->editColumn('ID', ['class' => 'center col-id'])
+            ->editColumn('Descrição da Permissão', ['class' => 'left col-permission'])
+            ->editColumn('Slug/Chave', ['class' => 'left col-slug'])
+            ->editColumn('Papéis', ['class' => 'left col-roles'])
+            ->setCSS([
+                '.col-id' => 'vertical-align: top',
+                '.col-permission' => 'vertical-align: top',
+                '.col-slug' => 'vertical-align: top',
+                '.col-roles' => 'vertical-align:top; word-warp:break-word',
+            ])
+            ->setPaper('a4')
+            ->setOrientation('portrait')
+            ->showNumColumn(false)
+            ->stream();
+    }
+
+
+    /**
+     * ====================================================================
+     * Export report to Excel format
+     *
+     * @param App\Permission $permission
+     * @param string $title
+     * @param array $meta
+     * @param array $columns
+     *
+     * @return ExcelReport $report
+     * ====================================================================
+     */
+    public function exportExcel($permission, $title = "", $meta = [], $columns)
+    {
+        return ExcelReport::of($title, $meta, $permission, $columns)
+            ->showNumColumn(false)
+            ->showMeta(false)
+            ->download('permissions');
+    }
+
+
+    /**
+     * ====================================================================
+     * Export report to CSV format
+     *
+     * @param App\Permission $permission
+     * @param string $title
+     * @param array $meta
+     * @param array $columns
+     *
+     * @return CSVReport $report
+     * ====================================================================
+     */
+    public function exportCSV($permission, $title = "", $meta = [], $columns)
+    {
+        return CSVReport::of($title, $meta, $permission, $columns)
+            ->showNumColumn(false)
+            ->showMeta(false)
+            ->download('permission');
     }
 }

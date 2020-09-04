@@ -10,7 +10,9 @@ use App\Http\Requests\RoleStoreRequest;
 use App\Http\Requests\RoleUpdateRequest;
 use RealRashid\SweetAlert\Facades\Alert;
 use Throwable;
-use App\Exports\RolesExport;
+use PdfReport;
+use ExcelReport;
+use CSVReport;
 
 class RoleController extends Controller
 {
@@ -270,14 +272,130 @@ class RoleController extends Controller
     /**
      * ====================================================================
      * Export data to excel file
+     *
+     * @param string $type
+     *
+     * @return void
      * ====================================================================
      */
     public function export(string $type)
     {
-        if ($type == "xlsx") {
-            return (new RolesExport)->download('roles.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+        $role = Role::orderBy('id', 'asc');
+
+        $title = "Relação de Papéis do Sistema";
+
+        $meta = [
+            'Ordem' => 'por ID',
+        ];
+
+        $columns = [
+            'ID' => 'id',
+            'Nome do Papel' => 'title',
+            'Permissões' => function($result) {
+                $list = '';
+                foreach($result->permissions as $permission) {
+                    if ($result->permissions->last() == $permission) {
+                        $list .= $permission->title;
+                    } else {
+                        $list .= $permission->title . ', ';
+                    }
+                }
+                return $list;
+            },
+            'Usuários' => function($result) {
+                $list = '';
+                foreach($result->users as $user) {
+                    if ($result->users->last() == $user) {
+                        $list .= $user->name;
+                    } else {
+                        $list .= $user->name . ', ';
+                    }
+                }
+                return $list;
+            }
+
+        ];
+
+        if ($type == "pdf") {
+            return $this->exportPDF($role, $title, $meta, $columns);
+        } elseif ($type == "xlsx") {
+            return $this->exportExcel($role, $title, $meta, $columns);
         } else {
-            return (new RolesExport)->download('roles.csv', \Maatwebsite\Excel\Excel::CSV);
+            return $this->exportCSV($role, $title, $meta, $columns);
         }
+    }
+
+
+    /**
+     * ====================================================================
+     * Export report to PDF format
+     *
+     * @param App\Role $role
+     * @param string $title
+     * @param array $meta
+     * @param array $columns
+     *
+     * @return PdfReport $report
+     * ====================================================================
+     */
+    public function exportPDF($role, $title = "", $meta = [], $columns)
+    {
+        return PdfReport::of($title, $meta, $role, $columns)
+            ->editColumn('ID', ['class' => 'center col-id'])
+            ->editColumn('Nome do Papel', ['class' => 'left col-role-name'])
+            ->editColumn('Permissões', ['class' => 'left col-permission'])
+            ->editColumn('Usuários', ['class' => 'left col-user-name'])
+            ->setCss([
+                '.col-id'         => 'vertical-align:top;',
+                '.col-role-name'  => 'vertical-align:top; max-width:100px',
+                '.col-permission' => 'vertical-align:top; max-width:200px; word-warp:break-word',
+                '.col-user-name'  => 'vertical-align:top; max-width:90px; word-warp:break-word',
+            ])
+            ->setPaper('a4')
+            ->setOrientation('landscape')
+            ->showNumColumn(false)
+            ->stream();
+    }
+
+
+    /**
+     * ====================================================================
+     * Export report to Excel format
+     *
+     * @param App\Role $role
+     * @param string $title
+     * @param array $meta
+     * @param array $columns
+     *
+     * @return ExcelReport $report
+     * ====================================================================
+     */
+    public function exportExcel($role, $title = "", $meta = [], $columns)
+    {
+        return ExcelReport::of($title, $meta, $role, $columns)
+            ->showNumColumn(false)
+            ->showMeta(false)
+            ->download('roles');
+    }
+
+
+    /**
+     * ====================================================================
+     * Export report to CSV format
+     *
+     * @param App\Role $role
+     * @param string $title
+     * @param array $meta
+     * @param array $columns
+     *
+     * @return CSVReport $report
+     * ====================================================================
+     */
+    public function exportCSV($role, $title = "", $meta = [], $columns)
+    {
+        return CSVReport::of($title, $meta, $role, $columns)
+            ->showNumColumn(false)
+            ->showMeta(false)
+            ->download('roles');
     }
 }

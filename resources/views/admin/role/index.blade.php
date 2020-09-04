@@ -31,12 +31,17 @@
 
                             <div class="dropdown-menu" aria-labelledby="dropdownOperationsButton">
                                 <a href="{{ route('role.export', 'xlsx') }}" class="dropdown-item">
-                                    <i class="fas fa-file-excel"></i> {{ __('gennix.model_role.export_excel') }}
+                                    <i class="fas fa-file-excel text-green"></i> {{ __('gennix.model_role.export_excel') }}
                                 </a>
 
                                 <a href="{{ route('role.export', 'csv') }}" class="dropdown-item">
                                     <i class="fas fa-file-alt"></i> {{ __('gennix.model_role.export_csv') }}
                                 </a>
+
+                                <a href="{{ route('role.export', 'pdf') }}" target="_blank" class="dropdown-item">
+                                    <i class="fas fa-file-pdf text-red"></i> {{ __('gennix.model_role.export_pdf') }}
+                                </a>
+
                             </div>
                         </div>
 

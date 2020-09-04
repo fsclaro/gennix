@@ -140,6 +140,7 @@
             'export'                        => 'Exportações',
             'export_excel'                  => 'Para Excel',
             'export_csv'                    => 'Para CSV',
+            'export_pdf'                    => 'Para PDF',
         ],
 
         'model_permission' => [
@@ -188,6 +189,7 @@
             'export'                        => 'Exportações',
             'export_excel'                  => 'Para Excel',
             'export_csv'                    => 'Para CSV',
+            'export_pdf'                    => 'Para PDF',
         ],
 
         'model_role' => [
@@ -246,6 +248,7 @@
             'export'                        => 'Exportações',
             'export_excel'                  => 'Para Excel',
             'export_csv'                    => 'Para CSV',
+            'export_pdf'                    => 'Para PDF',
         ],
 
         'model_user' => [

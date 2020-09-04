@@ -138,7 +138,10 @@
                 'deletemass_success'        => 'Activities successfully deleted.',
                 'deletemass_error'          => 'An error occurred and some activities were not deleted.'
             ],
-
+            'export'                        => 'Export',
+            'export_excel'                  => 'To Excel',
+            'export_csv'                    => 'To CSV',
+            'export_pdf'                    => 'To PDF',
         ],
 
         'model_permission' => [
@@ -187,7 +190,7 @@
             'export'                        => 'Export',
             'export_excel'                  => 'To Excel',
             'export_csv'                    => 'To CSV',
-
+            'export_pdf'                    => 'To PDF',
         ],
 
         'model_role' => [
@@ -246,6 +249,7 @@
             'export'                        => 'Export',
             'export_excel'                  => 'To Excel',
             'export_csv'                    => 'To CSV',
+            'export_pdf'                    => 'To PDF',
         ],
 
         'model_user' => [
@@ -338,6 +342,7 @@
             'export'                        => 'Export',
             'export_excel'                  => 'To Excel',
             'export_csv'                    => 'To CSV',
+            'export_pdf'                    => 'To PDF',
         ],
 
         'model_audit' => [

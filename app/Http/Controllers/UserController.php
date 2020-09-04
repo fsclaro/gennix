@@ -13,7 +13,6 @@ use App\Http\Requests\UserUpdateProfileRequest;
 use App\Http\Requests\UserPasswordRequest;
 use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
-use App\Exports\UsersExport;
 use Throwable;
 use PdfReport;
 use ExcelReport;
@@ -499,6 +498,10 @@ class UserController extends Controller
     /**
      * ====================================================================
      * Export data to excel file
+     *
+     * @param string $type
+     *
+     * @return void
      * ====================================================================
      */
     public function export(string $type)
@@ -538,6 +541,18 @@ class UserController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Export report to PDF format
+     *
+     * @param App\User $user
+     * @param string $title
+     * @param array $meta
+     * @param array $columns
+     *
+     * @return PdfReport $report
+     * ====================================================================
+     */
     public function exportPDF($user, $title = "", $meta = [], $columns)
     {
         return PdfReport::of($title, $meta, $user, $columns)
@@ -552,27 +567,42 @@ class UserController extends Controller
     }
 
 
+    /**
+     * ====================================================================
+     * Export report to Excel format
+     *
+     * @param App\User $user
+     * @param string $title
+     * @param array $meta
+     * @param array $columns
+     *
+     * @return ExcelReport $report
+     * ====================================================================
+     */
     public function exportExcel($user, $title = "", $meta = [], $columns)
     {
-        return ExcelReport::of($title, [], $user, $columns)
-            ->editColumn('ID', ['class' => 'center bolder'])
-            ->editColumn('Ativo?', ['class' => 'center'])
-            ->editColumn('Super Admin?', ['class' => 'center color-red'])
-            ->editColumn('Sexo', ['class' => 'center'])
-            ->setCss([
-                '.bolder' => 'font-weight: 800;',
-                '.color-red' => 'color: red;'
-            ])
+        return ExcelReport::of($title, $meta, $user, $columns)
             ->showNumColumn(false)
             ->showMeta(false)
             ->download('users');
     }
 
 
-
+    /**
+     * ====================================================================
+     * Export report to CSV format
+     *
+     * @param App\User $user
+     * @param string $title
+     * @param array $meta
+     * @param array $columns
+     *
+     * @return CSVReport $report
+     * ====================================================================
+     */
     public function exportCSV($user, $title = "", $meta = [], $columns)
     {
-        return CSVReport::of("", [], $user, $columns)
+        return CSVReport::of($title, $meta, $user, $columns)
             ->showNumColumn(false)
             ->showMeta(false)
             ->download('users');
