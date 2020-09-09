@@ -20,4 +20,5 @@ return [
     'audit'                         => 'Audit',
     'documentation'                 => 'System Documentation',
     'phpinfo'                       => 'PHP Information',
+    'notifications'                 => 'Notifications',
 ];

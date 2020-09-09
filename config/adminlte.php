@@ -231,7 +231,8 @@ return [
     |
     */
 
-'menu' => [
+
+    'menu' => [
         // [
         //     'text' => 'search',
         //     'search' => true,
@@ -258,6 +259,14 @@ return [
             'target'=> '_blank',
         ],
 
+        [
+            'text'  => 'notifications',
+            'icon'  => 'fa fa-fw fa-bullhorn',
+            'route'   => 'notification.index',
+            'can'   => 'notification-access',
+            // 'label' => 1,
+            // 'label_color' => 'success',
+        ],
 
         // Configurações de administação
         [

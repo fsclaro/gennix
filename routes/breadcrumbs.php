@@ -132,3 +132,27 @@ Breadcrumbs::for('audit_edit', function ($trail) {
     $trail->parent('audit');
     $trail->push(__('gennix.breadcrumbs.edit'));
 });
+
+// Dashboard > Notification
+Breadcrumbs::for('notification', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push(__('gennix.breadcrumbs.notification'), route('notification.index'));
+});
+
+// Dashboard > Notification > Details
+Breadcrumbs::for('notification_show', function ($trail) {
+    $trail->parent('notification');
+    $trail->push(__('gennix.breadcrumbs.details'));
+});
+
+// Dashboard > Notification > Create
+Breadcrumbs::for('notification_create', function ($trail) {
+    $trail->parent('notification');
+    $trail->push(__('gennix.breadcrumbs.create'));
+});
+
+// Dashboard > Notification > Edit
+Breadcrumbs::for('notification_edit', function ($trail) {
+    $trail->parent('notification');
+    $trail->push(__('gennix.breadcrumbs.edit'));
+});

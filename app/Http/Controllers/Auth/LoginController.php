@@ -76,7 +76,10 @@ class LoginController extends Controller
         }
 
         if ($this->attemptLogin($request)) {
+            activity()->disableLogging();
             $this->updateLastLogin($user);
+            activity()->enableLogging();
+
             $user->saveActivity(__('gennix.login'), null, 'success');
 
             return $this->sendLoginResponse($request);

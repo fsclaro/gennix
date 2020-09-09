@@ -86,7 +86,16 @@ class User extends Authenticatable implements HasMedia
         return $this->belongsToMany(Role::class, 'role_user');
     }
 
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
 
+    public function notifications_to()
+    {
+        return $this->hasMany(Notification::class, 'user_id_to', 'id');
+
+    }
     /**
      * funções
      */

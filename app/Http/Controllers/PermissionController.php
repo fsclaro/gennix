@@ -259,7 +259,7 @@ class PermissionController extends Controller
      * @param array $meta
      * @param array $columns
      *
-     * @return PdfReport $report
+     * @return PdfReport
      * ====================================================================
      */
     public function exportPDF($permission, $title = "", $meta = [], $columns)
@@ -291,7 +291,7 @@ class PermissionController extends Controller
      * @param array $meta
      * @param array $columns
      *
-     * @return ExcelReport $report
+     * @return ExcelReport
      * ====================================================================
      */
     public function exportExcel($permission, $title = "", $meta = [], $columns)
@@ -312,7 +312,7 @@ class PermissionController extends Controller
      * @param array $meta
      * @param array $columns
      *
-     * @return CSVReport $report
+     * @return CSVReport
      * ====================================================================
      */
     public function exportCSV($permission, $title = "", $meta = [], $columns)

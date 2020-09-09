@@ -335,7 +335,7 @@ class RoleController extends Controller
      * @param array $meta
      * @param array $columns
      *
-     * @return PdfReport $report
+     * @return PdfReport
      * ====================================================================
      */
     public function exportPDF($role, $title = "", $meta = [], $columns)
@@ -367,7 +367,7 @@ class RoleController extends Controller
      * @param array $meta
      * @param array $columns
      *
-     * @return ExcelReport $report
+     * @return ExcelReport
      * ====================================================================
      */
     public function exportExcel($role, $title = "", $meta = [], $columns)
@@ -388,7 +388,7 @@ class RoleController extends Controller
      * @param array $meta
      * @param array $columns
      *
-     * @return CSVReport $report
+     * @return CSVReport
      * ====================================================================
      */
     public function exportCSV($role, $title = "", $meta = [], $columns)

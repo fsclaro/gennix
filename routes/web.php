@@ -50,7 +50,7 @@ Route::get('lang/{lang}', 'LanguageController@changeLanguage')->name('language')
  * activity
  * ---------------------------------------------------
  */
-Route::resource('activity', 'ActivityController')->except(['edit', 'show', 'create', 'update', 'store']);
+Route::resource('activity', 'ActivityController')->except(['edit', 'show', 'create', 'update', 'store', 'destroy']);
 Route::post('activity/process/{type}', 'ActivityController@processRecords')->name('activity.process');
 Route::get('activity/details/{activity}', 'ActivityController@showDetails')->name('activity.details');
 
@@ -102,3 +102,10 @@ Route::get('contact/{id}', 'ContactController@show')->name('contact.show');
  * ---------------------------------------------------
  */
 Route::resource('audit', 'AuditController')->except(['edit', 'create', 'update', 'store']);
+
+/**
+ * ---------------------------------------------------
+ * Rotas para a classe Notification
+ * ---------------------------------------------------
+ */
+Route::resource('notification', 'NotificationController')->except(['edit', 'create', 'update', 'store', 'destroy']);

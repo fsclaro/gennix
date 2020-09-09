@@ -17,6 +17,7 @@ use Throwable;
 use PdfReport;
 use ExcelReport;
 use CSVReport;
+use App\Notification;
 
 class UserController extends Controller
 {
@@ -550,7 +551,7 @@ class UserController extends Controller
      * @param array $meta
      * @param array $columns
      *
-     * @return PdfReport $report
+     * @return PdfReport
      * ====================================================================
      */
     public function exportPDF($user, $title = "", $meta = [], $columns)
@@ -576,7 +577,7 @@ class UserController extends Controller
      * @param array $meta
      * @param array $columns
      *
-     * @return ExcelReport $report
+     * @return ExcelReport
      * ====================================================================
      */
     public function exportExcel($user, $title = "", $meta = [], $columns)
@@ -597,7 +598,7 @@ class UserController extends Controller
      * @param array $meta
      * @param array $columns
      *
-     * @return CSVReport $report
+     * @return CSVReport
      * ====================================================================
      */
     public function exportCSV($user, $title = "", $meta = [], $columns)
@@ -606,5 +607,19 @@ class UserController extends Controller
             ->showNumColumn(false)
             ->showMeta(false)
             ->download('users');
+    }
+
+
+    public function allNotifications() {
+        $notifications = Notification::where('user_id_to', $this->id);
+
+        return $notifications;
+    }
+
+    public function allNotificationsUnread() {
+        $notifications = Notification::where('user_id_to', $this->id)
+            ->where('is_read', false);
+
+        return $notifications;
     }
 }
