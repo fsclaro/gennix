@@ -70,6 +70,12 @@ class UserController extends Controller
         abort_unless(Gate::allows('user-create'), 403);
 
         try {
+            if (strlen($request->password) > 0) {
+                $request->request->set('password', Hash::make($request->password));
+            } else {
+                $request->request->remove('password');
+            }
+
             $user = User::create($request->all());
 
             if (!$request->is_superadmin) {
