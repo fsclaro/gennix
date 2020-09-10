@@ -13,7 +13,7 @@
 @stop
 
 @section('content')
-<form method="post" action="{{ route('{{modelNameSingularLowerCase}}.update', $role->id) }}" enctype="multipart/form-data">
+<form method="post" action="{{ route('{{modelNameSingularLowerCase}}.update', ${{modelNameSingularLowerCase}}->id) }}" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
