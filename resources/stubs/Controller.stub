@@ -181,12 +181,12 @@ class {{modelName}}Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy({{modelName}} ${{modelNameSingularLowerCase}})
+    public function destroy($id)
     {
         abort_unless(Gate::allows('{{modelNameSingularLowerCase}}-delete'), 403);
 
         try {
-            ${{modelNameSingularLowerCase}}->delete();
+            ${{modelNameSingularLowerCase}}::where('id', $id)->delete();
 
             Alert::toast(
                 __('gennix.model_{{modelNameSingularLowerCase}}.alert_messages.destroy_success'),
