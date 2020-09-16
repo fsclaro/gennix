@@ -98,12 +98,14 @@ class {{modelName}}Controller extends Controller
      * Display the specified resource.
      * ====================================================================
      *
-     * @param  \App\{{modelName}} ${modelNameSingularLowerCase}}
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show({{modelName}} ${{modelNameSingularLowerCase}})
+    public function show($id)
     {
         abort_unless(Gate::allows('{{modelNameSingularLowerCase}}-show'), 403);
+
+        ${{modelNameSingularLowerCase}} = {{$modelName}}::find($i);
 
         return view('admin.{{modelNameSingularLowerCase}}.show', compact('{{modelNameSingularLowerCase}}'));
     }
@@ -116,12 +118,14 @@ class {{modelName}}Controller extends Controller
      * Show the form for editing the specified resource.
      * ====================================================================
      *
-     * @param  \App\{{modelName}} ${{modelNameSingularLowerCase}}
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit({{modelName}} ${{modelNameSingularLowerCase}})
+    public function edit($id)
     {
         abort_unless(Gate::allows('{{modelNameSingularLowerCase}}-edit'), 403);
+
+        ${{modelNameSingularLowerCase}} = {{$modelName}}::find($i);
 
         return view('admin.{{modelNameSingularLowerCase}}.edit', compact('{{modelNameSingularLowerCase}}'));
     }
