@@ -125,7 +125,7 @@ class {{modelName}}Controller extends Controller
     {
         abort_unless(Gate::allows('{{modelNameSingularLowerCase}}-edit'), 403);
 
-        ${{modelNameSingularLowerCase}} = {{modelName}}::find($i);
+        ${{modelNameSingularLowerCase}} = {{modelName}}::find($id);
 
         return view('admin.{{modelNameSingularLowerCase}}.edit', compact('{{modelNameSingularLowerCase}}'));
     }
