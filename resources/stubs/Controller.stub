@@ -190,7 +190,7 @@ class {{modelName}}Controller extends Controller
         abort_unless(Gate::allows('{{modelNameSingularLowerCase}}-delete'), 403);
 
         try {
-            ${{modelNameSingularLowerCase}}::where('id', $id)->delete();
+            {{modelName}}::where('id', $id)->delete();
 
             Alert::toast(
                 __('gennix.model_{{modelNameSingularLowerCase}}.alert_messages.destroy_success'),
