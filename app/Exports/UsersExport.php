@@ -9,7 +9,6 @@ use Maatwebsite\Excel\Concerns\Exportable;
 
 class UsersExport implements FromView
 {
-
     use Exportable;
 
     private $type;

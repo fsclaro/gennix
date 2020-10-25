@@ -226,9 +226,9 @@ class PermissionController extends Controller
             'ID' => 'id',
             'Descrição da Permissão' => 'title',
             'Slug/Chave' => 'slug',
-            'Papéis' => function($result) {
+            'Papéis' => function ($result) {
                 $list = '';
-                foreach($result->roles as $role) {
+                foreach ($result->roles as $role) {
                     if ($result->roles->last() == $role) {
                         $list .= $role->title;
                     } else {
@@ -236,7 +236,6 @@ class PermissionController extends Controller
                     }
                 }
                 return $list;
-
             },
         ];
 

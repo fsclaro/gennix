@@ -291,9 +291,9 @@ class RoleController extends Controller
         $columns = [
             'ID' => 'id',
             'Nome do Papel' => 'title',
-            'Permissões' => function($result) {
+            'Permissões' => function ($result) {
                 $list = '';
-                foreach($result->permissions as $permission) {
+                foreach ($result->permissions as $permission) {
                     if ($result->permissions->last() == $permission) {
                         $list .= $permission->title;
                     } else {
@@ -302,9 +302,9 @@ class RoleController extends Controller
                 }
                 return $list;
             },
-            'Usuários' => function($result) {
+            'Usuários' => function ($result) {
                 $list = '';
-                foreach($result->users as $user) {
+                foreach ($result->users as $user) {
                     if ($result->users->last() == $user) {
                         $list .= $user->name;
                     } else {

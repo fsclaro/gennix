@@ -35,5 +35,4 @@ class NotificationUpdateRequest extends FormRequest
             // define others messages
         ];
     }
-
 }

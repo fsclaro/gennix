@@ -616,13 +616,15 @@ class UserController extends Controller
     }
 
 
-    public function allNotifications() {
+    public function allNotifications()
+    {
         $notifications = Notification::where('user_id_to', $this->id);
 
         return $notifications;
     }
 
-    public function allNotificationsUnread() {
+    public function allNotificationsUnread()
+    {
         $notifications = Notification::where('user_id_to', $this->id)
             ->where('is_read', false);
 

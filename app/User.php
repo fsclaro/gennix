@@ -94,7 +94,6 @@ class User extends Authenticatable implements HasMedia
     public function notifications_to()
     {
         return $this->hasMany(Notification::class, 'user_id_to', 'id');
-
     }
     /**
      * funções
