@@ -17,10 +17,11 @@
     <exclude-pattern>*/seeds/*</exclude-pattern>
     <exclude-pattern>*.blade.php</exclude-pattern>
     <exclude-pattern>*/lang/*</exclude-pattern>
-    <exclude-pattern>*/vendor/*</exclude-pattern>
     <exclude-pattern>*/config/*</exclude-pattern>
     <exclude-pattern>*.js</exclude-pattern>
-Generic.WhiteSpace.ScopeIdent.IncorrectExact
+
+    Generic.WhiteSpace.ScopeIdent.IncorrectExact
+
     <!-- Show progression -->
     <arg value="p"/>
     <arg name="colors"/>
